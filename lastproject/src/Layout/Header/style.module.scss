@@ -1,0 +1,69 @@
+.container{
+    width: 96%;
+    height:72px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logoWrapper{
+    width: 256px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo{
+    width: 72px;
+    height: 72px;
+}
+
+.logo a{
+
+    margin-right: 59px;
+}
+.btnCatalog{
+    width: 125px;
+    height: 49px;
+    border-radius: 5px;
+    border: 2px solid #393;
+    background: #393;
+
+}
+.text{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+}
+.navWrapper{
+    width: 331px;
+    height: 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin-left: 594px;
+}
+
+.navWrapper li {
+    list-style-type: none;
+
+    font-size: 16px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+
+}
+
+a.active{
+    color: rgb(120, 217, 183);
+}
+.bag{
+    width: 30px;
+    height: 30px;
+}

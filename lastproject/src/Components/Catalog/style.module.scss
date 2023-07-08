@@ -1,0 +1,30 @@
+.container{
+    width: 96%;
+    height:600px;
+    display: flex;
+
+}
+.container p{
+    color: #000;
+    font-size: 40px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: 1.2px;
+    margin-right: 96px;
+    
+}
+.category{
+    margin-top: 15px;
+    width: 120px;
+    height: 30px;
+    border: 2px solid #8b8b8b;
+    padding-top: 6px;
+    font-size: 10px;
+    font-style: normal;
+    color: #8b8b8b;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
