@@ -5,21 +5,25 @@ import { Footer } from './Layout/Footer'
 import { Catalog } from './Components/Catalog'
 import {SaleSeason} from './Components/SaleSeason'
 import { Discount } from './Components/Discount'
-import {Sale} from './Components/Sale'
+import { Sale } from './Components/Sale'
+import { Provider } from 'react-redux'
+import {store} from './Components/redux/store'
 
 function App() {
 
 
   return (
-    <div className="App">
-      <Header />
-      <SaleSeason/>
-      <Catalog />
-      <Discount />
-      <Sale/>
-      <Outlet />
-      <Footer />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Header />
+        <SaleSeason />
+        <Catalog />
+        <Discount />
+        <Sale />
+        <Outlet />
+        <Footer />
+      </div>
+    </Provider>
   )
 }
 
