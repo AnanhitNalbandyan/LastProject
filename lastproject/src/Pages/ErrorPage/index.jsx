@@ -11,8 +11,7 @@ export const ErrorPage = () => {
     return (
         <div id='error-page' className={st.container}>
 
-            <img src='./Images/error.png
-            ' alt="" />
+            <img src='../Images/error.png' alt="" />
     
         </div>
     )

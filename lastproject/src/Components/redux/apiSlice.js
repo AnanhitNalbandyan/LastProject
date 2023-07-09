@@ -5,7 +5,7 @@
             
             reducerPath: 'products',
             
-        baseQuery: fetchBaseQuery({ baseUrl: 'http://127.0.0.1:3333/categories/all' }),
+        baseQuery: fetchBaseQuery({ baseUrl: 'http://127.0.0.1:3333/' }),
 
 
         endpoints: (builder) => ({

@@ -9,16 +9,16 @@ import { useEffect } from 'react'
         const { data: cardData = [], error, isLoading } = useGetProductsCategoriesQuery('your-category-name');
 
     useEffect(() => {
-        // Выполняйте какие-либо действия при успешном получении данных, обработке ошибок и т. д.
+    
         if (error) {
-        // Обработка ошибок
+    
         }
     }, [cardData, error])
 
     if (isLoading) {
         return <div>Loading...</div>
     }
-
+console.log(useGetProductsCategoriesQuery)
     return (
     <div className={st.container}>
         <p>Catalog</p>
@@ -27,8 +27,10 @@ import { useEffect } from 'react'
             </NavLink>
         {cardData.map(card => (
             <div key={card.id} className={st.card}>
-                {card.title}
+                <img src= {`http://127.0.0.1:3333/${card.image}`}  alt="" />
+                <p>{card.title}</p> 
             </div>
+        
         ))}
     </div>
     )
