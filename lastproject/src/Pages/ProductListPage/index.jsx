@@ -1,10 +1,11 @@
     import { NavLink, useParams } from 'react-router-dom'
-    import { ProductCard } from './Layout/ProductCard'
-    import st from './style.module.css'
-    import { useGetProductsCategoriesQuery } from '../components/redux/apiSlice'
+    import { ProductCard } from '../../Layout/ProductCard'
+    import st from './style.module.scss'
+    import { useGetProductsCategoriesQuery } from '../../redux/apiSlice'
     
 
-    export const ProductsListPage = () => {
+    export const ProductListPage = () => {
+        
     const { id } = useParams()
     const { data, error, isLoading } = useGetProductsCategoriesQuery(id)
     console.log(data, error, isLoading)

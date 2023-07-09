@@ -1,6 +1,6 @@
 import st from './style.module.scss'
 import { NavLink } from 'react-router-dom'
-import { useGetProductsCategoriesQuery } from '../redux/apiSlice'
+import { useGetProductsCategoriesQuery } from '../../redux/apiSlice'
 import { useEffect } from 'react'
 
 
