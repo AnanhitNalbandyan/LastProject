@@ -25,7 +25,7 @@ console.log(useGetProductsCategoriesQuery)
             <NavLink to="/your-other-page-path" className={st.category}>
             All categories
             </NavLink>
-        {cardData.map(card => (
+        {cardData && cardData.map(card => (
             <div key={card.id} className={st.card}>
                 <img src= {`http://127.0.0.1:3333/${card.image}`}  alt="" />
                 <p>{card.title}</p> 

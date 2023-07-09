@@ -1,12 +1,12 @@
     import { NavLink } from 'react-router-dom'
     import st from './style.module.scss'
-    import { useGetAllCategoriesQuery } from '../components/redux/apiSlice'
+    import { useGetAllCategoriesQuery } from '../../Components/redux/apiSlice'
 
     export const CategoriesListPage = () => {
     const { data } = useGetAllCategoriesQuery()
     return (
         <>
-        <h1>5555555</h1>
+        <h1>Categories</h1>
         <div className={st.container}>
             {data &&
             data.map((el, index) => (

@@ -4,6 +4,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import { ErrorPage } from './Pages/ErrorPage';
+import { CategoriesListPage } from './Pages/CategoryList';
+import {ProductListPage} from './Pages/ProductListPage'
 
 
 const router = createBrowserRouter([
@@ -14,15 +16,15 @@ const router = createBrowserRouter([
     children: [
     {
         path: '/catalog',
-        element: <button>Ctalog</button>
+        element: <button><CategoriesListPage/></button>
       },
       {
         path: '/main page',
-        element:<div>Main page</div>
+        element:<div><App/></div>
       },
       {
           path: '/all products',
-        element:<div>All products</div>
+        element:<div><ProductListPage/></div>
       },
         {
           path: '/all sales',
