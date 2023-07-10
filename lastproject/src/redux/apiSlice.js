@@ -1,28 +1,29 @@
-    import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
+    import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-    export const sliceApi = createApi({
-            
-            reducerPath: 'products',
-            
-        baseQuery: fetchBaseQuery({ baseUrl: 'http://127.0.0.1:3333/' }),
-
-
-        endpoints: (builder) => ({
-            getAllCategories: builder.query({
-            query: () => `categories`,
-            }),
-        
-        getProductsCategories: builder.query({
-            query: (category) => `category/${category}`,
+    export const baseUrl = "http://127.0.0.1:3333/"//ссылка на все продукты
+    export const apiSlice = createApi({
+    reducerPath: "categories",
+    baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
+    endpoints: (builder) => ({
+        getAllCategories: builder.query({
+        query: () => "categories/all",
         }),
-        
-        getSingleProduct: builder.query({
-            query: (id) => `${id}`,
-            }),
+        getOneCategory: builder.query({
+        query: (id) => `categories/${id}`,
         }),
-        })
+        getAllPropducts: builder.query({
+        query: () => "products/all",
+        }),
+        getOneProductByCategory: builder.query({
+        query: (id) => `products/${id}`,
+        }),
+    }),
+    })
 
-export const { useGetAllCategoriesQuery,
-                useGetProductsCategoriesQuery,
-                useGetSingleProductQuery } = sliceApi
+    export const {
+    useGetAllCategoriesQuery,
+    useGetOneCategoryQuery,
+    useGetAllPropductsQuery,
+    useGetOneProductByCategoryQuery,
+    } = apiSlice

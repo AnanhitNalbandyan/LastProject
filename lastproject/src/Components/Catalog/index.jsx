@@ -1,37 +1,29 @@
-import st from './style.module.scss'
-import { NavLink } from 'react-router-dom'
-import { useGetProductsCategoriesQuery } from '../../redux/apiSlice'
-import { useEffect } from 'react'
+    import st from './style.module.scss'
+    import { useGetAllCategoriesQuery } from '../../redux/apiSlice'
+    import { baseUrl } from '../../redux/apiSlice'
+    import { Category } from '../../Pages/Category'
 
 
     export const Catalog = () => {
-        
-        const { data: cardData = [], error, isLoading } = useGetProductsCategoriesQuery('your-category-name');
+            
+    const { data } = useGetAllCategoriesQuery();
 
-    useEffect(() => {
-    
-        if (error) {
-    
-        }
-    }, [cardData, error])
-
-    if (isLoading) {
-        return <div>Loading...</div>
-    }
-console.log(useGetProductsCategoriesQuery)
     return (
-    <div className={st.container}>
-        <p>Catalog</p>
-            <NavLink to="/your-other-page-path" className={st.category}>
-            All categories
-            </NavLink>
-        {cardData && cardData.map(card => (
-            <div key={card.id} className={st.card}>
-                <img src= {`http://127.0.0.1:3333/${card.image}`}  alt="" />
-                <p>{card.title}</p> 
-            </div>
-        
-        ))}
-    </div>
+        <div className={st.wrapper}>
+        <h2>Catalog</h2>
+        <button>All cataloges</button>
+        <div className={st.categoriesWrapper}>
+            {data &&
+            data.map(
+                (el) => el.id <= 4 && (
+                    <Category
+                    key={el.id}
+                    title={el.title}
+                    image={baseUrl + el.image}
+                    />
+                )
+            )}
+        </div>
+        </div>
     )
-}
+    }

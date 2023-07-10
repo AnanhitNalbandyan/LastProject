@@ -34,40 +34,37 @@ p span{
     font-weight: 100;
     letter-spacing: 2.7px;
 }
-.formInput{
-    width: 475px;
-    height: auto;
-    margin-left: 199px;
-    
+
+.inputWrapper {
+    margin-bottom: 30px;
 }
-.input{
+
+.input {
     width: 473px;
-    height: 75px;
-    margin-bottom: 31px;
-    border-radius: 25.147px;
+    border: none;
+    border-radius: 25px;
     background: #FFF;
+    padding: 27px 50px;
+    padding-right: 0;
     color: #6C6C6C;
     font-size: 18px;
     font-family: Montserrat;
-    font-style: normal;
     font-weight: 600;
-    line-height: 120%;
-    letter-spacing: 0.54px;
 }
-:placeholder-shown{
-    padding-left: 50px;
+
+.form {
+    margin-right: 256px;
 }
-.button{
-    width: 473px;
-    height: 75px;
-    border-radius: 25.147px;
+
+.button {
+    border-radius: 25px;
     border: 2.395px solid #FFF;
-    background: linear-gradient(223deg, #393 0%, #006300 100%);;
+    background: transparent;
     color: #FFF;
-    font-size: 28.739px;
     font-family: Montserrat;
-    font-style: normal;
+    font-size: 28.739px;
     font-weight: 700;
-    line-height: 120%;
-    letter-spacing: 0.862px;
+    padding: 20px 151px;
+    margin-bottom: 45px;
+    cursor: pointer;
 }
