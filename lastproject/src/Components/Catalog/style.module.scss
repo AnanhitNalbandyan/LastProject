@@ -1,10 +1,14 @@
 .container{
     width: 96%;
-    height:600px;
-    display: flex;
-
+    height:600px;   
 }
-.container p{
+
+.wrapper{
+    display: flex;
+    
+}
+
+h2{
     color: #000;
     font-size: 40px;
     font-family: Montserrat;
@@ -13,8 +17,10 @@
     line-height: 130%;
     letter-spacing: 1.2px;
     margin-right: 96px;
-    
+
 }
+
+
 .category{
     margin-top: 15px;
     width: 120px;
@@ -27,4 +33,11 @@
     display: flex;
     justify-content: center;
     text-align: center;
+}
+
+.categoriesContainer{
+    width: 86%;
+    height: 416px;
+    display: flex;
+
 }

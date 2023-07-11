@@ -1,8 +1,10 @@
 .wrapper{
-    width: 1321px;
+    width: 86%;
     height: 717px;
 }
-.title{}
+.description{
+    
+}
 .prodauctContainer{
     display: flex;
     gap: 130px;
@@ -40,7 +42,7 @@ line-height: 130%;
 letter-spacing: 0.84px;
 }
 .btnToCard{
-    border-radius: 10px;
+border-radius: 10px;
 border: 2px solid #393;
 background: #393;
 color: #FFF;

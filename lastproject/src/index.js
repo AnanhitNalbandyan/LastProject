@@ -9,6 +9,7 @@ import { ErrorPage } from './Pages/ErrorPage'
 import { MainPage } from './Components/MainPage'
 import {ProductPage} from './Pages/ProductPage'
 import { AllProducts } from './Pages/AllProducts'
+import {CategoriesList} from './Pages/CategoriesList'
 
 
 const router = createBrowserRouter([
@@ -17,7 +18,10 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage/>,
     children: [
-    
+    {
+        path: '/',
+        element:<div><MainPage/></div>
+      },
       {
         path: '/main page',
         element:<div><MainPage/></div>
@@ -26,7 +30,16 @@ const router = createBrowserRouter([
           path: '/all products',
         element:<div><AllProducts/></div>
       },
-        
+        {
+          path: '/all sales',
+        element:<div>All products</div>
+      },
+      
+      {
+          path: '/catalog',
+        element:<div><CategoriesList/></div>
+      },
+      
       {
           path: '/products/:id',
         element:<div><ProductPage/></div>

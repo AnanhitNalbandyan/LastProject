@@ -1,6 +1,7 @@
 import st from './style.module.scss'
 import { NavLink } from 'react-router-dom'
-
+import bag  from '../../Images/shoppingbag.svg'
+import logo from '../../Images/logo.png'
 
 
 export const Header = () => {
@@ -11,7 +12,7 @@ export const Header = () => {
 
             <div className={st.logoWrapper}>
 
-                <span href="#"> <img className={st.logo} src='../Images/logo.png' alt="" /></span>
+                <span href="#"> <img className={st.logo} src={logo} alt="" /></span>
 
                 <button className={st.btnCatalog}> <NavLink className={st.text} to='/catalog'>Catalog</NavLink></button> 
                 
@@ -37,7 +38,7 @@ export const Header = () => {
                 </nav>
                 
 
-            <span href="#"><img className={st.bag} src='./Images/shoppingbag.svg' alt="" /></span> 
+            <span href="#"><img className={st.bag} src= {bag} alt="" /></span> 
             
             
         </header>

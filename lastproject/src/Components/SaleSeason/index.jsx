@@ -1,5 +1,5 @@
 import st from './style.module.scss'
-import bush from './Images/bush.png'
+import bush from '../../Images/bush.png'
 
 export const SaleSeason = () => {
     

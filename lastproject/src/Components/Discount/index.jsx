@@ -1,6 +1,5 @@
 import st from './style.module.scss'
-import litleman from './Images/litleman.png'
-
+import litleman from '../../Images/litleman.png'
 import { useForm, Controller } from 'react-hook-form'
 import { baseUrl } from '../../redux/apiSlice'
 

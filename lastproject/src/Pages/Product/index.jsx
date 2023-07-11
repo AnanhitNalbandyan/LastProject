@@ -1,4 +1,4 @@
-    import st from "./style.module.css"
+    import st from "./style.module.scss"
 
     export const Product = ({ discont_price, image, price, id, title }) => {
     console.log(price);
