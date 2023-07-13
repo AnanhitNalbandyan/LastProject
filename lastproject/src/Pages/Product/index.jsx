@@ -4,10 +4,7 @@
     console.log(price);
     return (
         <div className={st.wrapper}>
-            <div className={st.imgContainer}>
             <img className={st.image} src={image} alt="" />
-            </div>
-
         <div className={st.priceContainer}>
         <p className={st.price}>{`${price}$`}</p> 
         <span className={st.discont_price}>{discont_price ? `${discont_price}$` : ""}</span>

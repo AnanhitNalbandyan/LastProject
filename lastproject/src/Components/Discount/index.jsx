@@ -36,7 +36,7 @@ const handlePhoneChange = (e) => {
     return (
         <div className={st.container}>
 
-            <img className={st.litleman} src={litleman} alt="" />
+            <img className={st.litleMan} src={litleman} alt="" />
         
             <div clssName={st.textInput}>
 

@@ -1,24 +1,22 @@
 .container{
-    display: flex;
-    width: 30%;
+    width: 340px;
     height: 416px;
-    
-   
+    gap:  3%;
 }
 .image {
     width: 300px;
     height: 300px;
-    column-gap: 3%;
+
     
 }
 .titleImg{
-    color: #000000;
-    width: 87px;
-    height: 23px;
-    color: #FFF;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 100;
-    line-height: 0.72em;
-    letter-spacing: 2.7px;
+color: #000;
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 130%; 
+letter-spacing: 0.54px;
+margin-left: 35%;
+
 }
