@@ -1,7 +1,7 @@
     import st from './style.module.scss'
     import { useGetAllCategoriesQuery } from '../../redux/apiSlice'
     import { baseUrl } from '../../redux/apiSlice'
-import { Category } from '../../Pages/Category'
+    import { Category } from '../../Pages/Category'
     import { NavLink } from 'react-router-dom'
 
 

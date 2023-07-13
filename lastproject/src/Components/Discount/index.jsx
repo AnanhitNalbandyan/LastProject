@@ -44,7 +44,7 @@ const handlePhoneChange = (e) => {
                         <p>5% off <br /> <span>on the first order</span> </p>  
                     </div>
                 
-                    <form onSubmit={() => handleSubmit(onSubmit)}>
+                    <form className={st.inputForm} onSubmit={() => handleSubmit(onSubmit)}>
             <Controller
                 name="phone"
                 control={control}
@@ -63,7 +63,7 @@ const handlePhoneChange = (e) => {
                 )}
                 />
                 <button className={st.button} type="submit">
-                Cat a discount
+                Gate a discount
                 </button>
             </form>
 

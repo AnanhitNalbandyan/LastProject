@@ -1,14 +1,22 @@
 .container{
     width: 96%;
     height: 476px;
+    margin-top: 50px;
 }
 
-.title{
+.h2{
     color: #000;
     font-size: 40px;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 700;
     line-height: 130%;
-    letter-spacing: 1.2px
+    letter-spacing: 1.2px;
+    margin-right: 96px;
+}
+.productsContainer{
+    width: 86%;
+    height: 416px;
+    display: flex;
+
 }
