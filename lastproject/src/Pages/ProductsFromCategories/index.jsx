@@ -10,7 +10,7 @@ export const ProductsFromCategories = () => {
     const {id} = useParams()
     const { data, isLoading } = useGetOneCategoryQuery(id)
     const eachData = data && data.data[0]
-console.log(eachData);
+
 
     return (
         <>
@@ -19,13 +19,14 @@ console.log(eachData);
                 ) : (
                     <>
                         <div className={st.wrapper}>
-                            <h2>{eachData.title}</h2>
+                            <h2>{eachData[0].title}</h2>
                             <div className={st.categoriesWrapper}>
                                 {eachData.map((el) => (
                                     <NavLink key={el.id} to={`/categories/${el.id}`}>
                                         <Product
                                             key={el.id}
-                                            {...el}
+                                            title={el.title}
+                                            image={baseUrl + el.image}
                                         />
                                     </NavLink>
                                 ))}
