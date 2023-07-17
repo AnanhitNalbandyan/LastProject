@@ -1,75 +1,75 @@
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    .wrapper:hover,
-    .wrapper:focus {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper:hover,
+.wrapper:focus {
     transform: scale(1.1);
     transition-duration: 500ms;
     cursor: pointer;
-    }
-.wrapper{
+}
+
+.wrapper {
     width: 340px;
     height: 400px;
 }
 
-
 .image {
     width: 300px;
     height: 300px;
-    gap:5%
-    
+    gap: 5%;
 }
 
-.priceContainer{
+.priceContainer {
     width: 248px;
     height: 30px;
-    display: inline-flex
-    
+    display: inline-flex;
 }
 
-.price{
-color: #000;
-font-family: Montserrat;
-font-size: 30px;
-font-style: normal;
-font-weight: 600;
-line-height: 130%;
-letter-spacing: 0.9px;
+.price {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.9px;
 }
 
-.discont_price{
-color: #8B8B8B;
-font-family: Montserrat;
-font-size: 20px;
-font-style: normal;
-font-weight: 500;
-line-height: 130%; /* 26px */
-letter-spacing: 0.6px;
-text-decoration-line: strikethrough;
+.discont_price {
+    color: #8B8B8B;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+    text-decoration-line: strikethrough;
 }
 
-.percent{
-color: #FF32A1;
-font-family: Montserrat;
-font-size: 20px;
-font-style: normal;
-font-weight: 600;
-line-height: 130%; /* 26px */
-letter-spacing: 0.6px;
+.percent {
+    color: #FF32A1;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.6px;
 }
-.title{
+
+.title {
     color: #3A3A3A;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 500;
-line-height: 130%; /* 20.8px */
-letter-spacing: 0.48px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 0.48px;
 }
-  
-    .addButton {
+
+.addButton {
     display: none;
     position: absolute;
     top: 70%;
@@ -82,4 +82,77 @@ letter-spacing: 0.48px;
     color: #393;
     font-size: 18px;
     font-weight: 600;
+}
+
+
+@media (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+        height: auto;
+        padding: 20px;
     }
+
+    .image {
+        width: 100%;
+        height: auto;
+        gap: 10px;
+    }
+
+    .priceContainer {
+        width: 100%;
+        height: auto;
+    }
+
+    .price {
+        font-size: 24px;
+    }
+
+    .discont_price {
+        font-size: 18px;
+    }
+
+    .percent {
+        font-size: 18px;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .wrapper {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+        gap: 5px;
+    }
+
+    .priceContainer {
+        width: 100%;
+        height: auto;
+    }
+
+    .price {
+        font-size: 20px;
+    }
+
+    .discont_price {
+        font-size: 16px;
+    }
+
+    .percent {
+        font-size: 16px;
+    }
+
+    .title {
+        font-size: 12px;
+    }
+}

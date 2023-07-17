@@ -1,6 +1,6 @@
     import { useGetAllPropductsQuery, baseUrl } from "../../redux/apiSlice"
     import st from './style.module.scss'
-    import { NavLink, useParams } from 'react-router-dom'
+    import { NavLink} from 'react-router-dom'
     import { Product } from "../Product"
 
     export const ProductsList = () => {

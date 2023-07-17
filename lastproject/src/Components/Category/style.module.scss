@@ -22,11 +22,29 @@ letter-spacing: 0.54px;
 margin-left: 25%;
 
 }
-@media screen and (min-width: 768px) {
-.img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
+
+
+@media screen and (max-width: 767px) {
+.image {
+width: 200px;
+height: 200px;
+}
+
+.titleImg {
+font-size: 14px;
+margin-left: 10%;
+}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+.image {
+width: 250px;
+height: 250px;
+}
+
+.titleImg {
+font-size: 16px;
+margin-left: 20%;
 }
 }
 

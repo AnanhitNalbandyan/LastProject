@@ -3,3 +3,24 @@
     height: 416px;
     display: flex;
 }
+
+
+@media screen and (max-width: 768px) {
+    .productsContainer {
+        width: 100%; 
+        height: auto;
+        flex-wrap: wrap; 
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .productsContainer {
+        flex-direction: column; 
+        height: auto; 
+    }
+}
+
+
+
+

@@ -1,10 +1,10 @@
-.container{
+.container {
     width: 96%;
     height: 600px;
     margin-top: 50px;
 }
 
-.h2{
+.h2 {
     color: #000;
     font-size: 40px;
     font-family: Montserrat;
@@ -13,4 +13,31 @@
     line-height: 130%;
     letter-spacing: 1.2px;
     margin-right: 96px;
+}
+
+
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .h2 {
+        font-size: 36px;
+        margin-right: 0;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .h2 {
+        font-size: 32px;
+        margin-right: 0;
+    }
 }

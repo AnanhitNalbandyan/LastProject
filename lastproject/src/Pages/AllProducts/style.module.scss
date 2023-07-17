@@ -17,3 +17,14 @@ h2{
     margin-top: 20px;
 }
 
+@media (max-width: 768px) {
+h2 {
+font-size: 30px;
+line-height: 120%;
+}
+
+.products {
+    justify-content: center;
+    margin-top: 10px;
+}
+}

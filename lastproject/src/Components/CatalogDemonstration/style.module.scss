@@ -1,5 +1,4 @@
 
-
 .categoriesContainer{
     width: 76%;
     height: 416px;
@@ -25,5 +24,38 @@
     .categoriesContainer > * {
         flex-basis: calc(25% - 112px);
         margin-bottom: 56px;
+    }
+}
+
+
+.categoriesContainer{
+    width: 76%;
+    height: 416px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+    .categoriesContainer {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .categoriesContainer > * {
+        flex-basis: calc(33.33% - 80px);
+        margin-bottom: 48px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .categoriesContainer {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+    .categoriesContainer > * {
+        flex-basis: calc(50% - 50px);
+        margin-bottom: 44px;
     }
 }

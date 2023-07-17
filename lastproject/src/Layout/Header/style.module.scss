@@ -1,71 +1,181 @@
-.container{
+.container {
     width: 96%;
-    height:72px;
-    display:flex;
+    height: 72px;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 3%;
     padding-top: 3%;
 }
 
-
-.logoWrapper{
+.logoWrapper {
     width: 256px;
     height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
-.logo{
+.logo {
     width: 72px;
     height: 72px;
 }
 
-.logo a{
-
+.logo a {
     margin-right: 59px;
 }
-.btnCatalog{
+
+.btnCatalog:hover,
+.btnCatalog:focus {
+    transform: scale(1.1);
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+
+.btnCatalog {
     width: 125px;
     height: 49px;
     border-radius: 5px;
     border: 2px solid #393;
     background: #393;
-
 }
-.text{
+
+.text {
     text-decoration: none;
     color: #FFF;
     font-size: 16px;
     font-style: normal;
     line-height: normal;
 }
-.navWrapper{
+
+.navWrapper {
     width: 331px;
     height: 21px;
     display: flex;
     justify-content: space-between;
-    align-items: center; 
+    align-items: center;
     margin-left: 594px;
+}
+
+.li:focus {
+    cursor: pointer;
 }
 
 .navWrapper li {
     list-style-type: none;
-
     font-size: 16px;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
-
 }
 
-a.active{
+a.active {
     color: rgb(120, 217, 183);
 }
-.bag{
+
+.bag:hover,
+.bag:focus {
+    transform: scale(1.1);
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+
+.bag {
     width: 30px;
     height: 30px;
+}
+
+/* Для планшета (например, с шириной экрана от 768px до 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding-bottom: 1%;
+        padding-top: 1%;
+    }
+
+    .logoWrapper {
+        width: 200px;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo a {
+        margin-right: 30px;
+    }
+
+    .btnCatalog {
+        width: 100px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+
+    .navWrapper {
+        width: 250px;
+        margin-left: 300px;
+    }
+
+    .navWrapper li {
+        font-size: 14px;
+    }
+
+    .bag {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* Для мобильного телефона (например, с шириной экрана до 767px) */
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+        padding-bottom: 2%;
+        padding-top: 2%;
+    }
+
+    .logoWrapper {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .logo a {
+        margin-right: 0;
+    }
+
+    .btnCatalog {
+        width: 120px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .text {
+        font-size: 12px;
+    }
+
+    .navWrapper {
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .navWrapper li {
+        font-size: 12px;
+    }
+
+    .bag {
+        width: 20px;
+        height: 20px;
+    }
 }

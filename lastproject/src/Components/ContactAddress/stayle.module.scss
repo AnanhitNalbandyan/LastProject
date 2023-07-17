@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 96%;
+    height: 275px;
+    display: flex;
+    justify-self: start;
+    align-items: start;
+    margin-bottom: 80px;
+}
+.contactUs{
+    width: 50%;
+    height: auto;
+    display: block;
+
+}
+
+h3{
+color: #000;
+font-family: Montserrat;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 130%;
+margin-bottom: 50px; 
+}
+.phone{
+width: 649px;
+color: #000;
+font-family: Montserrat;
+font-size: 70px;
+font-style: normal;
+font-weight: 600;
+line-height: 130%; 
+}
+
+.socialMedia{
+width: 200px;
+height: auto;
+list-style: none;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.icon{
+    width: 50px;
+    height: auto;
+    display: block;
+}
+
+.contactLogo{
+width: 50px;
+height: 50px;
+flex-shrink: 0;
+}
+
+li a{
+color: #000;
+font-family: Montserrat;
+font-size: 15px;
+font-style: normal;
+font-weight: 600;
+line-height: 130%; 
+}
+
+.ourAddress{
+margin-left: 160px;
+display: block;
+}
+.address:hover,
+.address:focus {
+transform: scale(1.1);
+transition-duration: 500ms;
+cursor: pointer;
+}
+.address{
+width: 564px;
+height: 104px;
+color: #000;
+font-family: Montserrat;
+font-size: 40px;
+font-style: normal;
+font-weight: 600;
+line-height: 130%;
+text-decoration-line: underline;
+}
+
+.workingTime{
+margin-top: 20px;
+}
+
+.info{
+width: 181px;
+height: auto;
+color: #000;
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 500;
+line-height: 130%;
+letter-spacing: 0.6px;
+}
+
+.time{
+width: 181px;
+height: auto;
+color: #000;
+font-family: Montserrat;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 130%;
+letter-spacing: 0.6px; 
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+  
+  .contactUs {
+    width: 100%;
+  }
+  
+  .phone {
+    font-size: 50px;
+  }
+  
+  .socialMedia {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .icon {
+    width: 40px;
+  }
+  
+  .ourAddress {
+    margin-left: 0;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .address {
+    width: auto;
+    font-size: 30px;
+  }
+  
+  .workingTime {
+    text-align: center;
+  }
+  
+  .info {
+    font-size: 16px;
+  }
+  
+  .time {
+    font-size: 20px;
+  }
+}
+
+
+    @media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    h3 {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .phone {
+        font-size: 40px;
+    }
+    
+    .address {
+        font-size: 25px;
+    }
+    
+    .info {
+        font-size: 14px;
+    }
+    
+    .time {
+        font-size: 18px;
+    }
+    }

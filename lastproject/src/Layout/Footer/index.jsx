@@ -1,11 +1,13 @@
-import st from './style.module.scss'
-import footerPic from '../../Images/footerPic.png'
+import { ContactAddress } from "../../Components/ContactAddress"
+import {Map} from '../../Components/Map'
 
 export const Footer = () => {
     
+
     return (
-        <div className={st.container}>
-            <img className={st.footerPic} src={footerPic} alt="" />
-        </div>
+        <>
+            <ContactAddress />
+            <Map/>
+        </>
     )
 }
