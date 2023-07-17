@@ -1,5 +1,5 @@
 import React from 'react'
-import { useGetOneProductByCategoryQuery} from '../../redux/apiSlice'
+import { baseUrl, useGetOneProductByCategoryQuery} from '../../redux/apiSlice'
 import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { addProductToBasket } from '../../redux/basketSlice'
@@ -13,7 +13,8 @@ export const SingleProductPage = () => {
     const { data, isLoading } = useGetOneProductByCategoryQuery(id);
     
     const eachData = data && data[0]
-    const dispatch = useDispatch();
+
+    const dispatch = useDispatch()
         
     const addProductToBasketHandler = (data) => {
         dispatch(addProductToBasket(data))
@@ -27,7 +28,7 @@ export const SingleProductPage = () => {
             <div className={st.container}>
             <h2>{eachData.title}</h2>
             <div className={st.wrapper}>
-                <img className={st.image} src={eachData.image} alt={eachData.title} />
+                <img className={st.image} src={baseUrl + eachData.image} alt={eachData.title} />
                 <div className={st.descriptionPrice}>
                 <div className={st.pricePart}>
                     <p className={st.price}>{`${eachData.price}$`}</p> 

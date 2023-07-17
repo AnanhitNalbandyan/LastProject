@@ -10,7 +10,7 @@ export const ProductsFromCategories = () => {
     const {id} = useParams()
     const { data, isLoading } = useGetOneCategoryQuery(id)
     const eachData = data && data.data[0]
-
+console.log(eachData);
 
     return (
         <>
