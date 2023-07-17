@@ -18,12 +18,33 @@
         getOneProductByCategory: builder.query({
         query: (id) => `products/${id}`,
         }),
+        
+        addPhoneNumber: builder.mutation({
+            query: (newPhone) => ({
+                url: `/sale/send`,
+                method: 'POST',
+                body: newPhone,
+            }),
+            invalidatesTags: ['PhoneNumber'],
+        }),
+        addOrder: builder.mutation({
+            query: (body) => ({
+                url: `/order/send`,
+                method: 'POST',
+                body,
+            }),
+            invalidatesTags: ['Order'],
+        })
+
     }),
     })
+
 
     export const {
     useGetAllCategoriesQuery,
     useGetOneCategoryQuery,
     useGetAllPropductsQuery,
     useGetOneProductByCategoryQuery,
+    useAddPhoneNumberMutation,
+    useAddOrderMutation
     } = apiSlice

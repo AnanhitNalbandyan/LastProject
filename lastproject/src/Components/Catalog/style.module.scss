@@ -4,7 +4,9 @@
 }
 
 .wrapper{
+    width: 86%;
     display: flex;
+    margin-bottom: 20px;
     
 }
 
@@ -35,9 +37,3 @@ h2{
     text-align: center;
 }
 
-.categoriesContainer{
-    width: 86%;
-    height: 416px;
-    display: flex;
-
-}

@@ -1,26 +1,28 @@
-import { useGetAllPropductsQuery } from '../../redux/apiSlice'
-import { Product } from '../../Pages/Product'
-import {baseUrl} from '../../redux/apiSlice'
 import st from './style.module.scss'
+import { useGetAllCategoriesQuery, baseUrl } from '../../redux/apiSlice'
+import { Category } from '../Category'
 
-export const Sale = () => {
-    const { data, isLoading, error } = useGetAllPropductsQuery();
+
+export const CatalogDemonstartion = () => {
+    
+    const { data, isLoading, error } = useGetAllCategoriesQuery();
+
 
     return (
-        <div className={st.container}>
-            <h2>Sale</h2>
-            <div>
+        <>
+        <div>
     {error ? <h1>{error}</h1> : null}
                 {isLoading ? (
                     <h1>LOADING</h1>
                 ) : (
                     <>
 
-                        <div className={st.productsContainer}>
+                        <div className={st.categoriesContainer}>
 
-                            {data && data.map(
-                                (el) => el.id <= 4 && (
-                                    <Product
+                                {data && data
+                                    .map(
+                                (el) => el.id <= 3 && (
+                                    <Category
                                         key={el.id}
                                         title={el.title}
                                         image={baseUrl + el.image}
@@ -32,6 +34,8 @@ export const Sale = () => {
                     </>
                 )}
     </div>
-        </div>
+        
+        </>
     )
 }
+

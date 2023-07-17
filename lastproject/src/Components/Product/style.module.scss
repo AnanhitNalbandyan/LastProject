@@ -1,3 +1,14 @@
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .wrapper:hover,
+    .wrapper:focus {
+    transform: scale(1.1);
+    transition-duration: 500ms;
+    cursor: pointer;
+    }
 .wrapper{
     width: 340px;
     height: 400px;
@@ -39,7 +50,7 @@ letter-spacing: 0.6px;
 text-decoration-line: strikethrough;
 }
 
-.precent{
+.percent{
 color: #FF32A1;
 font-family: Montserrat;
 font-size: 20px;
@@ -57,3 +68,18 @@ font-weight: 500;
 line-height: 130%; /* 20.8px */
 letter-spacing: 0.48px;
 }
+  
+    .addButton {
+    display: none;
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    border-radius: 21px;
+    border: 2px solid #393;
+    background: #f1fff1;
+    width: 279px;
+    height: 72px;
+    color: #393;
+    font-size: 18px;
+    font-weight: 600;
+    }

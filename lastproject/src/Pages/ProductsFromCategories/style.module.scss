@@ -1,0 +1,21 @@
+.categoriesWrapper{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: auto;
+}
+
+    @media screen and (min-width: 768px) {
+    .categoriesWrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 44px 56px;
+    }
+    }
+
+    @media screen and (min-width: 1440px) {
+    .categoriesWrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    }

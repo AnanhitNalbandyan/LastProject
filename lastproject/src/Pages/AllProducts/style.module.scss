@@ -1,6 +1,19 @@
+h2{
+    margin-top: 20px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; 
+    letter-spacing: 1.2px;
+}
+
 .products{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     width: auto;
+    margin-top: 20px;
 }
+

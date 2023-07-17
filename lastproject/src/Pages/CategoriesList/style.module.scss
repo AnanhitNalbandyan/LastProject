@@ -1,9 +1,31 @@
-.wrapper h2{
-    margin: 80px 0;
+.wrapper{
+    width: 86%;
+    height: 844px;
+    margin: 80px auto;
+
 }
+
 
 .categoriesWrapper{
     display: flex;
-    gap: 35px;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
+
+}
+
+
+@media screen and (min-width: 768px) {
+    .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 44px 56px;
+}
+}
+
+@media screen and (min-width: 1440px) {
+    .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
 }

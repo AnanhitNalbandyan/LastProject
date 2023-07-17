@@ -1,4 +1,5 @@
 import st from './style.module.scss'
+import { NavLink } from 'react-router-dom'
 import bush from '../../Images/bush.png'
 
 export const SaleSeason = () => {
@@ -12,7 +13,11 @@ export const SaleSeason = () => {
             <div className={st.wrapper}>
                 <h1> Sale </h1>
                 <h2> New seasone</h2>
-                <button className={st.btnSale}>Sale</button>
+                <button className={st.btnSale} >
+                    <NavLink to="/sales">
+                            Sale
+                    </NavLink>
+                </button>
             </div>
             
         </div>

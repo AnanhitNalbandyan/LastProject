@@ -6,10 +6,12 @@ import {store} from './redux/store'
 import './index.css'
 import App from './App'
 import { ErrorPage } from './Pages/ErrorPage'
-import { MainPage } from './Components/MainPage'
-import {ProductPage} from './Pages/ProductPage'
+import { HomePage } from './Components/HomePage'
 import { AllProducts } from './Pages/AllProducts'
-import {CategoriesList} from './Pages/CategoriesList'
+import { CategoriesList } from './Pages/CategoriesList'
+import { SingleProductPage } from './Pages/SingleProductPage';
+import { AllSalesProducts } from './Pages/AllSaleProductList';
+import { ProductsFromCategories } from './Pages/ProductsFromCategories';
 
 
 const router = createBrowserRouter([
@@ -20,31 +22,37 @@ const router = createBrowserRouter([
     children: [
     {
         path: '/',
-        element:<div><MainPage/></div>
+        element:<HomePage/>
       },
       {
         path: '/main page',
-        element:<div><MainPage/></div>
+        element:<HomePage/>
       },
       {
           path: '/all products',
-        element:<div><AllProducts/></div>
+        element:<AllProducts/>
       },
         {
           path: '/all sales',
-        element:<div><AllProducts/></div>
+        element:<AllSalesProducts/>
       },
-      
+      {
+        path: '/sales',
+        element: <AllSalesProducts/>
+      },
       {
           path: '/catalog',
-        element:<div><CategoriesList/></div>
+        element:<CategoriesList/>
       },
       
       {
           path: '/products/:id',
-        element:<div><ProductPage/></div>
+        element:<SingleProductPage/>
       },
-    
+    {
+        path: '/category/:id',
+        element: <ProductsFromCategories/>,
+      },
       ]
   }
 ])

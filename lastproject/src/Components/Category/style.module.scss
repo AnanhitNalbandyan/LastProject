@@ -1,0 +1,32 @@
+
+.container:hover,
+.container:focus{
+    transform: scale(1.1);
+    transition-duration: 500ms;
+    cursor: pointer;
+
+}
+.image {
+    width: 300px;
+    height: 300px;   
+}
+
+.titleImg{
+color: #000;
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: 130%; 
+letter-spacing: 0.54px;
+margin-left: 25%;
+
+}
+@media screen and (min-width: 768px) {
+.img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+}
+

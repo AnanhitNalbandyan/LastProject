@@ -1,17 +1,17 @@
 import { SaleSeason } from "../SaleSeason"
 import { Catalog } from "../Catalog"
 import { Discount } from "../Discount"
-import { Sale } from "../Sale"
+import { SaleOffer } from "../SaleOffer"
 
 
-export const MainPage = () => {
+export const HomePage = () => {
     
     return (
         <div>
             <SaleSeason />
             <Catalog />
             <Discount />
-            <Sale />
+            <SaleOffer />
         </div>
     )
 }
