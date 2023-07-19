@@ -9,7 +9,7 @@ import {Product} from '../../Components/Product'
 export const ProductsFromCategories = () => {
     const {id} = useParams()
     const { data, isLoading } = useGetOneCategoryQuery(id)
-    const eachData = data && data.data[0]
+    const eachData = data && data.data && data.data[0]
 
 
     return (
@@ -21,8 +21,8 @@ export const ProductsFromCategories = () => {
                         <div className={st.wrapper}>
                             <h2>{eachData[0].title}</h2>
                             <div className={st.categoriesWrapper}>
-                                {eachData.map((el) => (
-                                    <NavLink key={el.id} to={`/categories/${el.id}`}>
+                                {eachData.map((el, index) => (
+                                    <NavLink key={index} to={`/categories/${el}`}>
                                         <Product
                                             key={el.id}
                                             title={el.title}
@@ -30,6 +30,7 @@ export const ProductsFromCategories = () => {
                                         />
                                     </NavLink>
                                 ))}
+
                             </div>
 
                         </div>
