@@ -8,21 +8,22 @@ import {Product} from '../../Components/Product'
 
 export const ProductsFromCategories = () => {
     const {id} = useParams()
-    const { data, isLoading } = useGetOneCategoryQuery(id)
+    const { data, isLoading, error } = useGetOneCategoryQuery(id)
     const eachData = data && data.data && data.data[0]
 
 
     return (
         <>
+                {error ? <h1>{error}</h1> : null}
                 {isLoading ? (
-                    <h1>LOADING...</h1>
+                    <h1>LOADING</h1>
                 ) : (
                     <>
                         <div className={st.wrapper}>
-                            <h2>{eachData[0].title}</h2>
+                            <h2>{eachData.title}</h2>
                             <div className={st.categoriesWrapper}>
                                 {eachData.map((el, index) => (
-                                    <NavLink key={index} to={`/categories/${el}`}>
+                                    <NavLink key={index} to={`/categories/${el.id}`}>
                                         <Product
                                             key={el.id}
                                             title={el.title}
