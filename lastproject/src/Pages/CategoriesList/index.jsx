@@ -10,7 +10,7 @@
     export const CategoriesList = () => {
     const { data, isLoading } = useGetAllCategoriesQuery()
     //console.log(data);
-
+        const eachData = data && data
         return (
             <>
                 {isLoading ? (
@@ -20,7 +20,7 @@
                         <div className={st.wrapper}>
                             <h2>Categories</h2>
                             <div className={st.categoriesWrapper}>
-                                {data && data.map((el) => (
+                                {eachData.map((el, id) => (
                                     <NavLink key={el.id} to={`/categories/${el.id}`}>
                                         <Category
                                             key={el.id}

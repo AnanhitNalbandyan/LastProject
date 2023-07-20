@@ -18,7 +18,8 @@ export const SingleProductPage = () => {
         
     const addProductToBasketHandler = (event, el) => {
         event.preventDefault()
-        const newProduct = {...el, quantity:1}
+    
+    const newProduct = { ...el, quantity: 1 }
         dispatch(addProductToBasket(newProduct))
         dispatch( countTotalPrice())
     }
@@ -41,7 +42,8 @@ export const SingleProductPage = () => {
                     )}%`
                     : ""}</span>
                 </div>
-                <button className={st.button}onClick={(event)=>addProductToBasketHandler(event, eachData)}>To cart</button>
+                                <button className={st.button}
+                                    onClick={(event) => addProductToBasketHandler(event, eachData)}>To cart</button>
                 <div className={st.descriptionPart}>
                         <p className={st.titleDes}>Description</p>           
                         <p className={st.description}>{ eachData.description}</p>

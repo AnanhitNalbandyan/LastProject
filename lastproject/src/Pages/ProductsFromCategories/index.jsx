@@ -22,13 +22,14 @@ export const ProductsFromCategories = () => {
                         <div className={st.wrapper}>
                             <h2>{eachData.title}</h2>
                             <div className={st.categoriesWrapper}>
-                                {eachData.map((el, index) => (
-                                    <NavLink key={index} to={`/categories/${el.id}`}>
+                                {eachData.map((el, id) => (
+                                    <NavLink key={id} to={`/categories/${el.id}`}>
                                         <Product
                                             key={el.id}
                                             title={el.title}
                                             price={el.price}
                                             image={baseUrl + el.image}
+                                            addProductToBasketHandler={el.addProductToBasketHandler}
                                         />
                                     </NavLink>
                                 ))}

@@ -30,7 +30,7 @@
             </div>
         <div className={st.priceBlock}>
                 <p className={st.price}> {price}$</p>
-                <p className={st.discont_price}>{discont_price}$</p>    
+                <p className={st.discont_price}>{discont_price ? `${discont_price}$` : ""}</p>    
             </div>
         <button className={st.button} onClick={deleteProductHandler}><span><RxCross2/></span></button>
     </div>

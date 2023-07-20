@@ -1,11 +1,20 @@
 import st from './style.module.scss'
 
-    export const Product = ({ discont_price, image, price, id, title }) => {
+export const Product = (
+    { discont_price,
+        image,
+        price,
+        id,
+        title,
+        addProductToBasketHandler,
+    }) => {
     //console.log(price)
         
     return (
         <div className={st.wrapper}>
             <img className={st.image} src={image} alt={title} />
+            <button className={st.addToCard}
+                onClick={addProductToBasketHandler}> Add to card </button>
         <div className={st.priceContainer}>
         <p className={st.price}>{`${price}$`}</p> 
         <span className={st.discont_price}>{discont_price ? `${discont_price}$` : ""}</span>

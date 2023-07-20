@@ -5,7 +5,10 @@ import st from './style.module.scss'
 
 export const ProductDemonstration = () => {
     const { data, isLoading, error } = useGetAllPropductsQuery()
-    const addToBasketHandler = (event, el) => { }
+    const eachData = data && data
+
+
+    
     return (
         <div>
     {error ? <h1>{error}</h1> : null}
@@ -16,16 +19,15 @@ export const ProductDemonstration = () => {
 
                         <div className={st.productsContainer}>
 
-                                {data && data
-                                    .map(
+                                {eachData.map(
                                 (el) => el.id <= 4 && (
                                     <NavLink to={`/products/${el.id}`} key={el.id}>
                                         <Product
                                             key={el.id}
                                             image={baseUrl + el.image}
                                             price={el.price}
-                                                    title={el.title}
-                                                    addToBasketHandler={event =>addToBasketHandler(event, el)}
+                                            title={el.title}
+                                            addToBasketHandler={event =>el.addToBasketHandler(event, el)}
                                             />
                                             
                                         
