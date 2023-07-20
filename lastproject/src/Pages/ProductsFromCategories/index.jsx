@@ -9,7 +9,7 @@ import {Product} from '../../Components/Product'
 export const ProductsFromCategories = () => {
     const {id} = useParams()
     const { data, isLoading, error } = useGetOneCategoryQuery(id)
-    const eachData = data && data.data && data.data[0]
+    const eachData = data && data.data
 
 
     return (
@@ -27,6 +27,7 @@ export const ProductsFromCategories = () => {
                                         <Product
                                             key={el.id}
                                             title={el.title}
+                                            price={el.price}
                                             image={baseUrl + el.image}
                                         />
                                     </NavLink>

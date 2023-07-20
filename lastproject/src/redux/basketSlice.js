@@ -1,12 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const basketSlice = createSlice({
-    name: 'basket',
-    initialState: {
+const initialState = {
         products: [],
         totalPrice: 0,
         totalProducts: 0,
-    },
+    }
+
+const basketSlice = createSlice({
+    name: 'basket',
+    initialState,
     reducers: {
         addProductToBasket: (state, action) => {
             const productById = state.products.find(el => el.id === action.payload.id)
@@ -19,16 +21,20 @@ const basketSlice = createSlice({
 
         },
         cleanBasket: (state) => {state.products = []},
+        
         countTotalPrice: (state) => {
-            state.totalPrice = state.products.reduce((total, el) => el.price * el.quantity + total, 0)
+            state.totalPrice = state.products.reduce((accum, el) => el.price * el.quantity + accum, 0)
         },
+
         countTotalProducts: (state) => { state.totalProducts = state.products.length },
+        
         decreaseProduct: (state, action) => {
             const productById = state.products.find(({ id }) => id === action.payload.id);
             const index = state.products.findIndex(el => el.id === action.payload.id);
             productById.quantity > 1 ? productById.quantity-- : state.products.splice(index, 1)
 
         },
+
     },
 })
 

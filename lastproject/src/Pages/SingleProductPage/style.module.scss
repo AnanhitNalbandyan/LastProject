@@ -75,7 +75,12 @@ h2 {
     line-height: 130%;
     letter-spacing: 0.84px;
 }
-
+.button:hover,
+.button:focus {
+transform: scale(1.1);
+transition-duration: 500ms;
+cursor: pointer;
+}
 .button {
     width: 341px;
     height: 86px;

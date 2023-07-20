@@ -1,29 +1,22 @@
 
-import { useDispatch, useSelector } from "react-redux"
-import { ProductInBasket } from "../../Components/ProductInBasket"
-import { deleteProductFromBasket, cleanBasket } from "../../redux/basketSlice"
+import { NavLink } from "react-router-dom"
+import {AiOutlineRight} from 'react-icons/ai'
+import st from './style.module.scss'
+import { BasketList } from "../../Components/BasketList"
 
-    export const BasketPage = () => {
-    const data = useSelector((state) => state.basket.products)
-    //console.log(data)
-        
-        const dispatch = useDispatch()
-const handleDeleteProduct = (id) => {
- dispatch(deleteProductFromBasket(id));
- }
+export const BasketPage = () => {
+    
 
-const handleClearBasket = () => {
- dispatch(cleanBasket())
- }
     return (
         <div>
-        <div>
-            {data.map((product) => (
-                <ProductInBasket key={product.id} {...product}
-                    onDelete={() => handleDeleteProduct(product.id)} />
-            ))}
-        </div>
-        <h2> Итого</h2> <button onClick={()=>handleClearBasket}>Очистить корзину</button>
+            <div className={st.container}>
+            <h2>Shopping cart</h2>
+            <NavLink className={st.store} to='/all products'> 
+            Back to the store <span> <AiOutlineRight/></span>
+            </NavLink> 
+            <BasketList/>
+            </div>
+            
         </div>
     )
-    }
+}

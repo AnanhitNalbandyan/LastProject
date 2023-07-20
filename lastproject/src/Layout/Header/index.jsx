@@ -38,7 +38,9 @@ export const Header = () => {
                 </nav>
                 
 
-            <span href="#"><img className={st.bag} src= {bag} alt="" /></span> 
+            <span href="#">
+                <NavLink to="/basket"><img className={st.bag} src={bag} alt="Basket" /></NavLink>
+            </span> 
             
             
         </header>

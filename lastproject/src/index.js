@@ -12,7 +12,7 @@ import { CategoriesList } from './Pages/CategoriesList'
 import { SingleProductPage } from './Pages/SingleProductPage';
 import { AllSalesProducts } from './Pages/AllSaleProductList';
 import { ProductsFromCategories } from './Pages/ProductsFromCategories';
-
+import { BasketPage } from './Pages/BasketPage'
 
 const router = createBrowserRouter([
   {
@@ -35,6 +35,10 @@ const router = createBrowserRouter([
         {
           path: '/all sales',
         element:<AllSalesProducts/>
+      },
+      {
+          path: '/basket',
+        element:<BasketPage/>
       },
       {
         path: '/sales',
