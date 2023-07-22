@@ -80,11 +80,20 @@ a.active {
     transition-duration: 500ms;
     cursor: pointer;
 }
-
 .bag {
     width: 30px;
     height: 30px;
+    position: relative;
 }
+.count{
+    padding-left: 9px;
+    position: absolute;
+    top:87px;
+    
+
+
+}
+
 
 /* Для планшета (например, с шириной экрана от 768px до 1024px) */
 @media (max-width: 1024px) {

@@ -15,6 +15,7 @@
     descreaseProductHandler,
     deleteProductHandler
     }) => {
+        
         return (
         
             <div className={st.productContainer}>

@@ -2,11 +2,13 @@ import { useGetAllPropductsQuery, baseUrl } from '../../redux/apiSlice'
 import { Product } from '../Product'
 import { NavLink } from 'react-router-dom'
 import st from './style.module.scss'
+import { useDispatch } from 'react-redux'
 
 export const ProductDemonstration = () => {
     const { data, isLoading, error } = useGetAllPropductsQuery()
     const eachData = data && data
 
+    const dispatch = useDispatch()
 
     
     return (
@@ -27,7 +29,7 @@ export const ProductDemonstration = () => {
                                             image={baseUrl + el.image}
                                             price={el.price}
                                             title={el.title}
-                                            addToBasketHandler={event =>el.addToBasketHandler(event, el)}
+                                            addToBasketHandler={event =>el.addToBasketHandler(event, el, dispatch)}
                                             />
                                             
                                         
