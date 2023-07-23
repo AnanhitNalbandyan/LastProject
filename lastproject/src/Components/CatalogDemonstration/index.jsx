@@ -1,6 +1,7 @@
 import st from './style.module.scss'
-import { useGetAllCategoriesQuery, baseUrl } from '../../redux/apiSlice'
+import { useGetAllCategoriesQuery } from '../../redux/apiSlice'
 import { Category } from '../Category'
+import {Product} from '../Product'
 import { NavLink } from 'react-router-dom'
 
 
@@ -25,8 +26,7 @@ export const CatalogDemonstartion = () => {
                                     <NavLink key={el.id} to={`/categories/${el.id}`}>
                                         <Category
                                             key={el.id}
-                                            title={el.title}
-                                            image={baseUrl + el.image}
+                                        {...el}
                                         />
                                     </NavLink>
                                 )

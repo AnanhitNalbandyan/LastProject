@@ -1,3 +1,4 @@
+import { baseUrl } from '../../redux/apiSlice'
 import st from './style.module.scss'
 
 export const Product = (
@@ -12,7 +13,7 @@ export const Product = (
         
     return (
         <div className={st.wrapper}>
-            <img className={st.image} src={ image} alt={title} />
+            <img className={st.image} src={baseUrl + image} alt={title} />
             <button className={st.addToCard}
                 onClick={ addToBasketHandler}> Add to card </button>
         <div className={st.priceContainer}>

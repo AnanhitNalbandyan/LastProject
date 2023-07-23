@@ -23,11 +23,8 @@ const addToBasketHandler = (event, el) => {
         ) : (eachData.map((el) => (
             <NavLink key={el.id} to={`/products/${el.id}`}>
                 <Product
-                key={el.id}
-                image={baseUrl + el.image}
-                price={el.price}
-                title={el.title}
-                addToBasketHandler={event =>addToBasketHandler(event, eachData)}        
+                {... el}
+                addToBasketHandler={event =>addToBasketHandler(event, el)}        
                 />
             </NavLink>
             ))

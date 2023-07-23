@@ -1,13 +1,14 @@
-import st from './style.module.scss'
+import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import bag  from '../../Images/shoppingbag.svg'
 import logo from '../../Images/logo.png'
-import { useSelector } from 'react-redux'
+
+import st from './style.module.scss'
 
 
 export const Header = () => {
     
-    const totalProducts = useSelector((state) => state.basket.totalProducts)
+    const countTotalProducts = useSelector((state) => state.basket.products.length)
 
 
     return (
@@ -42,7 +43,9 @@ export const Header = () => {
                 
 
             <span href="#">
-                <NavLink to="/basket"><span className={st.count}>{totalProducts}</span><img className={st.bag} src={bag} alt="Basket" /></NavLink>
+                <NavLink to="/basket">
+                    <span className={st.count}>{countTotalProducts}</span>
+                    <img className={st.bag} src={bag} alt="Basket" /></NavLink>
             </span> 
             
             

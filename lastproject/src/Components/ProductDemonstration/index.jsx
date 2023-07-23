@@ -1,4 +1,4 @@
-import { useGetAllPropductsQuery, baseUrl } from '../../redux/apiSlice'
+import { useGetAllPropductsQuery } from '../../redux/apiSlice'
 import { Product } from '../Product'
 import { NavLink } from 'react-router-dom'
 import st from './style.module.scss'
@@ -33,14 +33,9 @@ const addToBasketHandler = (event, el) => {
                                 (el) => el.id <= 4 && (
                                     <NavLink to={`/products/${el.id}`} key={el.id}>
                                         <Product
-                                            key={el.id}
-                                            image={baseUrl + el.image}
-                                            price={el.price}
-                                            title={el.title}
-                                            addToBasketHandler={event => addToBasketHandler(event, eachData)}
-                                            />
-                                            
-                                        
+                                        {... el}
+                                            addToBasketHandler={event => addToBasketHandler(event, el)}
+                                            /> 
                                     </NavLink>
                                     
                                 )
