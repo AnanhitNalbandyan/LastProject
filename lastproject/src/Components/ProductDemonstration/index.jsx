@@ -3,12 +3,20 @@ import { Product } from '../Product'
 import { NavLink } from 'react-router-dom'
 import st from './style.module.scss'
 import { useDispatch } from 'react-redux'
+import { addProductToBasket, countTotalPrice } from '../../redux/basketSlice'
+
 
 export const ProductDemonstration = () => {
     const { data, isLoading, error } = useGetAllPropductsQuery()
     const eachData = data && data
 
     const dispatch = useDispatch()
+const addToBasketHandler = (event, el) => {
+    event.preventDefault()
+    const newProduct = { ...el, quantity: 1 };
+    dispatch(addProductToBasket(newProduct));
+    dispatch(countTotalPrice());
+}
 
     
     return (
@@ -29,7 +37,7 @@ export const ProductDemonstration = () => {
                                             image={baseUrl + el.image}
                                             price={el.price}
                                             title={el.title}
-                                            addToBasketHandler={event =>el.addToBasketHandler(event, el, dispatch)}
+                                            addToBasketHandler={event => addToBasketHandler(event, eachData)}
                                             />
                                             
                                         

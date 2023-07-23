@@ -23,10 +23,13 @@
             <img className={st.image} src={baseUrl+image} alt={title} />
             <div className={st.titleQuantity}>
                 <p className={st.title}>{title}</p>
-                <div className={st.quantityBlock}>
-                    <div className={st.plus} onClick={addProductToBasketHandler}><span><AiOutlinePlus/></span></div>
-                    <p className={st.quantity}>{quantity}</p>
-                    <div className={st.minus} onClick={descreaseProductHandler}><span><AiOutlineMinus/></span></div>
+                    <div className={st.quantityBlock}>
+                    
+                        <div className={st.minus} onClick={descreaseProductHandler}><span><AiOutlineMinus /></span></div>
+                        <p className={st.quantity}>{quantity}</p>
+                        <div className={st.plus} onClick={addProductToBasketHandler}><span><AiOutlinePlus /></span></div>
+                
+                    
                 </div>
             </div>
         <div className={st.priceBlock}>

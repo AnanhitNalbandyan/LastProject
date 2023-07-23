@@ -3,14 +3,26 @@ import {useGetOneCategoryQuery, baseUrl} from '../../redux/apiSlice'
 import { useParams } from 'react-router'
 import { NavLink } from 'react-router-dom'
 import {Product} from '../../Components/Product'
-
+import { useDispatch } from 'react-redux'
+import { addProductToBasket, countTotalPrice } from '../../redux/basketSlice'
 
 
 export const ProductsFromCategories = () => {
-    const {id} = useParams()
+    const { id } = useParams()
+    
+
     const { data, isLoading, error } = useGetOneCategoryQuery(id)
+    
     const eachData = data && data.data
 
+    const dispatch = useDispatch()
+
+    const addToBasketHandler = (event, el) => {
+    event.preventDefault()
+    const newProduct = { ...el, quantity: 1 };
+    dispatch(addProductToBasket(newProduct));
+    dispatch(countTotalPrice());
+}
 
     return (
         <>
@@ -29,7 +41,7 @@ export const ProductsFromCategories = () => {
                                             title={el.title}
                                             price={el.price}
                                             image={baseUrl + el.image}
-                                            addProductToBasketHandler={el.addProductToBasketHandler}
+                                            addToBasketHandler={event => addToBasketHandler(event, el)}  
                                         />
                                     </NavLink>
                                 ))}
