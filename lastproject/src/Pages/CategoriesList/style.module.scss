@@ -1,15 +1,16 @@
 .wrapper{
-    width: 86%;
+    width: 100%;
     height: auto;
-    margin: 40px auto;
+    margin-top: 40px;
 
 }
 
 .categoriesWrapper{
+    width: 100%;
+    height: auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
+    
 }
 /*.categoriesWrapper{
         display: grid;

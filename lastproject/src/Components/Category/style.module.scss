@@ -1,10 +1,15 @@
 
 .container:hover,
 .container:focus{
-    transform: scale(1.1);
+    transform: scale(1.01);
     transition-duration: 500ms;
     cursor: pointer;
 
+}
+.container{
+    width: 300px;
+    height: auto;
+    margin: 20px;
 }
 .image {
     width: 300px;

@@ -38,7 +38,7 @@ h2 {
 }
 
 .pricePart {
-    width: 350px;
+    width: 400px;
     height: auto;
     display: flex;
     justify-content: space-between;
@@ -74,6 +74,9 @@ h2 {
     font-weight: 600;
     line-height: 130%;
     letter-spacing: 0.84px;
+    margin-left: -100px;
+    padding-right: 70px;
+    
 }
 .button:hover,
 .button:focus {

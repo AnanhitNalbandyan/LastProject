@@ -9,7 +9,7 @@
 }
 
 .wrapper{
-    width: 86%;
+    width: 100%;
     display: flex;
     margin-bottom: 20px;
     
@@ -23,18 +23,19 @@ h2{
     font-weight: 700;
     line-height: 130%;
     letter-spacing: 1.2px;
-    margin-right: 96px;
+    padding-left: 10px;
 
 }
 
 .category:hover,
 .category:focus {
-transform: scale(1.1);
+transform: scale(1.01);
 transition-duration: 500ms;
 cursor: pointer;
 }
 .category{
     margin-top: 15px;
+    margin-left: 90px;
     width: 120px;
     height: 30px;
     border: 2px solid #8b8b8b;
@@ -45,6 +46,7 @@ cursor: pointer;
     display: flex;
     justify-content: center;
     text-align: center;
+
 }
 
     @media (max-width: 768px) {

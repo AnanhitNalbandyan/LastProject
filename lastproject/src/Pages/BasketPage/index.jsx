@@ -11,7 +11,7 @@ export const BasketPage = () => {
         <div>
             <div className={st.container}>
             <h2>Shopping cart</h2>
-            <NavLink className={st.store} to='/all products'> 
+            <NavLink className={st.store} to='/'> 
             Back to the store <span> <AiOutlineRight/></span>
             </NavLink> 
             <BasketList/>

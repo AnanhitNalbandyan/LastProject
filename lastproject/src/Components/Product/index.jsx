@@ -5,7 +5,6 @@ export const Product = (
     { discont_price,
         image,
         price,
-        id,
         title,
         addToBasketHandler,
     }) => {
