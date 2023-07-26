@@ -72,7 +72,7 @@ export const BasketList = () => {
             <div className={st.buttonWrapper}>
                 <button className={st.button}
                     onClick={() => cleanBasketHandler()}>
-                    Clean
+                    Clean basket
                 </button>
             </div>
             

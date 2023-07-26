@@ -25,6 +25,10 @@ const router = createBrowserRouter([
         element:<HomePage/>
       },
       {
+        path: '/logo',
+        element:<HomePage/>
+      },
+      {
         path: '/main page',
         element:<HomePage/>
       },

@@ -4,7 +4,7 @@ padding: 0;
 box-sizing: border-box;
 }
 .container{
-width: 86%;
+width: 96%;
 height: auto;
 display: flex;
 }
@@ -12,9 +12,10 @@ display: flex;
 .orderBox{
 width: 65%;
 height: 393px;
-margin-left: -150px;
+margin-left: -10px;
 border-radius: 21px;
 border: 2px solid #000;
+margin-bottom: 20px;
 }
 .margin{
 margin-left: 25px;
@@ -59,9 +60,17 @@ margin-top: 20px;
 .button{
 margin-top: 40px;
 margin-bottom: 50px;
-width: 100px;
-height: 30px;
+width: 200px;
+height: 50px;
 border-radius: 17px;
 background: #393;
 border: none;
+color: #FFF;
+text-align: center;
+font-family: Montserrat;
+font-size: 28px;
+font-style: normal;
+font-weight: 700;
+line-height: 130%; 
+letter-spacing: 0.84px;
 }

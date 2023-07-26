@@ -1,13 +1,13 @@
 
-import { ProductsList} from "../../Components/ProductsList"
+import { SaleProductsList} from "../../Components/SaleProductsList"
 
     export const AllSalesProducts = () => {
 
     
         return (
             <>
-                <h2>Product with sale</h2>
-                <ProductsList/>
+                <h2>Products with sale</h2>
+                <SaleProductsList/>
             </>
     )
 }

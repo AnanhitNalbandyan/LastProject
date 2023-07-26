@@ -1,5 +1,6 @@
 import { ProductDemonstration } from '../ProductDemonstration'
 import st from './style.module.scss'
+import { NavLink } from 'react-router-dom'
 
 
 export const SaleOffer = () => {
@@ -8,7 +9,10 @@ export const SaleOffer = () => {
     return (
         <>
     <div className={st.container}>
-            <h2>Sale</h2>
+            <NavLink to="/sales">
+                    <h2>Sale</h2>
+            </NavLink>
+                
             <ProductDemonstration/>
     
     </div>
