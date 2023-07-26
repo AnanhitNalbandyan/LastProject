@@ -19,7 +19,7 @@
         query: (id) => `products/${id}`,
         }),
         
-        addPhoneNumber: builder.mutation({
+        postPhoneNumberForDiscount: builder.mutation({
             query: (newPhone) => ({
                 url: `/sale/send`,
                 method: 'POST',
@@ -45,6 +45,6 @@
     useGetOneCategoryQuery,
     useGetAllPropductsQuery,
     useGetOneProductByCategoryQuery,
-    useAddPhoneNumberMutation,
+    usePostPhoneNumberForDiscountMutation,
     useAddOrderMutation
     } = apiSlice

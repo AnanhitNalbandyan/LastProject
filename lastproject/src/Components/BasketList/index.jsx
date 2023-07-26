@@ -8,6 +8,7 @@ import {addProductToBasket,
     decreaseProduct,
     deleteProduct,
     countTotalPrice} from '../../redux/basketSlice'
+import { ControlerDiscount } from '../ControlerDiscount'
 
 
 export const BasketList = () => {
@@ -64,13 +65,17 @@ export const BasketList = () => {
                         <p className={st.price}>{totalPrice}$</p>
                     </div>
             
-                        <button className={st.buttonOrder}>Order</button>
+                    <ControlerDiscount/>
                     </div>
                 </div>    
-        
-    
             </div>
-            <button className={st.button} onClick={() => cleanBasketHandler()}>Clean</button>
+            <div className={st.buttonWrapper}>
+                <button className={st.button}
+                    onClick={() => cleanBasketHandler()}>
+                    Clean
+                </button>
+            </div>
+            
     </>
     )
 }

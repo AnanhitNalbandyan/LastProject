@@ -8,7 +8,7 @@
     height: 210px;
     margin-top: 20px;
     margin-bottom: 20px;
-    border-top: 1px solid #a7a7a7;;
+    border-top: 1px solid #a7a7a7;
     display: flex; 
     align-items:flex-start;
 }
@@ -45,19 +45,19 @@ margin-bottom: 128px;
 }
 
 .quantityBlock{
-width: 70px;
-height: 20px;
+width: 80px;
+height: 25px;
 margin-left: 10px;
 margin-right: 10px;
 border-radius: 12px;
-border: 1px solid #000;
+border: 1px solid #958181;
 display: flex;
 justify-content: space-between;
 text-align: center;
 
 }
 .plus{
-    padding-left: 5px;
+    padding: 2px 5px 5px 0;
 }
 .quantity{
 color: #000;
@@ -67,10 +67,11 @@ font-style: normal;
 font-weight: 600;
 line-height: 130%; 
 letter-spacing: 0.54px;
-margin-bottom: 5px;
+padding: 0 5px 0 0;
 }
 .minus{
-    padding-right: 5px;
+    
+    padding: 2px 5px 5px 5px;
 }
 .priceBlock{
     width: 200px;

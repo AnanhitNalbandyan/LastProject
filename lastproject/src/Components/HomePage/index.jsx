@@ -1,6 +1,6 @@
 import { SaleSeason } from "../SaleSeason"
 import { Catalog } from "../Catalog"
-import { Discount } from "../Discount"
+import { Discount1 } from '../Dicount1'
 import { SaleOffer } from "../SaleOffer"
 
 
@@ -10,7 +10,7 @@ export const HomePage = () => {
         <div>
             <SaleSeason />
             <Catalog />
-            <Discount />
+            <Discount1 />
             <SaleOffer />
         </div>
     )
