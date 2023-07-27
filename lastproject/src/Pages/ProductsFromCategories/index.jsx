@@ -16,6 +16,8 @@ export const ProductsFromCategories = () => {
     const { data, isLoading, error } = useGetOneCategoryQuery(id)
     
     const [filteredProducts, setFiltredProducts] = useState()
+    
+    const eachData = data && data.data
 
     const categoryName = data && data.category
 
@@ -38,8 +40,9 @@ export const ProductsFromCategories = () => {
                 {isLoading ? (
                     <h1>LOADING</h1>
                 ) : (
-                    <>
-                        <Filtration products={data} setFiltredProducts={setFiltredProductsHandler} />
+                    <div className={st.container}>
+                        
+                        <Filtration products={eachData} setFiltredProducts={setFiltredProductsHandler} />
                         <div className={st.wrapper}>
                         
                             <TitleGlobal title={categoryName.title}/>
@@ -58,7 +61,7 @@ export const ProductsFromCategories = () => {
                             </div>
 
                         </div>
-                    </>
+                    </div>
                 )}       
         </>
     )
