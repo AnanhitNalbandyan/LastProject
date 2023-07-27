@@ -5,7 +5,9 @@ import { NavLink } from 'react-router-dom'
 import {Product} from '../../Components/Product'
 import { useDispatch } from 'react-redux'
 import { addProductToBasket, countTotalPrice } from '../../redux/basketSlice'
-
+import {TitleGlobal} from '../../Components/TitleGlobal'
+import { useState } from "react"
+import { Filtration } from '../../Components/Filtration'
 
 export const ProductsFromCategories = () => {
     const { id } = useParams()
@@ -13,8 +15,9 @@ export const ProductsFromCategories = () => {
 
     const { data, isLoading, error } = useGetOneCategoryQuery(id)
     
+    const [filteredProducts, setFiltredProducts] = useState()
 
-    const eachData = data && data.data
+    const categoryName = data && data.category
 
     const dispatch = useDispatch()
 
@@ -25,6 +28,9 @@ export const ProductsFromCategories = () => {
     dispatch(countTotalPrice());
 }
 
+    const setFiltredProductsHandler = (productsToFilter) => {
+    setFiltredProducts(productsToFilter)
+}
     
     return (
         <>
@@ -33,16 +39,17 @@ export const ProductsFromCategories = () => {
                     <h1>LOADING</h1>
                 ) : (
                     <>
+                        <Filtration products={data} setFiltredProducts={setFiltredProductsHandler} />
                         <div className={st.wrapper}>
-                            
+                        
+                            <TitleGlobal title={categoryName.title}/>
+
                             <div className={st.categoriesWrapper}>
-                                {eachData.map((el) => (
+
+                                {filteredProducts && filteredProducts.map((el) => (
                                     <NavLink key={el.id} to={`/products/${el.id}`}>
                                         <Product
-                                            key={el.id}
-                                            title={el.title}
-                                            price={el.price}
-                                            image={el.image}
+                                        {...el}
                                             addToBasketHandler={event => addToBasketHandler(event, el)}  
                                         />
                                     </NavLink>
