@@ -62,11 +62,11 @@ import st from './style.module.scss'
             </label>
         </div> }
         <div className={st.sorted}>
-            <label>
+            <label className={st.sortText}>
             Sorted
             <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
-                <option value="asc">Ascending</option>
-                <option value="desc">Descending</option>
+                <option className={st.option} value="asc">Ascending</option>
+                <option className={st.option} value="desc">Descending</option>
             </select>
             </label>
         </div>

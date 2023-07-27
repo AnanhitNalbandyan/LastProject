@@ -42,7 +42,7 @@
 .discountCheckbox{
     width: 300px;
     height: auto;
-    margin-left: 40px;
+    margin-left: 50px;
     display: flex;
     align-items: flex-start;
 }
@@ -64,3 +64,39 @@
     border-radius: 7px;
     border: 1px solid #000;
 } 
+
+.sorted{
+    width: 400px;
+    height: auto;
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sortText{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 26px */
+    letter-spacing: 0.6px;
+    margin-right: 20px;
+}
+.sorted select{
+    width: 219px;
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 7px;
+    border: 1px solid #000;
+}
+.option{
+    margin-left: 20px;
+    color: #797979;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; 
+    letter-spacing: 0.48px;
+}

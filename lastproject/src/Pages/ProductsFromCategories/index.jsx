@@ -13,6 +13,7 @@ export const ProductsFromCategories = () => {
 
     const { data, isLoading, error } = useGetOneCategoryQuery(id)
     
+
     const eachData = data && data.data
 
     const dispatch = useDispatch()
@@ -24,6 +25,7 @@ export const ProductsFromCategories = () => {
     dispatch(countTotalPrice());
 }
 
+    
     return (
         <>
                 {error ? <h1>{error}</h1> : null}
