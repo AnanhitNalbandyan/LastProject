@@ -29,9 +29,9 @@ const isPhoneValid = (phone) => {
     return phone.startsWith('') || phone === '+4' || phone === '+'
 }
 
-const handlePhoneChange = (e) => {
-    const phoneValue = e.target.value;
-    setValue('phone', (isPhoneValid(phoneValue)  ? phoneValue : `+49${phoneValue}`).replace(/[^0-9\+]/, ""));
+const handlePhoneChange = (el) => {
+    const phoneValue = el.target.value;
+    setValue('phone', (isPhoneValid(phoneValue) ? phoneValue : `+49${phoneValue}`).replace(/[^0-9\+]/g, ""))
 }
 const objToSend = {
     title: 'test product',
@@ -70,6 +70,14 @@ const sendNumberHandler = (obj) => {
                 onClick={() => sendNumberHandler(objToSend)}>
                 Order
             </button>
+            {isLoading ? (
+                <div>Loading</div>
+            ) : (
+                    <div> {isSuccess ? <div className={st.answer}>Thank you!!! We will connected with you</div>
+                        : null}
+                    </div>
+            )}
+            {isError ? <div>Error</div> : null }
         </form>
     )
 }

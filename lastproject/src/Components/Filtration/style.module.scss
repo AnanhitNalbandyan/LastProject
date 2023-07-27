@@ -1,0 +1,66 @@
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.price{
+    width: 300px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.price label{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; 
+    letter-spacing: 0.6px;
+}
+
+.price input{
+    width: 103px;
+    height: 42px;
+    border-radius: 7px;
+    border: 1px solid #000;
+}
+
+.price input :placeholder{
+    color: #ACACAC;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; 
+    letter-spacing: 0.48px;
+    margin-left: 10px;
+}
+
+.discountCheckbox{
+    width: 300px;
+    height: auto;
+    margin-left: 40px;
+    display: flex;
+    align-items: flex-start;
+}
+.discountCheckbox label{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; 
+    letter-spacing: 0.6px;
+}
+.discountCheckbox input{
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    border-radius: 7px;
+    border: 1px solid #000;
+} 

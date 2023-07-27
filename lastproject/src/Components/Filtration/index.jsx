@@ -1,21 +1,27 @@
-    import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import st from './style.module.scss'
 
     export const Filtration = ({ products, setFiltredProducts }) => {
+    
     const [fromPrice, setFromPrice] = useState()
     const [toPrice, setToPrice] = useState()
-    //   const [discountedOnly, setDiscountedOnly] = useState(false)
+        
+    const [discountedOnly, setDiscountedOnly] = useState(false)
+        
     const [sortOrder, setSortOrder] = useState()
 
     useEffect(() => {
-        // data отфильтрованная
         const filteredProducts = products.filter((product) => {
-        // const actualPrice = product.discont_price || product.price
+        const actualPrice = product.discont_price || product.price
         return (
-            (!fromPrice || product.price > Number(fromPrice)) &&
-            (!toPrice || product.price < Number(toPrice))
-            //&& проверка !discountedOnly product.discont_price
+            (!fromPrice || actualPrice > Number(fromPrice)) &&
+            (!toPrice || actualPrice < Number(toPrice)) &&
+            (!discountedOnly || !!product.discont_price)
+            
         )
         })
+
+    
 
         const sortedProducts = filteredProducts.sort((a, b) => {
         // проверку на наличие скидочной цены
@@ -28,37 +34,42 @@
         })
 
         setFiltredProducts(sortedProducts) //  без фильров возвращает целиком
-    }, [products, fromPrice, toPrice, sortOrder])
+    }, [products, fromPrice, toPrice, discountedOnly, sortOrder, setFiltredProducts])
 
     return (
-        <div>
-        <div>
-            <label>Price from:</label>
-            <input type="number" value={fromPrice} onChange={(e) => setFromPrice(e.target.value)} />
+    <div className={st.container}>
+        <div className={st.price}>
+            <label>Price</label>
+                <input type="number"
+                    value={fromPrice}
+                    placeholder='from'
+                    onChange={(el) => setFromPrice(el.target.value)} />
+                
+                <input type="number"
+                    value={toPrice}
+                    placeholder='to'
+                    onChange={(e) => setToPrice(e.target.value)} />
         </div>
-        <div>
-            <label>Price to:</label>
-            <input type="number" value={toPrice} onChange={(e) => setToPrice(e.target.value)} />
-        </div>
-        {/* <div>
-            <label>
+        
+            {<div className={st.discountCheckbox}>
+                <label>
+                    Discounted items
             <input
                 type="checkbox"
                 checked={discountedOnly}
-                onChange={(e) => setDiscountedOnly(e.target.checked)}
+                onChange={(el) => setDiscountedOnly(el.target.checked)}
             />
-            Discounted items only
             </label>
-        </div> */}
-        <div>
+        </div> }
+        <div className={st.sorted}>
             <label>
-            Sort by price:
+            Sorted
             <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
                 <option value="asc">Ascending</option>
                 <option value="desc">Descending</option>
             </select>
             </label>
         </div>
-        </div>
+    </div>
     )
-    }
+}

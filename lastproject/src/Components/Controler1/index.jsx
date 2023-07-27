@@ -1,14 +1,11 @@
 import st from './style.module.scss'
-import { baseUrl } from '../../redux/apiSlice'
 import { useForm, Controller } from 'react-hook-form'
-import { usePostPhoneNumberForDiscountMutation } from '../../redux/apiSlice'
+import { baseUrl } from '../../redux/apiSlice'
+
 
 
 export const Controler = () => {
-    
-
-const  { isError, isLoading, isSuccess } = usePostPhoneNumberForDiscountMutation();
-const { handleSubmit, control, setValue } = useForm();
+    const { handleSubmit, control, setValue } = useForm()
 
     const onSubmit = async (data) => {
         const response = await fetch(`${baseUrl}sale/send`, {
@@ -26,18 +23,19 @@ const { handleSubmit, control, setValue } = useForm();
     }
 
 const isPhoneValid = (phone) => {
-    return phone.startsWith('') || phone === '+4' || phone === '+'
+    return phone.startsWith('+49') || phone === '+4' || phone === '+'
 }
 
 const handlePhoneChange = (e) => {
     const phoneValue = e.target.value;
     setValue('phone', (isPhoneValid(phoneValue)  ? phoneValue : `+49${phoneValue}`).replace(/[^0-9\+]/, ""));
 }
-
+    
 
     return (
-        <form className={st.inputForm} onSubmit={() => () => handleSubmit(onSubmit)}>
-        <Controller
+                
+                    <form className={st.inputForm} onSubmit={() => handleSubmit(onSubmit)}>
+            <Controller
                 name="phone"
                 control={control}
                 defaultValue="+49"
@@ -54,17 +52,12 @@ const handlePhoneChange = (e) => {
                     </div>
                 )}
                 />
-            <button className={st.button} type="submit">
+                <button className={st.button} type="submit">
                 Gate a discount
             </button>
-            {isLoading ? (
-                <div>Loading</div>
-            ) : (
-                    <div> {isSuccess ? <div className={st.answer}>Thank you!!! We will connected with you</div>
-                        : null}
-                    </div>
-            )}
-            {isError ? <div>Error</div> : null }
-        </form>
+            
+            </form>
+
+        
     )
 }
