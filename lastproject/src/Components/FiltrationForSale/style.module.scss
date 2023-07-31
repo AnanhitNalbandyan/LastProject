@@ -1,0 +1,76 @@
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.price{
+    width: 300px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.price label{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; 
+    letter-spacing: 0.6px;
+}
+
+.price input{
+    width: 103px;
+    height: 42px;
+    border-radius: 7px;
+    border: 1px solid #000;
+}
+
+.price input :placeholder{
+    color: #ACACAC;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; 
+    letter-spacing: 0.48px;
+    margin-left: 10px;
+}
+
+.sorted{
+    width: 400px;
+    height: auto;
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sortText{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 26px */
+    letter-spacing: 0.6px;
+    margin-right: 20px;
+}
+.sorted select{
+    width: 219px;
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 7px;
+    border: 1px solid #000;
+}
+.option{
+    margin-left: 20px;
+    color: #797979;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; 
+    letter-spacing: 0.48px;
+}

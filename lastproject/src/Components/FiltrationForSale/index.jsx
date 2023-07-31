@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react'
 import st from './style.module.scss'
 
 
-    export const Filtration = ({ products, setFiltredProducts }) => {
+    export const FiltrationForSale = ({ products, setFiltredProducts }) => {
     
 
     
     const [fromPrice, setFromPrice] = useState()
     const [toPrice, setToPrice] = useState()
         
-    const [discountedOnly, setDiscountedOnly] = useState(false)
         
     const [sortOrder, setSortOrder] = useState()
 
@@ -18,9 +17,7 @@ import st from './style.module.scss'
         const actualPrice = product.discont_price || product.price
         return (
             (!fromPrice || actualPrice > Number(fromPrice)) &&
-            (!toPrice || actualPrice < Number(toPrice)) &&
-            (!discountedOnly || !!product.discont_price)
-            
+            (!toPrice || actualPrice < Number(toPrice)) 
         )
         })
 
@@ -37,7 +34,7 @@ import st from './style.module.scss'
         })
 
         setFiltredProducts(sortedProducts) //  без фильров возвращает целиком
-    }, [products, fromPrice, toPrice, discountedOnly, sortOrder, setFiltredProducts])
+    }, [products, fromPrice, toPrice, sortOrder, setFiltredProducts])
 
     return (
     <div className={st.container}>
@@ -54,16 +51,6 @@ import st from './style.module.scss'
                     onChange={(e) => setToPrice(e.target.value)} />
         </div>
         
-            {<div className={st.discountCheckbox}>
-                <label>
-                    Discounted items
-            <input
-                type="checkbox"
-                checked={discountedOnly}
-                onChange={(el) => setDiscountedOnly(el.target.checked)}
-            />
-            </label>
-        </div> }
         <div className={st.sorted}>
             <label className={st.sortText}>
             Sorted

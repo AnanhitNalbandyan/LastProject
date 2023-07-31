@@ -9,6 +9,9 @@ export const Product = (
         addToBasketHandler,
     }) => {
 
+//console.log(`title: ${title}`);
+    // console.log('Price:', price);
+   // console.log('Discount Price:', discont_price);
         
     return (
         <div className={st.wrapper}>

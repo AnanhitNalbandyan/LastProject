@@ -54,17 +54,19 @@ const handlePhoneChange = (e) => {
                     </div>
                 )}
                 />
-            <button className={st.button} type="submit">
-                Gate a discount
-            </button>
+            {isSuccess ? (
+                <p className={st.answer}>
+                    Thank you!!! We will connect with you
+                </p>
+            ) : (
+                <button className={st.button} type="submit">
+                    Get a discount
+                </button>
+            )}
             {isLoading ? (
                 <div>Loading</div>
-            ) : (
-                    <div> {isSuccess ? <div className={st.answer}>Thank you!!! We will connected with you</div>
-                        : null}
-                    </div>
-            )}
-            {isError ? <div>Error</div> : null }
+            ) : null}
+            {isError ? <div>Error</div> : null}
         </form>
     )
 }

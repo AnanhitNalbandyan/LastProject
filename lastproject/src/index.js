@@ -24,10 +24,7 @@ const router = createBrowserRouter([
         path: '/',
         element:<HomePage/>
       },
-      {
-        path: '/logo',
-        element:<HomePage/>
-      },
+      
       {
         path: '/main page',
         element:<HomePage/>
@@ -58,7 +55,7 @@ const router = createBrowserRouter([
         element:<SingleProductPage/>
       },
     {
-        path: '/categories/:id',
+        path: '/categories/:id/',
         element: <ProductsFromCategories/>,
       },
       

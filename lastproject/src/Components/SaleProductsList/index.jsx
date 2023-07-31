@@ -4,7 +4,7 @@
     import { Product } from "../Product"
     import { useDispatch } from "react-redux"
     import { useState } from "react"
-    import { Filtration } from "../Filtration"
+    import { FiltrationForSale} from "../FiltrationForSale"
 
     import { addProductToBasket, countTotalPrice } from "../../redux/basketSlice"
 
@@ -39,7 +39,7 @@
                 (
         
             <>
-            <Filtration products={productsWithDiscount} setFiltredProducts={setFiltredProductsHandler} />                
+            <FiltrationForSale products={productsWithDiscount} setFiltredProducts={setFiltredProductsHandler} />                
             {filteredProducts && filteredProducts.map((el) => (
             <NavLink key={el.id} to={`/products/${el.id}`}>
                 <Product

@@ -1,3 +1,8 @@
+.byCategoryContainer{
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+}
 .container{
     margin-top: 40px;
 }
@@ -10,7 +15,6 @@
     margin-top: 50px;
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap;
     width: auto;
 }
 

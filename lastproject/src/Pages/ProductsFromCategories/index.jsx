@@ -5,12 +5,11 @@ import { NavLink } from 'react-router-dom'
 import {Product} from '../../Components/Product'
 import { useDispatch } from 'react-redux'
 import { addProductToBasket, countTotalPrice } from '../../redux/basketSlice'
-import {TitleGlobal} from '../../Components/TitleGlobal'
 import { useState } from "react"
 import { Filtration } from '../../Components/Filtration'
 
 export const ProductsFromCategories = () => {
-    const { id } = useParams()
+    const { id} = useParams()
     
 
     const { data, isLoading, error } = useGetOneCategoryQuery(id)
@@ -19,7 +18,7 @@ export const ProductsFromCategories = () => {
     
     const eachData = data && data.data
 
-    const categoryName = data && data.category
+    const categoryName = data && data.categories && data.categories.title
 
     const dispatch = useDispatch()
 
@@ -39,27 +38,32 @@ export const ProductsFromCategories = () => {
                 {error ? <h1>{error}</h1> : null}
                 {isLoading ? (
                     <h1>LOADING</h1>
-                ) : (
-                    <div className={st.container}>
-                        
-                        <Filtration products={eachData} setFiltredProducts={setFiltredProductsHandler} />
-                        <div className={st.wrapper}>
-                        
-                            <TitleGlobal title={categoryName.title}/>
+            ) : (
+                    <div className={st.byCategoryContainer}>
 
-                            <div className={st.categoriesWrapper}>
+                    {categoryName ? <h3>{categoryName}</h3> : null}
+                        
+                        <div className={st.container}>
 
-                                {filteredProducts && filteredProducts.map((el) => (
-                                    <NavLink key={el.id} to={`/products/${el.id}`}>
-                                        <Product
-                                        {...el}
-                                            addToBasketHandler={event => addToBasketHandler(event, el)}  
-                                        />
-                                    </NavLink>
-                                ))}
+                            <Filtration products={eachData} setFiltredProducts={setFiltredProductsHandler} />
+                            <div className={st.wrapper}>
+                            
+                                
+
+                                <div className={st.categoriesWrapper}>
+
+                                    {filteredProducts && filteredProducts.map((el) => (
+                                        <NavLink key={el.id} to={`/products/${el.id}`}>
+                                            <Product
+                                            {...el}
+                                                addToBasketHandler={event => addToBasketHandler(event, el)}  
+                                            />
+                                        </NavLink>
+                                    ))}
+
+                                </div>
 
                             </div>
-
                         </div>
                     </div>
                 )}       

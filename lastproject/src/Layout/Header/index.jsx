@@ -15,7 +15,7 @@ export const Header = () => {
         <header className={st.container}>
 
             <div className={st.logoWrapper}>
-                <NavLink to="/logo">
+                <NavLink to="/">
                     <span href="#"> <img className={st.logo} src={logo} alt="" /></span>
                 </NavLink>
                 <button className={st.btnCatalog}> <NavLink className={st.text} to='/catalog'>Catalog</NavLink></button> 
