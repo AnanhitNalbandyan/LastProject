@@ -1,3 +1,4 @@
+import st from './style.module.scss'
 import { ContactAddress } from "../../Components/ContactAddress"
 import {Map} from '../../Components/Map'
 
@@ -6,7 +7,10 @@ export const Footer = () => {
 
     return (
         <>
-            <ContactAddress />
+            <div className={st.connectingItems}>
+                <ContactAddress />
+            </div>
+
             <Map/>
         </>
     )

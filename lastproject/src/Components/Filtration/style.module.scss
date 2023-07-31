@@ -10,6 +10,7 @@
     height: auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .price label{
     color: #000;
@@ -26,9 +27,6 @@
     height: 42px;
     border-radius: 7px;
     border: 1px solid #000;
-}
-
-.price input :placeholder{
     color: #ACACAC;
     font-family: Montserrat;
     font-size: 16px;
@@ -36,8 +34,9 @@
     font-weight: 500;
     line-height: 130%; 
     letter-spacing: 0.48px;
-    margin-left: 10px;
+    padding-left: 8px;
 }
+
 
 .discountCheckbox{
     width: 300px;
@@ -89,6 +88,14 @@
     margin-left: 20px;
     border-radius: 7px;
     border: 1px solid #000;
+    color: #ACACAC;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; 
+    letter-spacing: 0.48px;
+    padding-left: 8px;
 }
 .option{
     margin-left: 20px;

@@ -34,16 +34,19 @@ export const SingleProductPage = () => {
             <div className={st.wrapper}>
                 <img className={st.image} src={baseUrl + eachData.image} alt={eachData.title} />
                 <div className={st.descriptionPrice}>
-                <div className={st.pricePart}>
-                    <p className={st.price}>{`${eachData.discont_price ? eachData.discont_price : eachData.price}$`}</p> 
-                    <span className={st.discont_price}>{eachData.discont_price ? `${eachData.discont_price}$` : ""}</span>
-                            <span className={st.percent}> {eachData.discont_price ?
+                    <div className={st.pricePart}>
+                        <div className={st.numberSymbl}>
+                            <p className={st.price}>{eachData.discont_price ? eachData.discont_price : eachData.price}</p> 
+                            <p className={st.dollar}>$</p>
+                        </div>           
+                    
+                    <span className={st.discount}>{eachData.discont_price ? `${eachData.discont_price}$` : ""}</span>
+                    <span className={st.percent}> {eachData.discont_price ?
                                 `${Math.round(100 - eachData.discont_price / (eachData.price / 100)
-                    )}%`
-                    : ""}</span>
+                    )}%`: ""}</span>
                 </div>
-                                <button className={st.button}
-                                    onClick={(event) => addProductToBasketHandler(event, eachData)}>To cart</button>
+                    <button className={st.button}
+                        onClick={(event) => addProductToBasketHandler(event, eachData)}>To cart</button>
                 <div className={st.descriptionPart}>
                         <p className={st.titleDes}>Description</p>           
                         <p className={st.description}>{ eachData.description}</p>

@@ -8,16 +8,16 @@ export const SaleSeason = () => {
     return (
         <div className={st.container}>
             
-            <img className={st.bush} src={bush} alt="" />
-
             <div className={st.wrapper}>
                 <h1> Sale </h1>
-                <h2> New seasone</h2>
+                <h2 className={st.season}> New seasone</h2>
                 <button className={st.btnSale} >
                     <NavLink to="/sales">
                             Sale
                     </NavLink>
                 </button>
+            <img className={st.bush} src={bush} alt="" />
+            
             </div>
             
         </div>

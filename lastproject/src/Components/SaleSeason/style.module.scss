@@ -28,7 +28,7 @@ h1 {
     line-height: 130%;
 }
 
-h2 {
+.season {
     color: #FFF;
     font-size: 63px;
     font-family: Montserrat;
@@ -59,10 +59,11 @@ h2 {
 
 .bush {
     position: absolute;
-    top: -80px;
+    top: 30px;
     right: 0;
-    width: 900px;
-    height: 679px;
+    left: 629px; 
+    width: 680px;
+    height: 479px;
 }
 
 

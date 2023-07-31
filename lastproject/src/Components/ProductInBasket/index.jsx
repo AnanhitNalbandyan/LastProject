@@ -18,8 +18,8 @@
         
         return (
         
-            <div className={st.productContainer}>
-                <div className={st.line}></div>
+        <div className={st.productContainer}>
+                
             <img className={st.image} src={baseUrl+image} alt={title} />
             <div className={st.titleQuantity}>
                 <p className={st.title}>{title}</p>
@@ -37,7 +37,7 @@
                 <p className={st.discont_price}>{discont_price ? `${discont_price}$` : ""}</p>    
             </div>
         <button className={st.button} onClick={deleteProductHandler}><span><RxCross2/></span></button>
-    </div>
+        </div>
     
     )
     }

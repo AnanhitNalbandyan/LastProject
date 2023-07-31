@@ -12,8 +12,11 @@ export const SaleOffer = () => {
             <NavLink to="/sales">
                     <h2>Sale</h2>
             </NavLink>
-                
-            <ProductDemonstration/>
+
+        <div className={st.products}>
+            <ProductDemonstration />
+        </div>        
+    
     
     </div>
         </>

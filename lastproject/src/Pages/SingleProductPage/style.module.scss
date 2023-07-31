@@ -7,6 +7,8 @@
 .container {
     width: 96%;
     height: auto;
+    margin-top: 40px;
+    margin-bottom: 60px;
 }
 
 h2 {
@@ -17,6 +19,7 @@ h2 {
     font-weight: 600;
     line-height: 130%; /* 46.8px */
     letter-spacing: 1.08px;
+    margin-bottom: 40px;
 }
 
 .wrapper {
@@ -34,20 +37,21 @@ h2 {
 }
 
 .descriptionPrice {
-    width: 400px;
+    width: 500px;
 }
+
 
 .pricePart {
     width: 400px;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    display:inline-flex; 
+    margin-bottom: -100px;
 
+}
+.numberSymbl{
+    width: 100%;
+    display: flex;
+}
 .price {
-    width: 10%;
-    height: 10%;
     color: #000;
     font-family: Montserrat;
     font-size: 70px;
@@ -55,7 +59,17 @@ h2 {
     font-weight: 600;
     line-height: 130%;
 }
-
+.dollar{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+    margin-left: -250px;
+    margin-top: 50px;
+}
 .discount {
     color: #8B8B8B;
     font-family: Montserrat;
@@ -64,6 +78,8 @@ h2 {
     font-weight: 500;
     line-height: 130%;
     text-decoration-line: strikethrough;
+    margin-top: 50px;
+    margin-left: -200px;
 }
 
 .percent {
@@ -74,8 +90,9 @@ h2 {
     font-weight: 600;
     line-height: 130%;
     letter-spacing: 0.84px;
-    margin-left: -100px;
-    padding-right: 70px;
+    margin-top: 40px;
+    margin-left: 90px;
+    
     
 }
 .button:hover,
@@ -103,11 +120,15 @@ cursor: pointer;
 .descriptionPart {
     width: 380px;
     height: auto;
+    border-top: dotted;
+    border-color: #C0C0C0;;
+    
 }
 
 .titleDes {
     width: 300px;
     height: auto;
+    margin-top: 30px;
     margin-bottom: 20px;
     color: #000;
     font-family: Montserrat;

@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .productContainer{
-    width: 75%;
+    width: 95%;
     height: 210px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -13,7 +13,6 @@
     display: flex; 
     align-items:flex-start;
 }
-
 
 .image{
     width: 192px;
@@ -105,11 +104,12 @@ line-height: 130%;
 letter-spacing: 0.6px;
 text-decoration-line:line-through;
 }
+
 .button{
     border: none;
     background:none;
+    margin-top: 10px;
 }
-
 @media (max-width: 768px) {
     .productContainer {
         flex-direction: column;

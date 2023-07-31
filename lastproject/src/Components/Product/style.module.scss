@@ -26,6 +26,7 @@
     width: 248px;
     height: 30px;
     display: inline-flex;
+    padding-top: 8px;
 }
 
 .price {
@@ -38,6 +39,8 @@
     letter-spacing: 0.9px;
 }
 
+
+
 .discont_price {
     color: #8B8B8B;
     font-family: Montserrat;
@@ -47,6 +50,7 @@
     line-height: 130%;
     letter-spacing: 0.6px;
     text-decoration-line: strikethrough;
+    padding-top: 3px;
 }
 
 .percent {
@@ -57,7 +61,8 @@
     font-weight: 600;
     line-height: 130%;
     letter-spacing: 0.6px;
-    margin-left: 10px;
+    padding-top: 3px;
+    margin-left: 60px;
 }
 
 .title {
@@ -68,6 +73,7 @@
     font-weight: 500;
     line-height: 130%;
     letter-spacing: 0.48px;
+    padding-top: 8px;
 }
 .addToCard:hover{
 opacity: 1;

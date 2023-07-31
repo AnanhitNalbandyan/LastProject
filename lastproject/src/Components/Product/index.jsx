@@ -19,9 +19,12 @@ export const Product = (
             <button className={st.addToCard}
                 onClick={ addToBasketHandler}> Add to card </button>
         <div className={st.priceContainer}>
-        <p className={st.price}>{`${price}$`}</p> 
+            <p className={st.price}>{`${price}$`}</p> 
+            
         <span className={st.discont_price}>{discont_price ? `${discont_price}$` : ""}</span>
-        <span className={st.percent}>-10%</span>
+        <span className={st.percent}> {discont_price ?
+                                `${Math.round(100 - discont_price / (price / 100)
+                    )}%`: ""}</span>
         </div>
         <p className={st.title}>{title}</p>
         </div>

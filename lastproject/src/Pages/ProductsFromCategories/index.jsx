@@ -13,12 +13,12 @@ export const ProductsFromCategories = () => {
     
 
     const { data, isLoading, error } = useGetOneCategoryQuery(id)
-    
+   // console.log(data && data.category);
     const [filteredProducts, setFiltredProducts] = useState()
     
     const eachData = data && data.data
 
-    const categoryName = data && data.categories && data.categories.title
+   // const categoryName = data && data.categories && data.categories.title
 
     const dispatch = useDispatch()
 
@@ -33,6 +33,7 @@ export const ProductsFromCategories = () => {
     setFiltredProducts(productsToFilter)
 }
     
+    
     return (
         <>
                 {error ? <h1>{error}</h1> : null}
@@ -41,8 +42,8 @@ export const ProductsFromCategories = () => {
             ) : (
                     <div className={st.byCategoryContainer}>
 
-                    {categoryName ? <h3>{categoryName}</h3> : null}
-                        
+            {/*<h3>Hello</h3>*/} 
+                        <h3>{ data ? data.category.title : 'What do you want'}</h3>  
                         <div className={st.container}>
 
                             <Filtration products={eachData} setFiltredProducts={setFiltredProductsHandler} />

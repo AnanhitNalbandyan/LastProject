@@ -10,7 +10,7 @@ display: flex;
 }
 
 .orderBox{
-width: 65%;
+width: 58%;
 height: 393px;
 margin-left: -10px;
 border-radius: 21px;
@@ -57,20 +57,21 @@ height: auto;
 border-top: 1px solid #a7a7a7;
 margin-top: 20px;
 }
-.button{
-margin-top: 40px;
-margin-bottom: 50px;
-width: 200px;
-height: 50px;
-border-radius: 17px;
-background: #393;
-border: none;
-color: #FFF;
-text-align: center;
-font-family: Montserrat;
-font-size: 28px;
-font-style: normal;
-font-weight: 700;
-line-height: 130%; 
-letter-spacing: 0.84px;
+.button {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    width: 200px;
+    height: 50px;
+    border-radius: 17px;
+    border: 1px solid #393;
+    background: #393;
+    border-color: none; 
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: 0.84px;
 }

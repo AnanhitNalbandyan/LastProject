@@ -17,7 +17,7 @@ import { CatalogDemonstartion } from '../CatalogDemonstration'
                 <NavLink className={st.category}to='/catalog'>All categories</NavLink>   
     </div>
                     
-        <div>
+        <div className={st.categories}>
         <CatalogDemonstartion/>
         </div>
     </div>

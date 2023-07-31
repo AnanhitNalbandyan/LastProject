@@ -8,21 +8,21 @@
 }
 .wapper{
 
-    width: 100%;
+    width: 96%;
     height: auto;
 }
 .categoriesWrapper{
     margin-top: 50px;
     display: flex;
-    justify-content: space-evenly;
-    width: auto;
+    justify-content: space-between;
+    align-items: center;
 }
 
     @media screen and (min-width: 768px) {
     .categoriesWrapper {
         margin-top: 50px;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 44px 56px;
     }
     }
@@ -30,7 +30,7 @@
 @media screen and (max-width: 767px) {
     .categoriesWrapper {
         margin-top: 50px;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
     }
 }

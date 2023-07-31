@@ -11,6 +11,7 @@ export const ProductDemonstration = () => {
     const eachData = data && data
 
     const dispatch = useDispatch()
+
 const addToBasketHandler = (event, el) => {
     event.preventDefault()
     const newProduct = { ...el, quantity: 1 };
@@ -18,7 +19,8 @@ const addToBasketHandler = (event, el) => {
     dispatch(countTotalPrice());
 }
 
-    
+
+
     return (
         <div>
     {error ? <h1>{error}</h1> : null}
