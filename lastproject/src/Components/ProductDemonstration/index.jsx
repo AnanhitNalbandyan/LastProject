@@ -12,13 +12,13 @@ export const ProductDemonstration = () => {
 
     const dispatch = useDispatch()
 
-const addToBasketHandler = (event, el) => {
-    event.preventDefault()
-    const newProduct = { ...el, quantity: 1 };
-    dispatch(addProductToBasket(newProduct));
-    dispatch(countTotalPrice());
-}
-
+    const addToBasketHandler = (event, el) => {
+        event.preventDefault()
+        const newProduct = { ...el, quantity: 1 };
+        dispatch(addProductToBasket(newProduct));
+        dispatch(countTotalPrice());
+    }
+    const discountedProducts = eachData && eachData.filter((el) => el.discont_price)
 
 
     return (
@@ -31,17 +31,12 @@ const addToBasketHandler = (event, el) => {
 
                         <div className={st.productsContainer}>
 
-                                {eachData.map(
-                                (el) => el.id <= 4 && (
-                                    <NavLink to={`/products/${el.id}`} key={el.id}>
-                                        <Product
-                                        {... el}
-                                            addToBasketHandler={event => addToBasketHandler(event, el)}
-                                            /> 
-                                    </NavLink>
-                                    
-                                )
-                            )}
+                            {discountedProducts && discountedProducts.slice(0, 4).map((el) => (
+                                <NavLink to={`/products/${el.id}`} key={el.id}>
+                                    <Product {...el}
+                                        addToBasketHandler={(event) => addToBasketHandler(event, el)} />
+                                </NavLink>
+                            ))}
     
                         </div>
                     </>

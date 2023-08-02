@@ -8,7 +8,7 @@ import {addProductToBasket,
     decreaseProduct,
     deleteProduct,
     countTotalPrice} from '../../redux/basketSlice'
-import { ControlerDiscount } from '../ControlerDiscount'
+import { ControlerOrder } from '../ControlerOrder'
 
 
 export const BasketList = () => {
@@ -65,7 +65,7 @@ export const BasketList = () => {
                         <p className={st.price}>{totalPrice}$</p>
                     </div>
             
-                    <ControlerDiscount/>
+                    <ControlerOrder/>
                     </div>
                 </div>    
             </div>

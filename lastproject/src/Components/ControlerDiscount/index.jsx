@@ -2,11 +2,11 @@ import st from './style.module.scss'
 import { baseUrl } from '../../redux/apiSlice'
 import { useForm, Controller } from 'react-hook-form'
 import { usePostPhoneNumberForDiscountMutation } from '../../redux/apiSlice'
-
+import { useState } from 'react'
 
 export const ControlerDiscount = () => {
     
-
+const [phoneEntered, setPhoneEntered] = useState(false)
 const [postNumberForDiscount, { isError, isLoading, isSuccess }] = usePostPhoneNumberForDiscountMutation();
 const { handleSubmit, control, setValue } = useForm();
 
@@ -26,12 +26,13 @@ const { handleSubmit, control, setValue } = useForm();
     }
 
 const isPhoneValid = (phone) => {
-    return phone.startsWith('') || phone === '+4' || phone === '+'
+    return phone.startsWith('+49') || phone === '+4' || phone === '+'
 }
 
 const handlePhoneChange = (el) => {
     const phoneValue = el.target.value;
     setValue('phone', (isPhoneValid(phoneValue) ? phoneValue : `+49${phoneValue}`).replace(/[^0-9\+]/g, ""))
+    setPhoneEntered(true)
 }
 const objToSend = {
     title: 'test product',
@@ -41,43 +42,44 @@ const objToSend = {
     category: 'electronic'
 }
 
-const sendNumberHandler = (obj) => {
+    const sendNumberHandler = (obj) => {
     postNumberForDiscount(obj).unwrap().then()
 }
 
 
-    return (
-        <form className={st.inputForm} onSubmit={() => () => handleSubmit(onSubmit)}>
+        return (
+        <form className={st.inputForm} onSubmit={handleSubmit(onSubmit)}>
+        {isSuccess && phoneEntered ? (
+                    <div className={st.answer}>
+                    Your application has been accepted, <br /> we will contact you!!!
+                    </div>
+        ) : (
+            <>
             <Controller
                 name="phone"
                 control={control}
-                defaultValue=""
+                defaultValue="+49"
                 render={({ field, fieldState: { error } }) => (
-                    <div className={st.inputWrapper}>
+                <div className={st.inputWrapper}>
                     <input
-                        {...field}
-                        className={st.input}
-                        type="tel"
-                        onChange={handlePhoneChange}
-                            maxLength={14}
-                            placeholder="Phone number"
+                    {...field}
+                    className={st.input}
+                    type="tel"
+                    onChange={handlePhoneChange}
+                    maxLength={14}
+                    placeholder="Phone number"
                     />
                     {error && <span>Phone number is required.</span>}
-                    </div>
+                </div>
                 )}
-                />
-            <button className={st.buttonOrder}
-                onClick={() => sendNumberHandler(objToSend)}>
-                Order
+            />
+            <button className={st.button} onClick={() => sendNumberHandler(objToSend)}>
+                Get discount
             </button>
-            {isLoading ? (
-                <div>Loading</div>
-            ) : (
-                    <div> {isSuccess ? <div className={st.answer}>Thank you!!! We will connected with you</div>
-                        : null}
-                    </div>
-            )}
-            {isError ? <div>Error</div> : null }
+            </>
+        )}
+        {isLoading ? <div>Loading</div> : null}
+        {isError ? <div>Error</div> : null}
         </form>
     )
-}
+    }

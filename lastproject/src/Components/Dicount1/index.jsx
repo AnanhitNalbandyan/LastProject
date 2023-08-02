@@ -1,6 +1,6 @@
 import st from './style.module.scss'
 import litleman from '../../Images/litleman.png'
-import { Controler } from '../Controler'
+import { ControlerDiscount } from '../ControlerDiscount'
 
 
 export const Discount1 = () => {
@@ -17,7 +17,10 @@ export const Discount1 = () => {
                         <p>5% off <br /> <span>on the first order</span> </p>  
                     </div>
                 
-            <Controler/>
+                <div className={st.controlerDiscount}>
+                    <ControlerDiscount/>
+                </div>
+            
 
             </div>
         
