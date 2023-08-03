@@ -1,4 +1,17 @@
-.map {
-width: 100%;
-border: none;
+.map{
+    width: 100%;
+}
+
+    @media (max-width: 768px) {
+    .map {
+        width: 80%;
+    }
+    }
+
+
+    @media (max-width: 480px) {
+    .map {
+        
+        width: 70%;
+    }
 }

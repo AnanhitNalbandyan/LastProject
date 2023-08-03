@@ -89,21 +89,21 @@ a.active {
     padding-left: 9px;
     position: absolute;
     top:87px;
-    
-
-
+    color: red;
 }
 
 
 /* Для планшета (например, с шириной экрана от 768px до 1024px) */
 @media (max-width: 1024px) {
     .container {
+        width: 80%;
         padding-bottom: 1%;
         padding-top: 1%;
     }
 
     .logoWrapper {
         width: 200px;
+        margin-left: 2%;
     }
 
     .logo {
@@ -127,7 +127,7 @@ a.active {
 
     .navWrapper {
         width: 250px;
-        margin-left: 300px;
+        margin-left: 20%;
     }
 
     .navWrapper li {
@@ -137,13 +137,22 @@ a.active {
     .bag {
         width: 25px;
         height: 25px;
+        margin-left: -35%;
+        position: relative;
+    }
+    .count{
+    padding-left: 1px;
+    position: absolute;
+    top:78px;
+    color: red;
+    font-size: 14px
     }
 }
 
 /* Для мобильного телефона (например, с шириной экрана до 767px) */
 @media (max-width: 767px) {
     .container {
-        flex-direction: column;
+        width: 40%;
         padding-bottom: 2%;
         padding-top: 2%;
     }
@@ -167,6 +176,7 @@ a.active {
         width: 120px;
         height: 40px;
         font-size: 14px;
+        margin-right: 2%;
     }
 
     .text {
@@ -174,9 +184,8 @@ a.active {
     }
 
     .navWrapper {
-        width: 100%;
-        margin-left: 0;
-        justify-content: center;
+        width: 250px;
+        margin-left: -10%;
     }
 
     .navWrapper li {
@@ -186,5 +195,14 @@ a.active {
     .bag {
         width: 20px;
         height: 20px;
+        margin-left: -10%;
+        position: relative;
+    }
+    .count{
+    padding-left: 5px;
+    position: absolute;
+    top:78px;
+    color: red;
+    font-size: 14px
     }
 }

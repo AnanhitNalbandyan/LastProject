@@ -1,5 +1,6 @@
 import st from './style.module.scss'
 import { ProductInBasket } from '../ProductInBasket'
+import {PiShoppingCart} from 'react-icons/pi'
 
 import { useDispatch, useSelector } from 'react-redux'
 import {addProductToBasket,
@@ -45,37 +46,46 @@ export const BasketList = () => {
 
     return (
         <>
-        <div className={st.container}>
-        <div>
-            {returnedValue.map((product) => (
-            <ProductInBasket
-                key={product.id}
-                {...product}
-                deleteProductHandler={() => deleteProductHandler(product)}
-                addProductToBasketHandler={() => addProductToBasketHandler(product)}
-                descreaseProductHandler={()=>descreaseProductHandler(product)}
-            />
-            ))}
-        </div>
+            <div className={st.container}>
+                <div>
+                    {returnedValue.length === 0 ? (
+                        <div className={st.empty}>
+                        <h3>Your basket is empty</h3>
+                            <span className={st.basket}>
+                                <PiShoppingCart/>
+                            </span>
+                        </div>
+                    ) : (
+                        returnedValue.map((product) => (
+                            <ProductInBasket
+                                key={product.id}
+                                {...product}
+                                deleteProductHandler={() => deleteProductHandler(product)}
+                                addProductToBasketHandler={() => addProductToBasketHandler(product)}
+                                decreaseProductHandler={() => descreaseProductHandler(product)}
+                            />
+                        ))
+                    )}
+                </div>
+                {returnedValue.length !== 0 && (
                 <div className={st.orderBox}>
-                    <div className={st.margin}>
-                    <h2>Order details</h2>
-                    <div className={st.totalPrice}>
-                        <h5>Total price: </h5>
-                        <p className={st.price}>{totalPrice}$</p>
-                    </div>
-            
-                    <ControlerOrder/>
-                    </div>
-                </div>    
+                        <div className={st.margin}>
+                            <h2>Order details</h2>
+                            <div className={st.totalPrice}>
+                                <h5>Total price: </h5>
+                                <p className={st.price}>{totalPrice}$</p>
+                            </div>
+                            <ControlerOrder />
+                        </div>
+                    
+                    </div> 
+                )}    
             </div>
             <div className={st.buttonWrapper}>
-                <button className={st.button}
-                    onClick={() => cleanBasketHandler()}>
+                <button className={st.button} onClick={() => cleanBasketHandler()}>
                     Clean basket
                 </button>
             </div>
-            
-    </>
+        </>
     )
 }

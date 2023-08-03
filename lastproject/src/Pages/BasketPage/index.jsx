@@ -12,7 +12,7 @@ export const BasketPage = () => {
             <div className={st.container}>
             <h2>Shopping cart</h2>
             <NavLink className={st.store} to='/'> 
-            Back to the store <span> <AiOutlineRight/></span>
+                Back to the store <span> <AiOutlineRight/></span>
             </NavLink> 
             <BasketList/>
             </div>
