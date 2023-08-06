@@ -1,13 +1,18 @@
-    import { useGetAllPropductsQuery } from "../../redux/apiSlice"
-    import st from './style.module.scss'
     import { NavLink} from 'react-router-dom'
-    import { Product } from "../Product"
-    import { useDispatch } from "react-redux"
     import { useState } from "react"
-    import { FiltrationForSale} from "../FiltrationForSale"
-
+    import { useDispatch } from "react-redux"
+    import { ToastContainer, toast } from 'react-toastify'
+    
+    import { Product } from "../Product"
+    
+    import { useGetAllPropductsQuery } from "../../redux/apiSlice"
     import { addProductToBasket, countTotalPrice } from "../../redux/basketSlice"
-
+    import { FiltrationForSale } from "../FiltrationForSale"
+    
+    import st from './style.module.scss'
+    import 'react-toastify/dist/ReactToastify.css'
+    
+    
     export const SaleProductsList = () => {
     const { data, isLoading } = useGetAllPropductsQuery();
 
@@ -20,6 +25,18 @@
     const addToBasketHandler = (event, el) => {
     event.preventDefault()
     
+    toast.info(`Product ${el.title} Added to Card!`, {
+    position: toast.POSITION.TOP_RIGHT,
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: 'light',
+    })
+    
+        
     const newProduct = { ...el, quantity: 1 };
     dispatch(addProductToBasket(newProduct));
     dispatch(countTotalPrice());
@@ -39,15 +56,16 @@
                 (
         
             <>
-            <FiltrationForSale products={productsWithDiscount} setFiltredProducts={setFiltredProductsHandler} />                
-            {filteredProducts && filteredProducts.map((el) => (
-            <NavLink key={el.id} to={`/products/${el.id}`}>
-                <Product
-                {...el}
-                addToBasketHandler={event => addToBasketHandler(event, el)}
-                />
-            </NavLink>
-            ))}
+                <ToastContainer autoClose={5000} />
+                <FiltrationForSale products={productsWithDiscount} setFiltredProducts={setFiltredProductsHandler} />                
+                {filteredProducts && filteredProducts.map((el) => (
+                <NavLink key={el.id} to={`/products/${el.id}`}>
+                    <Product
+                    {...el}
+                    addToBasketHandler={event => addToBasketHandler(event, el)}
+                    />
+                </NavLink>
+                ))}
         </>
         )}
         </div>

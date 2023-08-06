@@ -1,10 +1,13 @@
 import React from 'react'
-import { baseUrl, useGetOneProductByCategoryQuery} from '../../redux/apiSlice'
 import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { addProductToBasket,  countTotalPrice } from '../../redux/basketSlice'
-import st from './style.module.scss'
+import { ToastContainer, toast } from 'react-toastify'
 
+import { baseUrl, useGetOneProductByCategoryQuery } from '../../redux/apiSlice'
+import { addProductToBasket,  countTotalPrice } from '../../redux/basketSlice'
+
+import st from './style.module.scss'
+import 'react-toastify/dist/ReactToastify.css'
 
 export const SingleProductPage = () => {
 
@@ -19,17 +22,30 @@ export const SingleProductPage = () => {
     const addProductToBasketHandler = (event, el) => {
         event.preventDefault()
     
-    const newProduct = { ...el, quantity: 1 }
+        toast.info(`Product ${el.title} Added to Card!`, {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+    })
+        
+        const newProduct = { ...el, quantity: 1 }
         dispatch(addProductToBasket(newProduct))
         dispatch( countTotalPrice())
     }
 
     return (
-            <>
+        <>
+        
         {isLoading ? (
             <h1>LOADING...</h1>
         ) : (
             <div className={st.container}>
+            <ToastContainer autoClose={5000} />
             <h2>{eachData.title}</h2>
             <div className={st.wrapper}>
                 <img className={st.image} src={baseUrl + eachData.image} alt={eachData.title} />

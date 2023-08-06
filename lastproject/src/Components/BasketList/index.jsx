@@ -1,6 +1,6 @@
 import st from './style.module.scss'
 import { ProductInBasket } from '../ProductInBasket'
-import {PiShoppingCart} from 'react-icons/pi'
+import basketEmpty from '../../Images/basketEmpty.png'
 
 import { useDispatch, useSelector } from 'react-redux'
 import {addProductToBasket,
@@ -51,9 +51,9 @@ export const BasketList = () => {
                     {returnedValue.length === 0 ? (
                         <div className={st.empty}>
                         <h3>Your basket is empty</h3>
-                            <span className={st.basket}>
-                                <PiShoppingCart/>
-                            </span>
+                            <img src={basketEmpty} alt = 'shopping basket' className={st.basket}/>
+                                
+                            
                         </div>
                     ) : (
                         returnedValue.map((product) => (

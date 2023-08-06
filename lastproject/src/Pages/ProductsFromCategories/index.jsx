@@ -1,12 +1,18 @@
-import st from './style.module.scss'
-import {useGetOneCategoryQuery} from '../../redux/apiSlice'
+import { useState } from "react"
 import { useParams } from 'react-router'
 import { NavLink } from 'react-router-dom'
-import {Product} from '../../Components/Product'
+import { ToastContainer, toast } from 'react-toastify'
 import { useDispatch } from 'react-redux'
+
+import { useGetOneCategoryQuery } from '../../redux/apiSlice'
 import { addProductToBasket, countTotalPrice } from '../../redux/basketSlice'
-import { useState } from "react"
+
+import {Product} from '../../Components/Product'
 import { Filtration } from '../../Components/Filtration'
+
+import 'react-toastify/dist/ReactToastify.css'
+import st from './style.module.scss'
+
 
 export const ProductsFromCategories = () => {
     const { id} = useParams()
@@ -23,10 +29,23 @@ export const ProductsFromCategories = () => {
     const dispatch = useDispatch()
 
     const addToBasketHandler = (event, el) => {
-    event.preventDefault()
-    const newProduct = { ...el, quantity: 1 };
-    dispatch(addProductToBasket(newProduct));
-    dispatch(countTotalPrice());
+        event.preventDefault()
+        
+        toast.info(`Product ${el.title} Added to Card!`, {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+    })
+
+
+        const newProduct = { ...el, quantity: 1 }
+        dispatch(addProductToBasket(newProduct))
+        dispatch(countTotalPrice())
 }
 
     const setFiltredProductsHandler = (productsToFilter) => {
@@ -45,7 +64,7 @@ export const ProductsFromCategories = () => {
             {/*<h3>Hello</h3>*/} 
                         <h3>{ data ? data.category.title : 'What do you want'}</h3>  
                         <div className={st.container}>
-
+                            <ToastContainer autoClose={5000} />
                             <Filtration products={eachData} setFiltredProducts={setFiltredProductsHandler} />
                             <div className={st.wrapper}>
                             

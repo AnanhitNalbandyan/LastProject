@@ -1,9 +1,14 @@
 import { useGetAllPropductsQuery } from '../../redux/apiSlice'
-import { Product } from '../Product'
 import { NavLink } from 'react-router-dom'
-import st from './style.module.scss'
 import { useDispatch } from 'react-redux'
 import { addProductToBasket, countTotalPrice } from '../../redux/basketSlice'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+import { Product } from '../Product'
+
+import st from './style.module.scss'
+
 
 
 export const ProductDemonstration = () => {
@@ -14,6 +19,17 @@ export const ProductDemonstration = () => {
 
     const addToBasketHandler = (event, el) => {
         event.preventDefault()
+
+        toast.info(`Product ${el.title} Added to Card!`, {
+        position: toast.POSITION.TOP_RIGHT,
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+    })
         const newProduct = { ...el, quantity: 1 };
         dispatch(addProductToBasket(newProduct));
         dispatch(countTotalPrice());
@@ -28,9 +44,8 @@ export const ProductDemonstration = () => {
                     <h1>LOADING</h1>
                 ) : (
                     <>
-
                         <div className={st.productsContainer}>
-
+                            <ToastContainer autoClose={5000} />
                             {discountedProducts && discountedProducts.slice(0, 4).map((el) => (
                                 <NavLink to={`/products/${el.id}`} key={el.id}>
                                     <Product {...el}
