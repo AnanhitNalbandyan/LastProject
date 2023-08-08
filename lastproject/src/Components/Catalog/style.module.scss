@@ -11,8 +11,7 @@
 .wrapper{
     width: 100%;
     display: flex;
-    margin-bottom: 20px;
-    
+    margin-bottom: 20px;  
 }
 
 h2{
@@ -52,14 +51,15 @@ cursor: pointer;
     margin-top: 90px;
     margin-left: -15px;
 }
+
     @media (max-width: 768px) {
     .container {
-        height: 500px;
+        width: 76%;
+        height:500px; 
     }
 
     .wrapper {
-        width: 100%;
-        flex-wrap: wrap;
+        flex-direction: column;
     }
 
     h2 {
@@ -69,28 +69,39 @@ cursor: pointer;
     }
 
     .category {
-        width: 100px;
+        width: 90px;
         height: 24px;
+        margin-left: 20px;
         font-size: 8px;
         padding-top: 4px;
     }
+    .categories{
+    margin-top: 40px;
+    margin-left: -15px;
+}
     }
 
 
     @media (max-width: 480px) {
     .container {
-        height: 400px;
+        height: 450px;
     }
-
+    .wrapper {
+        flex-direction: column;
+    }
     h2 {
         font-size: 24px;
-        margin-bottom: 5px;
+        margin-bottom: 0px;
     }
 
     .category {
         width: 80px;
         height: 20px;
         font-size: 6px;
-        padding-top: 3px;
+        margin-top: 0px;
     }
+    .categories{
+    margin-top: 20px;
+    margin-left: -15px;
+}
     }

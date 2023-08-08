@@ -99,23 +99,23 @@ transition: opacity .3s;
     transition: opacity .3s;
 }
 
-
-@media (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .wrapper {
-        width: 100%;
+        width: 80%;
         height: auto;
-        padding: 20px;
+        padding: 0px;
     }
 
     .image {
-        width: 100%;
-        height: auto;
-        gap: 10px;
+        width: 200px;
+        height: 200px;
+        gap: 5%;
     }
 
     .priceContainer {
-        width: 100%;
+        width: 80%;
         height: auto;
+        padding-top: 0px;
     }
 
     .price {
@@ -128,46 +128,58 @@ transition: opacity .3s;
 
     .percent {
         font-size: 18px;
+        margin-left: 40px;
     }
 
     .title {
         font-size: 14px;
+        margin: 0;
+        padding: 0;
     }
 }
 
-
-
-@media (max-width: 480px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .wrapper {
-        width: 100%;
+        width: 80%;
         height: auto;
-        padding: 10px;
+        padding: 15px;
     }
 
     .image {
-        width: 100%;
+        width: 80%;
         height: auto;
-        gap: 5px;
+        gap: 5%;
     }
 
     .priceContainer {
-        width: 100%;
+        width: 80%;
         height: auto;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .price {
         font-size: 20px;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .discont_price {
         font-size: 16px;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .percent {
         font-size: 16px;
+        margin-left: 30px;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .title {
-        font-size: 12px;
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
     }
 }

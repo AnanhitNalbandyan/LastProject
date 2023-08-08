@@ -33,6 +33,11 @@ margin-left: 35%;
 
 
 @media screen and (max-width: 767px) {
+.container{
+    width: 200px;
+    height: auto;
+    margin: 10px;
+}
 .image {
 width: 200px;
 height: 200px;
@@ -40,11 +45,16 @@ height: 200px;
 
 .titleImg {
 font-size: 14px;
-margin-left: 10%;
+margin-left: 25%;
 }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+.container{
+    width: 200px;
+    height: auto;
+    margin: 30px;
+}
 .image {
 width: 250px;
 height: 250px;

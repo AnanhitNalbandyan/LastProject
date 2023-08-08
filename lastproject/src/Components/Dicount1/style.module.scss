@@ -40,3 +40,73 @@
     letter-spacing: 2.7px;
     }
 
+@media screen and (max-width: 768px) {
+    .container {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .litleMan {
+        width: 300px;
+        height: 300px;
+        margin: 10px auto 10px 200px;
+    }
+.textInput {
+    width: 60%;
+    margin: 20px auto;
+    display: block;
+    }
+    .text {
+        margin: 0 auto 0 -50px;
+    }
+
+    p {
+        width: 60%;
+        font-size: 50px;
+        line-height: 1.2em;
+        text-align: center;
+    }
+
+    p span {
+        margin-top: -5px;
+        font-size: 30px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 80%;
+    }
+
+    .litleMan {
+        width: 200px;
+        height: 200px;
+        margin: 20px auto;
+    }
+.textInput {
+    width: 50%;
+    margin: 20px auto;
+    display: block;
+    }
+
+    .text {
+        margin: 20px auto -50px;
+    }
+
+    p {
+        width: 60%;
+        font-size: 30px;
+        line-height: 1.2em;
+        text-align: center;
+    }
+
+    p span {
+        margin-top: -5px;
+        font-size: 20px;
+    }
+}
+
+
+
+

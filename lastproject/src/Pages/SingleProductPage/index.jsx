@@ -23,7 +23,7 @@ export const SingleProductPage = () => {
         event.preventDefault()
     
         toast.info(`Product ${el.title} Added to Card!`, {
-        position: toast.POSITION.TOP_RIGHT,
+        position: toast.POSITION.TOP_CENTER,
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
