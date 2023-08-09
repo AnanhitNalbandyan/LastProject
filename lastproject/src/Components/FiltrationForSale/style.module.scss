@@ -22,6 +22,63 @@
     letter-spacing: 0.6px;
 }
 
+
+@media (max-width: 1024px) {
+        .container{
+        width: 100%;
+        margin-left: -100%;
+        margin-bottom: 10px;
+}
+    .price {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sorted {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .container{
+        width: 100%;
+        margin-left: -100%;
+        margin-bottom: 10px;
+}
+    .price {
+        width: 100%; 
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+    .price label {
+        margin-bottom: 10px;
+    }
+    .price input {
+        width: 100%; 
+        margin-bottom: 10px; 
+        padding: 8px; 
+    }
+
+    .sorted {
+        width: 100%; 
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+    .sortText {
+        margin-bottom: 10px; 
+    }
+    .sorted select {
+        width: 100%; 
+        margin-left: 0; 
+    }
+    .option {
+        margin-left: 0; 
+    }
+}
+
 .price input{
     width: 103px;
     height: 42px;

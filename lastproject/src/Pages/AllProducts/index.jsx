@@ -6,7 +6,9 @@ export const AllProducts = () => {
     return (
         <>
             <h2 className={st.title}>All Pruducts</h2>
-
+            <div className={st.productList}>
+                <ProductsList/>
+            </div>
             <ProductsList/>
         
         </>

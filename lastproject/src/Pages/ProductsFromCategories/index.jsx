@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useCallback,useState } from "react"
 import { useParams } from 'react-router'
 import { NavLink } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
@@ -48,9 +48,9 @@ export const ProductsFromCategories = () => {
         dispatch(countTotalPrice())
 }
 
-    const setFiltredProductsHandler = (productsToFilter) => {
+    const setFiltredProductsHandler = useCallback((productsToFilter) => {
     setFiltredProducts(productsToFilter)
-}
+}, [])
     
     
     return (
@@ -61,31 +61,30 @@ export const ProductsFromCategories = () => {
             ) : (
                     <div className={st.byCategoryContainer}>
 
-            {/*<h3>Hello</h3>*/} 
                         <h3>{ data ? data.category.title : 'What do you want'}</h3>  
-                        <div className={st.container}>
+                        
                             <ToastContainer autoClose={5000} />
+                            <div className={st.filtration}>
                             <Filtration products={eachData} setFiltredProducts={setFiltredProductsHandler} />
-                            <div className={st.wrapper}>
                             
-                                
+                            </div>
 
                                 <div className={st.categoriesWrapper}>
 
                                     {filteredProducts && filteredProducts.map((el) => (
+                                    <div className={st.wrapper}>
                                         <NavLink key={el.id} to={`/products/${el.id}`}>
                                             <Product
                                             {...el}
                                                 addToBasketHandler={event => addToBasketHandler(event, el)}  
                                             />
-                                        </NavLink>
+                                            </NavLink>
+                                    </div>
                                     ))}
 
                                 </div>
-
-                            </div>
                         </div>
-                    </div>
+                    
                 )}       
         </>
     )

@@ -18,15 +18,18 @@ export const Product = (
             <img className={st.image} src={baseUrl + image} alt={title} />
             <button className={st.addToCard}
                 onClick={ addToBasketHandler}> Add to card </button>
-        <div className={st.priceContainer}>
-            <p className={st.price}>{`${price}$`}</p> 
-            
-        <span className={st.discont_price}>{discont_price ? `${discont_price}$` : ""}</span>
-        <span className={st.percent}> {discont_price ?
-                                `${Math.round(100 - discont_price / (price / 100)
-                    )}%`: ""}</span>
-        </div>
-        <p className={st.title}>{title}</p>
+            <div className={st.titlePrice}>
+                <div className={st.priceContainer}>
+                <p className={st.price}>{`${price}$`}</p> 
+                
+                <span className={st.discont_price}>{discont_price ? `${discont_price}$` : ""}</span>
+                <span className={st.percent}> {discont_price ?
+                                        `${Math.round(100 - discont_price / (price / 100)
+                        )}%` : ""}
+                </span>
+            </div>
+                <p className={st.title}>{title}</p>
+            </div>
         </div>
     )
     }

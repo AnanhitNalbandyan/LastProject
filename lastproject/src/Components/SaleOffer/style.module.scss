@@ -4,7 +4,7 @@
     margin-top: 50px;
 }
 
-.h2 {
+.title {
     color: #000;
     font-size: 40px;
     font-family: Montserrat;
@@ -29,9 +29,11 @@
         margin-left: auto;
     }
 
-    .h2 {
+    .title {
         font-size: 36px;
         margin-right: 0;
+        margin-left: -10%;
+
     }
 }
 
@@ -42,7 +44,7 @@
         margin: 20px auto;
     }
 
-    .h2 {
+    .title {
         font-size: 32px;
         margin-right: 0;
     }

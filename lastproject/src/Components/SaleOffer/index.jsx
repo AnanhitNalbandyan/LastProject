@@ -10,7 +10,7 @@ export const SaleOffer = () => {
         <>
     <div className={st.container}>
             <NavLink to="/sales">
-                    <h2>Sale</h2>
+            <h2 className={st.title}>Sale</h2>
             </NavLink>
 
         <div className={st.products}>

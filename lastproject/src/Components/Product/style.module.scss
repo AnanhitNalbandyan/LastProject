@@ -21,12 +21,16 @@
     height: 300px;
     gap: 5%;
 }
-
+.titlePrice{
+    width: 300px;
+    height: 200px;
+}
 .priceContainer {
-    width: 248px;
-    height: 30px;
+    width: 280px;
+    height: 50px;
     display: inline-flex;
     padding-top: 8px;
+    
 }
 
 .price {
@@ -37,9 +41,8 @@
     font-weight: 600;
     line-height: 130%;
     letter-spacing: 0.9px;
+    margin-right: 20%;
 }
-
-
 
 .discont_price {
     color: #8B8B8B;
@@ -51,6 +54,7 @@
     letter-spacing: 0.6px;
     text-decoration-line: strikethrough;
     padding-top: 3px;
+
 }
 
 .percent {
@@ -73,8 +77,9 @@
     font-weight: 500;
     line-height: 130%;
     letter-spacing: 0.48px;
-    padding-top: 8px;
+    
 }
+
 .addToCard:hover{
 opacity: 1;
 transition: opacity .3s;
@@ -101,9 +106,8 @@ transition: opacity .3s;
 
 @media screen and (max-width: 767px) {
     .wrapper {
-        width: 80%;
-        height: auto;
-        padding: 0px;
+        width: 90%;
+        height: 90%;
     }
 
     .image {
@@ -111,11 +115,16 @@ transition: opacity .3s;
         height: 200px;
         gap: 5%;
     }
-
+.titlePrice{
+    width: 90%px;
+    height: 90%;
+}
     .priceContainer {
-        width: 80%;
-        height: auto;
-        padding-top: 0px;
+        width: 60%;
+        height: 10%;
+        padding-top: 2px;
+        margin-left: 0;
+        margin-right: 30px;
     }
 
     .price {
@@ -136,45 +145,64 @@ transition: opacity .3s;
         margin: 0;
         padding: 0;
     }
+    .addToCard{
+    width: 200px;
+    height: auto;
+    flex-shrink: 0;
+    color: #393;
+    font-size: 8px;
+    font-weight: 300;
+    line-height: 20.4px; 
+    border-radius: 21px;
+    border: 2px solid #393;
+    background: #f1fff1;
+    z-index: 111;
+    position: absolute;
+    cursor: pointer;
+    bottom: 180px;
+    left: 30px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .wrapper {
         width: 80%;
-        height: auto;
+        height: 80%;
         padding: 15px;
     }
 
     .image {
         width: 80%;
-        height: auto;
+        height: 80%;
         gap: 5%;
     }
-
+.titlePrice{
+    width: 80%px;
+    height: 80%;
+}
     .priceContainer {
-        width: 80%;
-        height: auto;
+        width: 70%;
+        height:20%;
         margin-top: 0;
         margin-bottom: 0;
     }
 
     .price {
         font-size: 20px;
-        margin-top: 0;
-        margin-bottom: 0;
     }
 
     .discont_price {
         font-size: 16px;
-        margin-top: 0;
-        margin-bottom: 0;
+
     }
 
     .percent {
         font-size: 16px;
         margin-left: 30px;
-        margin-top: 0;
-        margin-bottom: 0;
+        
     }
 
     .title {
@@ -182,4 +210,23 @@ transition: opacity .3s;
         margin: 0;
         padding: 0;
     }
+        .addToCard{
+    width: 200px;
+    height: auto;
+    flex-shrink: 0;
+    color: #393;
+    font-size: 8px;
+    font-weight: 300;
+    line-height: 20.4px; 
+    border-radius: 21px;
+    border: 2px solid #393;
+    background: #f1fff1;
+    z-index: 111;
+    position: absolute;
+    cursor: pointer;
+    bottom: 180px;
+    left: 30px;
+    opacity: 0;
+    transition: opacity .3s;
+}
 }

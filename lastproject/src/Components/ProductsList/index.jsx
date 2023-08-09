@@ -1,5 +1,5 @@
     import { NavLink} from 'react-router-dom'
-    import { useState } from "react"
+    import { useCallback, useState } from "react"
     
     import { useGetAllPropductsQuery } from "../../redux/apiSlice"
     import { addProductToBasket, countTotalPrice } from "../../redux/basketSlice"
@@ -40,9 +40,9 @@
         dispatch(countTotalPrice())
 }
 
-    const setFiltredProductsHandler = (productsToFilter) => {
+    const setFiltredProductsHandler = useCallback((productsToFilter) => {
     setFiltredProducts(productsToFilter)
-}
+}, [])
     
     return (
     <div className={st.products}>

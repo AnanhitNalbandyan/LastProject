@@ -1,5 +1,5 @@
     import { NavLink} from 'react-router-dom'
-    import { useState } from "react"
+    import { useCallback,useState } from "react"
     import { useDispatch } from "react-redux"
     import { ToastContainer, toast } from 'react-toastify'
     
@@ -45,9 +45,9 @@
     const productsWithDiscount =
             eachData ? eachData.filter(el => el.discont_price) : []
     
-    const setFiltredProductsHandler = (productsToFilter) => {
+    const setFiltredProductsHandler = useCallback((productsToFilter) => {
     setFiltredProducts(productsToFilter)
-}   
+}, [])
         return (
         <div className={st.products}>
         {isLoading ? (

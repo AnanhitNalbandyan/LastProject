@@ -45,9 +45,10 @@ h2 {
 
 
 .pricePart {
-    width: 400px;
+    width: 320px;
     display:inline-flex; 
     margin-bottom: -100px;
+    margin-left: 15%;
 
 }
 .numberSymbl{
@@ -61,6 +62,7 @@ h2 {
     font-style: normal;
     font-weight: 600;
     line-height: 130%;
+    margin-left: -15%;
 }
 .dollar{
     color: #000;
@@ -70,7 +72,7 @@ h2 {
     font-weight: 600;
     line-height: 130%;
     letter-spacing: 0.6px;
-    margin-left: -250px;
+    margin-left: -65%;
     margin-top: 50px;
 }
 .discount {
@@ -173,15 +175,18 @@ cursor: pointer;
     }
 
     .pricePart {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
+        width: 40%;
+        display: inline-flex;
     }
 
     .price {
         font-size: 50px;
+        margin-top: 5%;
     }
-
+.dollar{
+    margin-left: -53%;
+    margin-top: 40px;
+}
     .button {
         width: 100%;
         padding: 25px;
@@ -225,15 +230,17 @@ cursor: pointer;
     }
 
     .pricePart {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
+        width: 40%;
+        display: inline-flex;
     }
 
     .price {
         font-size: 40px;
+        margin-top: 5%;
     }
-
+    .dollar{
+        margin-left: -53%;
+    }
     .button {
         width: 100%;
         padding: 20px;

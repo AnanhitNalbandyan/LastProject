@@ -10,8 +10,9 @@ export const Footer = () => {
             <div className={st.connectingItems}>
                 <ContactAddress />
             </div>
-
-            <Map/>
+            <div className={st.map}>
+            <Map />
+            </div>
         </>
     )
 }

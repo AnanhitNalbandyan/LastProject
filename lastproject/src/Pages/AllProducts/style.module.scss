@@ -9,22 +9,25 @@
     letter-spacing: 1.2px;
 }
 
-.products{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    width: auto;
-    margin-top: 20px;
+.productList{
+    width: 100%;
+    height: auto;
+    
 }
 
-@media (max-width: 768px) {
-h2 {
-font-size: 30px;
-line-height: 120%;
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .title {
+        font-size: 32px;
+        line-height: 120%;
+    }
+
 }
 
-.products {
-    justify-content: center;
-    margin-top: 10px;
-}
+
+@media only screen and (max-width: 767px) {
+    .title {
+        font-size: 24px;
+        line-height: 110%;
+    }
+
 }

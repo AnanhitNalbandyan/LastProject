@@ -8,7 +8,7 @@ export const ContactAddress = () => {
         <>
         <div className={st.container}>
             <div className={st.contactUs}>
-            <h3>Contact</h3>
+            <h3 className={st.title}>Contact</h3>
             <p className={st.phone}>+49 999 999 99 99</p>
             <div className={st.socialMedia}>
             <li className={st.icon}>
