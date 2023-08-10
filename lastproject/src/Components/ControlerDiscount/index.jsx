@@ -31,8 +31,15 @@ const isPhoneValid = (phone) => {
 
 const handlePhoneChange = (el) => {
     const phoneValue = el.target.value;
-    setValue('phone', (isPhoneValid(phoneValue) ? phoneValue : `+49${phoneValue}`).replace(/[^0-9\+]/g, ""))
-    setPhoneEntered(true)
+    const sanitizedPhoneValue = phoneValue.replace(/[^0-9\+]/g, "");
+    
+    if (sanitizedPhoneValue.length < 10) {
+        setValue('phone', sanitizedPhoneValue);
+        setPhoneEntered(false)
+    } else {
+        setValue('phone', (isPhoneValid(sanitizedPhoneValue) ? sanitizedPhoneValue : `+49${sanitizedPhoneValue}`).replace(/[^0-9\+]/g, ""));
+        setPhoneEntered(true);
+    }
 }
 const objToSend = {
     title: 'test product',

@@ -61,7 +61,7 @@ export const ProductsFromCategories = () => {
             ) : (
                     <div className={st.byCategoryContainer}>
 
-                        <h3>{ data ? data.category.title : 'What do you want'}</h3>  
+                        <h3 className={st.categoryTitle}>{ data ? data.category.title : 'What do you want'}</h3>  
                         
                             <ToastContainer autoClose={5000} />
                             <div className={st.filtration}>
@@ -72,7 +72,7 @@ export const ProductsFromCategories = () => {
                                 <div className={st.categoriesWrapper}>
 
                                     {filteredProducts && filteredProducts.map((el) => (
-                                    <div className={st.wrapper}>
+                                    <div key={el.id} className={st.wrapper}>
                                         <NavLink key={el.id} to={`/products/${el.id}`}>
                                             <Product
                                             {...el}

@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import bag  from '../../Images/shoppingbag.svg'
-import logo from '../../Images/logo.png'
+import logo from '../../Images/logo.svg'
 
 import st from './style.module.scss'
 

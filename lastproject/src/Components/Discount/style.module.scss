@@ -1,0 +1,152 @@
+
+    .container {
+    width: 96%;
+    height: auto;
+    background: linear-gradient(223deg, #393 0%, #006300 100%);
+    display: flex;
+    }
+
+    .litleMan {
+    width: 522px;
+    height: 422px;
+    margin: 27px 5% 27px 3%;
+    }
+
+    .textInput {
+    display: block;
+    }
+
+    .text {
+    margin: 47px 0 46px 10%;
+    }
+
+    p {
+    width: 469px;
+    height: 159px;
+    color: #FFF;
+    font-size: 90px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 0.72em;
+    letter-spacing: 2.7px;
+    }
+
+    p span {
+    margin-top: -10px;
+    color: #FFF;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 100;
+    letter-spacing: 2.7px;
+    }
+.controlerDiscount{
+    margin-left: -20%;
+}
+@media screen and (max-width: 1040px) {
+    .container {
+        width:100%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .litleMan {
+        width: 400px;
+        height: 200px;
+    }
+
+    .textInput {
+        width: 60%;
+        margin: 20px auto;
+        display: block;
+        }
+
+    .text {
+        margin: 0 auto 0 -50px;
+    }
+
+    p {
+        width: 60%;
+        font-size: 50px;
+        line-height: 1.2em;
+        text-align: center;
+    }
+
+    p span {
+        margin-top: -5px;
+        font-size: 30px;
+    }
+}
+
+
+@media screen and (max-width: 780px) {
+    .container {
+        width: 100%;
+        height:auto
+    }
+
+    .litleMan {
+        width: 400px;
+        height: 200px;
+        margin: 10% 60% 10% 40%;
+    }
+.textInput {
+    width: 50%;
+    margin: 20px auto;
+    display: block;
+    }
+
+    .text {
+        margin: 20px auto -50px;
+    }
+
+    p {
+        width: 60%;
+        font-size: 30px;
+        line-height: 1.2em;
+        text-align: center;
+    }
+
+    p span {
+        margin-top: -5px;
+        font-size: 20px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+        height:auto
+    }
+
+    .litleMan {
+        width: 200px;
+        height: 200px;
+        margin: 1% auto 1% 30%;
+    }
+.textInput {
+    width: 50%;
+    margin: 20px auto;
+    display: block;
+    }
+
+    .text {
+        margin: 20px auto -50px;
+    }
+
+    p {
+        width: 60%;
+        font-size: 30px;
+        line-height: 1.2em;
+        text-align: center;
+    }
+
+    p span {
+        margin-top: -5px;
+        font-size: 20px;
+    }
+}
+
+
+
+

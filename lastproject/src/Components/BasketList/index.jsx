@@ -1,7 +1,6 @@
 import st from './style.module.scss'
 import { ProductInBasket } from '../ProductInBasket'
-import basketEmpty from '../../Images/basketEmpty.png'
-
+import basketEmpty from '../../Images/basket.png'
 import { useDispatch, useSelector } from 'react-redux'
 import {addProductToBasket,
     cleanBasket,
