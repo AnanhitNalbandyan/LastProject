@@ -7,15 +7,17 @@
 
 }
 .container{
-    width: 300px;
+    width: 100%;
     height: auto;
-    margin: 20px;
+    margin-bottom: 10%;
 }
+
 .image {
     width: 300px;
     height: 300px; 
     background-position: center;
     object-fit: cover;
+    gap: 10%;
 }
 
 .titleImg{
@@ -26,8 +28,10 @@ font-style: normal;
 font-weight: 600;
 line-height: 130%; 
 letter-spacing: 0.54px;
-margin-top: 15px;
-margin-left: 35%;
+width: 100%;
+height: auto;
+margin-top: 5%;
+margin-left: 30%;
 
 }
 

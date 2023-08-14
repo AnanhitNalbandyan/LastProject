@@ -1,5 +1,5 @@
     import { NavLink} from 'react-router-dom'
-    import { useCallback,useState } from "react"
+    import { useState } from "react"
     import { useDispatch } from "react-redux"
     import { ToastContainer, toast } from 'react-toastify'
     
@@ -16,56 +16,75 @@
     export const SaleProductsList = () => {
     const { data, isLoading } = useGetAllPropductsQuery();
 
-    const [filteredProducts, setFiltredProducts] = useState()
-    
+    const [filteredProducts, setFilteredProducts] = useState()
+    const [isAddingToBasket, setIsAddingToBasket] = useState(false)
+        
     const eachData = data && data 
         
     const dispatch = useDispatch()
 
-    const addToBasketHandler = (event, el) => {
-    event.preventDefault()
-    
-    toast.info(`Product ${el.title} Added to Card!`, {
-    position: toast.POSITION.TOP_CENTER,
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: 'light',
-    })
-    
-        
-    const newProduct = { ...el, quantity: 1 };
-    dispatch(addProductToBasket(newProduct));
-    dispatch(countTotalPrice());
-}
+    const addToBasketHandler = async (event, el) => {
+        if (isAddingToBasket) {
+            return
+        }
+
+        setIsAddingToBasket(true) 
+        try {
+            event.preventDefault()
+
+            toast.success(`Product ${el.title} Added to Basket!`, {
+                position: toast.POSITION.BOTTOM_LEFT,
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'light',
+            })
+
+            const newProduct = { ...el, quantity: 1 }
+            dispatch(addProductToBasket(newProduct))
+            dispatch(countTotalPrice())
+
+            setTimeout(() => {
+                setIsAddingToBasket(false)
+            }, 3000)
+        } catch (error) {
+            console.error("Error adding product to basket:", error);
+            setIsAddingToBasket(false)
+        }
+    }
         
     const productsWithDiscount =
             eachData ? eachData.filter(el => el.discont_price) : []
     
-    const setFiltredProductsHandler = useCallback((productsToFilter) => {
-    setFiltredProducts(productsToFilter)
-}, [])
+    const setFiltredProductsHandler = productsToFilter => {
+    setFilteredProducts(productsToFilter)
+}
         return (
-        <div className={st.products}>
+        <div className={st.container}>
         {isLoading ? (
             <h1>Loading...</h1>
                 ) :
                 (
         
             <>
-                <ToastContainer autoClose={5000} />
-                <FiltrationForSale products={productsWithDiscount} setFiltredProducts={setFiltredProductsHandler} />                
-                {filteredProducts && filteredProducts.map((el) => (
-                <NavLink key={el.id} to={`/products/${el.id}`}>
-                    <Product
-                    {...el}
-                    addToBasketHandler={event => addToBasketHandler(event, el)}
-                    />
-                </NavLink>
+                <ToastContainer autoClose={3000} />
+                <FiltrationForSale products={productsWithDiscount}
+                            setFiltredProducts={setFiltredProductsHandler}   
+                />                
+                <div className={st.products}>
+                    {filteredProducts && filteredProducts.map((el) => (
+                    <NavLink key={el.id} to={`/products/${el.id}`}>
+                        <Product
+                        {...el}
+                        addToBasketHandler={event => addToBasketHandler(event, el)}
+                        isAddingToBasket={isAddingToBasket}
+                        />
+                    </NavLink>
                 ))}
+                </div>
         </>
         )}
         </div>

@@ -1,5 +1,5 @@
 .container {
-    width: 96%;
+    width: 100%;
     height: 72px;
     display: flex;
     justify-content: space-between;
@@ -9,8 +9,7 @@
 }
 
 .logoWrapper {
-    width: 256px;
-    height: auto;
+    width: 36%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,7 +21,7 @@
 }
 
 .logo a {
-    margin-right: 59px;
+    gap: 10%;
 }
 
 .btnCatalog:hover,
@@ -35,6 +34,7 @@
 .btnCatalog {
     width: 125px;
     height: 49px;
+    margin-left: 10%;
     border-radius: 5px;
     border: 2px solid #393;
     background: #393;
@@ -47,16 +47,25 @@
     font-style: normal;
     line-height: normal;
 }
-
-.navWrapper {
-    width: 331px;
-    height: 21px;
+.navBagWrapper{
+    width: 70%;
+    margin-left: 40%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 594px;
 }
-
+.navWrapper {
+    width: 150%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.li:hover{
+    transform: scale(1.01);
+    transition-duration: 500ms;
+    cursor: pointer;
+}
 .li:focus {
     cursor: pointer;
 }
@@ -74,6 +83,11 @@ a.active {
     color: rgb(120, 217, 183);
 }
 
+.bagCount{
+    width: 10%;
+
+}
+
 .bag:hover,
 .bag:focus {
     transform: scale(1.1);
@@ -81,15 +95,14 @@ a.active {
     cursor: pointer;
 }
 .bag {
-    width: 30px;
-    height: 30px;
+    font-size: 40px;
     position: relative;
 }
 .count{
-    padding-left: 9px;
     position: absolute;
-    top:87px;
-    color: red;
+    margin: calc(0.5% + 0.11vw);
+    color: rgb(17, 231, 17);
+
 }
 
 
@@ -134,19 +147,23 @@ a.active {
         font-size: 14px;
     }
 
-    .bag {
-        width: 25px;
-        height: 25px;
-        margin-left: -35%;
-        position: relative;
-    }
-    .count{
-    padding-left: 1px;
+
+
+.bag:hover,
+.bag:focus {
+    transform: scale(1.01);
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+.bag {
+    font-size: 30px;
+    position: relative;
+}
+.count{
     position: absolute;
-    top:78px;
-    color: red;
-    font-size: 14px
-    }
+    margin: calc(0.8% + 0.11vw);
+
+}
 }
 
 /* Для мобильного телефона (например, с шириной экрана до 767px) */
@@ -192,17 +209,21 @@ a.active {
         font-size: 12px;
     }
 
-    .bag {
-        width: 20px;
-        height: 20px;
-        margin-left: -10%;
-        position: relative;
-    }
-    .count{
-    padding-left: 5px;
+    
+.bag:hover,
+.bag:focus {
+    transform: scale(1.01);
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+.bag {
+    font-size: 20px;
+    position: relative;
+}
+.count{
     position: absolute;
-    top:78px;
-    color: red;
-    font-size: 14px
-    }
+    margin: calc(1% + 0.11vw);
+
+}
+
 }

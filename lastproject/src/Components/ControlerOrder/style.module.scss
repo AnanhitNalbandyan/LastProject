@@ -1,11 +1,12 @@
 .inputWrapper {
-    margin-top: -70px;
     width: 100%;
     height: auto;
+    margin-top: -70px;
+    margin-left: 2%;
     }
 
 .input {
-width: 446px;
+width: 90%;
 height: 73px;
 border-radius: 20px;
 border: 1px solid #000;
@@ -30,7 +31,9 @@ cursor: pointer;
 }
 
 .buttonOrder{
-width: 446px;
+width: 90%;
+height: 73px;
+margin-left: 2%;
 padding: 20px 185px 20px 143px;
 align-items: flex-start;
 gap: 10px;

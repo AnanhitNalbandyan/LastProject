@@ -7,17 +7,19 @@ export const Product = (
         price,
         title,
         addToBasketHandler,
+        isAddingToBasket,
     }) => {
 
-//console.log(`title: ${title}`);
-    // console.log('Price:', price);
-   // console.log('Discount Price:', discont_price);
-        
+
     return (
         <div className={st.wrapper}>
             <img className={st.image} src={baseUrl + image} alt={title} />
             <button className={st.addToCard}
-                onClick={ addToBasketHandler}> Add to card </button>
+                onClick={addToBasketHandler}
+                disabled={isAddingToBasket}
+            >
+                {isAddingToBasket ? 'Product is adding' : 'Add to Cart'}
+            </button>
             <div className={st.titlePrice}>
                 <div className={st.priceContainer}>
                 <p className={st.price}>{`${price}$`}</p> 

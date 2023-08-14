@@ -1,8 +1,13 @@
+.container{
+    width: 100%;
+
+}
 .products{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    width: auto;
+    margin-left: -3%;
+    
 }
 
 @media (max-width: 1024px) {

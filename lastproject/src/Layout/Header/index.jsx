@@ -21,33 +21,33 @@ export const Header = () => {
                 <button className={st.btnCatalog}> <NavLink className={st.text} to='/catalog'>Catalog</NavLink></button> 
                 
             </div>
-
+            <div className={st.navBagWrapper}>
                 <nav >
 
                     <ul className={st.navWrapper}>
                         <li>
                             <NavLink className={({ isActive }) => (isActive ? st.active : '')}
-                                        to='/main page'>Main Page</NavLink>
+                                        to='/mainPage'>Main Page</NavLink>
                         </li>
                         <li>
                             <NavLink className={({ isActive }) => (isActive ? st.active : '')}
-                                        to='/all products'>All products</NavLink>
+                                        to='/allProducts'>All products</NavLink>
                         </li>
                         <li>
                             <NavLink className={({ isActive }) => (isActive ? st.active : '')}
-                                        to='/all sales'>All sales</NavLink>
+                                        to='/allSales'>All sales</NavLink>
                         </li>
                     </ul>
 
                 </nav>
                 
 
-            <span href="#">
+            <span className={st.bagCount} href="#">
                 <NavLink to="/basket">
                     <span className={st.count}>{countTotalProducts}</span>
                     <img className={st.bag} src={bag} alt="Basket" /></NavLink>
             </span> 
-            
+        </div> 
             
         </header>
     )

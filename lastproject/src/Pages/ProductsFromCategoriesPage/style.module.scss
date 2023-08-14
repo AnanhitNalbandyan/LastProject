@@ -1,0 +1,23 @@
+.byCategoryContainer{
+    width: 100%;
+}
+
+
+.categoryTitle{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%; 
+    letter-spacing: 1.2px;
+    margin-bottom: 10%;
+}
+.categoriesWrapper{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-left: -3%;
+}
+

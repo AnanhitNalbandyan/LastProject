@@ -1,7 +1,7 @@
 import st from './style.module.scss'
 import { SaleProductsList} from "../../Components/SaleProductsList"
 
-    export const AllSalesProducts = () => {
+    export const AllSalesProductsPage = () => {
 
     
         return (

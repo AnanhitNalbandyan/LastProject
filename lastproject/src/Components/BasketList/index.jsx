@@ -2,7 +2,8 @@ import st from './style.module.scss'
 import { ProductInBasket } from '../ProductInBasket'
 import basketEmpty from '../../Images/basket.png'
 import { useDispatch, useSelector } from 'react-redux'
-import {addProductToBasket,
+import {
+    addProductToBasket,
     cleanBasket,
     countTotalProducts,
     decreaseProduct,
@@ -71,8 +72,8 @@ export const BasketList = () => {
                         <div className={st.margin}>
                             <h2>Order details</h2>
                             <div className={st.totalPrice}>
-                                <h5>Total price: </h5>
-                                <p className={st.price}>{totalPrice}$</p>
+                                <h5>Total: </h5>
+                                <p className={st.price}>{totalPrice.toFixed(2)}$</p>
                             </div>
                             <ControlerOrder />
                         </div>

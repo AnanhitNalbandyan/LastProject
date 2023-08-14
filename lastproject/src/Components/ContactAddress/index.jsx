@@ -8,7 +8,7 @@ export const ContactAddress = () => {
         <>
         <div className={st.container}>
             <div className={st.contactUs}>
-            <h3 className={st.title}>Contact</h3>
+            <h3 className={st.titleContact}>Contact</h3>
             <p className={st.phone}>+49 999 999 99 99</p>
             <div className={st.socialMedia}>
             <li className={st.icon}>
@@ -26,9 +26,10 @@ export const ContactAddress = () => {
             </div>
             </div>
             <div className={st.ourAddress}>
-            <a href="https://goo.su/qUVF">
-                <address className={st.address}>Linkstraße 2, 8 OG, 10785, Berlin, Deutschland</address>
-            </a>
+                <h3 className={st.titleAddress}>Address</h3>        
+                <a href="https://goo.su/qUVF">
+                    <address className={st.address}>Linkstraße 2, 8 OG, 10785, Berlin, Deutschland</address>
+                </a>
 
             <div className={st.workingTime}>
                 <p className={st.info}>Working Hours:</p>

@@ -44,15 +44,16 @@ export const ProductDemonstration = () => {
                     <h1>LOADING</h1>
                 ) : (
                     <>
-                        <div className={st.productsContainer}>
+                        <div className={st.container}>
                             <ToastContainer autoClose={5000} />
+                            <div className={st.products}>
                             {discountedProducts && discountedProducts.slice(0, 4).map((el) => (
                                 <NavLink to={`/products/${el.id}`} key={el.id}>
                                     <Product {...el}
                                         addToBasketHandler={(event) => addToBasketHandler(event, el)} />
                                 </NavLink>
                             ))}
-    
+                            </div>
                         </div>
                     </>
                 )}

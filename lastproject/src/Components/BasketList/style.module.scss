@@ -1,8 +1,4 @@
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
+
 .container{
 width: 96%;
 height: auto;
@@ -24,9 +20,10 @@ display: flex;
 
 
 .orderBox{
-width: 58%;
+width: 53%;
 height: 393px;
-margin-left: -10px;
+margin-top: 2%;
+margin-left: -41%;
 border-radius: 21px;
 border: 2px solid #000;
 margin-bottom: 20px;
@@ -64,9 +61,17 @@ font-weight: 600;
 line-height: 130%; 
 letter-spacing: 0.96px;
 }
-
+.dollar{
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+}
 .buttonWrapper{
-width: 81%;
+width: 86%;
 height: auto;
 border-top: 1px solid #a7a7a7;
 margin-top: 20px;
@@ -74,8 +79,8 @@ margin-top: 20px;
 .button {
     margin-top: 40px;
     margin-bottom: 50px;
-    width: 200px;
-    height: 50px;
+    width: 250px;
+    height:40px;
     border-radius: 17px;
     border: 1px solid #393;
     background: #393;
@@ -85,7 +90,7 @@ margin-top: 20px;
     font-family: Montserrat;
     font-size: 28px;
     font-style: normal;
-    font-weight: 700;
-    line-height: 130%;
+    font-weight: 100;
+    line-height: 50%;
     letter-spacing: 0.84px;
 }

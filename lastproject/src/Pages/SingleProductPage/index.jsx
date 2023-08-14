@@ -22,8 +22,8 @@ export const SingleProductPage = () => {
     const addProductToBasketHandler = (event, el) => {
         event.preventDefault()
     
-        toast.info(`Product ${el.title} Added to Card!`, {
-        position: toast.POSITION.TOP_CENTER,
+        toast.success(`Product ${el.title} Added to Card!`, {
+        position: toast.POSITION.BOTTOM_LEFT,
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,

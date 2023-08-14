@@ -9,7 +9,7 @@
 
     
 
-    export const CategoriesList = () => {
+    export const CategoriesListPage = () => {
     const { data, isLoading } = useGetAllCategoriesQuery()
 
         const eachData = data && data

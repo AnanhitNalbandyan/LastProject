@@ -14,7 +14,9 @@ import { CatalogDemonstartion } from '../CatalogDemonstration'
         <div className={st.container}>
         <div className={st.wrapper}>
             <h2>Catalog</h2>
-                <NavLink className={st.category}to='/catalog'>All categories</NavLink>   
+                        <NavLink className={st.category} to='/catalog'>
+                            <p className={st.text}>All categories</p> 
+                        </NavLink>   
     </div>
                     
         <div className={st.categories}>

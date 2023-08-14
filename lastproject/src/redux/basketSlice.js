@@ -46,4 +46,4 @@ export const {
     deleteProduct,
     countTotalPrice
 } = basketSlice.actions;
-export const basketReducer = basketSlice.reducer; 
+export const basketReducer = basketSlice.reducer
