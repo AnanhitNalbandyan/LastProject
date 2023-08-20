@@ -1,0 +1,203 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.empty {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.empty img {
+    width: 40%;
+    height: auto;
+    margin: 2%;
+    transform: scaleX(-1);
+}
+
+.productInBasket{
+    width: 60%;
+}
+.orderBox {
+    width: 35%;
+    height: 393px;
+    border-radius: 21px;
+    border: 2px solid #000;
+    margin: 2% 5%;
+}
+
+.title {
+    margin-left: 25px;
+}
+
+.totalPrice {
+    max-width: 80%;
+    height: auto;
+    margin-left: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total {
+    width: 152px;
+    height: 31px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 0.72px;
+}
+
+.price {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.96px;
+}
+
+.dollar {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+}
+
+.buttonWrapper {
+    width: 57%;
+    height: auto;
+    border-top: 1px solid #a7a7a7;
+    margin-top: 20px;
+}
+
+.button {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    width: 250px;
+    height: 40px;
+    border-radius: 17px;
+    border: 1px solid #393;
+    background: #393;
+    border-color: none;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: 50%;
+    letter-spacing: 0.84px;
+}
+
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+    
+.title {
+    margin-left: 25px;
+}
+
+.totalPrice {
+    max-width: 60%;
+}
+
+.total {
+    width: 152px;
+    height: 20px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 0.72px;
+}
+
+.price {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.96px;
+}
+
+.dollar {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+}
+    .orderBox {
+        width: 60%;
+    }
+}
+
+
+@media (max-width: 768px) {
+.orderBox {
+        width: 90%;
+}
+.title {
+    margin-left: 25px;
+}
+h2{
+    font-size: 220%;
+    margin-top: 2%;
+}
+
+.totalPrice {
+    width: 100%;
+    margin-bottom: 20%;
+}
+
+h5{
+    font-size: 80%;
+}
+p{
+    width: 80%;
+    margin-top: 5%;
+}
+.price {
+    font-size: 18px;
+}
+
+.dollar {
+    font-size: 10px;
+}
+.orderBox{
+    margin: 2% 1%;
+}
+}
+
+
+
+@media (max-width: 400px) {
+    .orderBox {
+        width: 90%;
+        margin: 2% 0%;
+}
+
+}

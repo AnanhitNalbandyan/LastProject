@@ -1,0 +1,24 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.map{
+    width: 100%;
+}
+
+    @media (max-width: 768px) {
+    .map {
+        width: 100%;
+    }
+    }
+
+
+    @media (max-width: 480px) {
+    .map {
+        
+        width: 100%;
+    }
+}

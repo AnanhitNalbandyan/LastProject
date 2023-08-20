@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 100%;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logoWrapper {
+    width: 30%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 20%;
+}
+
+.logo {
+    width: 72px;
+    height: 72px;
+}
+
+.logo a {
+    gap: 10%;
+}
+
+.btnCatalog:hover,
+.btnCatalog:focus {
+    transform: scale(1.1);
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+
+.btnCatalog {
+    width: 125px;
+    height: 49px;
+    margin-left: 10%;
+    border-radius: 5px;
+    border: 2px solid #393;
+    background: #393;
+}
+
+.text {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+}
+.navBagWrapper{
+    width: 60%;
+    margin-left: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60%;
+}
+.navWrapper {
+    width: 250%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+.li:hover{
+    transform: scale(1.01);
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+.li:focus {
+    cursor: pointer;
+}
+
+.navWrapper li {
+    list-style-type: none;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+}
+
+.navWrapper a:hover {
+    color: #393;
+}
+a.active {
+    color: rgb(120, 217, 183);
+}
+
+.bagCount{
+    width: 10%;
+    position: relative;
+}
+
+.bag:hover,
+.bag:focus {
+    transform: scale(1.1);
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+.bag {
+    font-size: 40px;
+    
+}
+.count{
+    position: absolute;
+    top:16px;
+    left: 8px;
+    font-size: 20px;
+    color: rgb(70, 149, 70);
+    line-height: 40%;
+
+}
+
+@media (max-width: 1024px) {
+    .container {
+        width: 80%;
+        padding-bottom: 1%;
+        padding-top: 1%;
+    }
+
+    .logoWrapper {
+        width: 150px;
+        margin-left: 2%;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo a {
+        margin-right: 30px;
+    }
+
+    .btnCatalog {
+        width: 100px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+    .navBagWrapper{
+        width: 50%;
+        margin-left: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40%;
+    }
+    .navWrapper {
+        width: 250px;
+        margin-left: 20%;
+    }
+
+    .navWrapper li {
+        font-size: 14px;
+    }
+
+    .bag:hover,
+    .bag:focus {
+        transform: scale(1.01);
+        transition-duration: 500ms;
+        cursor: pointer;
+    }
+
+    .bag {
+        font-size: 30px;
+        position: relative;
+    }
+
+    .count {
+        position: absolute;
+        margin: calc(0.8% + 0.11vw);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-bottom: 0.5%;
+        padding-top: 0.5%;
+    }
+
+    .logoWrapper {
+        width: 160px;
+        margin-left: 2%;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .btnCatalog {
+        width: 90px;
+        height: 36px;
+        font-size: 12px;
+    }
+
+    .text {
+        font-size: 12px;
+    }
+    
+    .navBagWrapper{
+        width: 40%;
+        margin-left: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40%;
+    }
+    .navWrapper {
+        width: 200px;
+        margin-left: 15%;
+    }
+
+    .navWrapper li {
+        font-size: 12px;
+    }
+
+    .bag {
+        font-size: 24px;
+    }
+
+    .count {
+        font-size: 16px;
+        margin: calc(0.6% + 0.11vw);
+    }
+}
+
+@media (max-width: 400px) {
+    .container{
+        gap: 15%;
+    }
+
+    .logoWrapper {
+        width: 20%;
+        margin-left: 2%;
+    }
+
+    .logo {
+        width: 20px;
+        height: 20px;
+    }
+
+    .btnCatalog {
+        width: 60px;
+        height: 22px;
+        font-size: 10px;
+    }
+
+    .text {
+        font-size: 10px;
+    }
+
+    .navBagWrapper{
+        width: 30%;
+        margin-left: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60%;
+    }
+    .navWrapper {
+        width: 100px;
+        margin-left: 30%;
+    }
+
+    .navWrapper li {
+        font-size: 10px;
+    }
+    .navBagWrapper{
+        gap: 80%;
+    }
+    .bag {
+        font-size: 20px;
+    }
+
+    .count {
+        font-size: 14px;
+        margin: calc(0.4% + 0.11vw);
+    }
+}
+
+
+
+

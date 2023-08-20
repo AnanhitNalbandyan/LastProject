@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.products{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+    .products {
+        justify-content: center; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    .products {
+        justify-content: flex-start; 
+    }
+}
+
+
+@media (max-width: 400px) {
+    .products {
+        flex-direction: column; 
+        align-items: center; 
+    }
+}

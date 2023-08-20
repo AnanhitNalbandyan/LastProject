@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 96%;
+    height:625px;
+}
+
+
+
+@media (max-width: 1024px) {
+    .container {
+        width: 90%; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 85%; 
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        width: 80%; 
+        height: auto;
+    }
+}
