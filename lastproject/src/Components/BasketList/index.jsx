@@ -6,7 +6,7 @@ import {
     addProductToBasket,
     cleanBasket,
     countTotalProducts,
-    decreaseProduct,
+    descreaseProduct,
     deleteProduct,
     countTotalPrice} from '../../redux/basketSlice'
 import { ControlerOrder } from '../ControlerOrder'
@@ -32,10 +32,10 @@ export const BasketList = () => {
     }
 
     const descreaseProductHandler = (product) => {
-        dispatch(decreaseProduct(product))
-        dispatch(countTotalPrice())
-        dispatch(countTotalProducts())
-    }
+    dispatch(descreaseProduct(product))
+    dispatch(countTotalPrice())
+    dispatch(countTotalProducts())
+}
 
     const addProductToBasketHandler = (product) => {
         dispatch(addProductToBasket(product))
@@ -47,7 +47,7 @@ export const BasketList = () => {
     return (
         <>
             <div className={st.container}>
-                <div>
+                <div className={st.productInBasket}>
                     {returnedValue.length === 0 ? (
                         <div className={st.empty}>
                         <h3>Your basket is empty</h3>
@@ -57,32 +57,33 @@ export const BasketList = () => {
                         </div>
                     ) : (
                         returnedValue.map((product) => (
-                            <ProductInBasket
-                                key={product.id}
-                                {...product}
-                                deleteProductHandler={() => deleteProductHandler(product)}
-                                addProductToBasketHandler={() => addProductToBasketHandler(product)}
-                                decreaseProductHandler={() => descreaseProductHandler(product)}
-                            />
+                                <ProductInBasket
+                                    key={product.id}
+                                    {...product}
+                                    deleteProductHandler={() => deleteProductHandler(product)}
+                                    addProductToBasketHandler={() => addProductToBasketHandler(product)}
+                                    descreaseProductHandler={() => descreaseProductHandler(product)}
+                                />
                         ))
                     )}
                 </div>
                 {returnedValue.length !== 0 && (
                 <div className={st.orderBox}>
-                        <div className={st.margin}>
+                        <div className={st.title}>
                             <h2>Order details</h2>
                             <div className={st.totalPrice}>
-                                <h5>Total: </h5>
-                                <p className={st.price}>{totalPrice.toFixed(2)}$</p>
+                                <h5 className={st.total}>Total: </h5>
+                                <p className={st.price}>{totalPrice.toFixed(2)} <a className={st.dollar} href="dollar">$</a> </p>
                             </div>
-                            <ControlerOrder />
+                            
                         </div>
-                    
-                    </div> 
+                    <ControlerOrder />
+                </div> 
                 )}    
             </div>
             <div className={st.buttonWrapper}>
-                <button className={st.button} onClick={() => cleanBasketHandler()}>
+                <button className={st.button}
+                        onClick={() => cleanBasketHandler()}>
                     Clean basket
                 </button>
             </div>

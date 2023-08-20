@@ -52,11 +52,11 @@ export const SingleProductPage = () => {
                 <div className={st.descriptionPrice}>
                     <div className={st.pricePart}>
                         <div className={st.numberSymbl}>
-                            <p className={st.price}>{eachData.discont_price ? eachData.discont_price : eachData.price}</p> 
-                            <p className={st.dollar}>$</p>
+                            <p className={st.price}>{eachData.price}</p> 
+                                <a className={st.dollar} href="dollar">$</a> 
                         </div>           
                     
-                    <span className={st.discount}>{eachData.discont_price ? `${eachData.discont_price}$` : ""}</span>
+                    <span className={st.discount}>{eachData.discont_price ? `${eachData.discont_price}$`  : ""}</span>
                     <span className={st.percent}> {eachData.discont_price ?
                                 `${Math.round(100 - eachData.discont_price / (eachData.price / 100)
                     )}%`: ""}</span>

@@ -7,9 +7,7 @@ export const AllProductsPage = () => {
         
             <div className={st.container}>
                 <h2 className={st.title}>All Products</h2>
-                <div className={st.productList}>
                     <ProductsList/>
-                </div>
             </div>
         
     )

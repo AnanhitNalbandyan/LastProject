@@ -10,20 +10,17 @@ export const Discount = () => {
         <div className={st.container}>
 
             <img className={st.litleMan} src={litleman} alt="" />
-        
-            <div className={st.textInput}>
-
-                    <div className={st.text}>
-                        <p>5% off <br /> <span>on the first order</span> </p>  
-                    </div>
+            <div className={st.wrapper}>
+                    <dv className={st.text}>
+                    
+                    <p>5% off <br /> <span>on the first order</span> </p>  
+                    
+                </dv>
                 
-                <div className={st.controlerDiscount}>
-                    <ControlerDiscount/>
-                </div>
-            
-
+                <ControlerDiscount/>
             </div>
-        
+            
         </div>
+        
     )
 }

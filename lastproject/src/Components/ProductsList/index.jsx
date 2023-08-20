@@ -1,6 +1,6 @@
 
 import { NavLink} from 'react-router-dom'
-import {  useState } from "react"
+import {  useCallback, useState } from "react"
 
 import { useGetAllPropductsQuery } from "../../redux/apiSlice"
 import { addProductToBasket, countTotalPrice } from "../../redux/basketSlice"
@@ -48,16 +48,16 @@ export const ProductsList = () => {
 
             setTimeout(() => {
                 setIsAddingToBasket(false)
-            }, 3000)
+            }, 1000)
         } catch (error) {
             console.error("Error adding product to basket:", error);
             setIsAddingToBasket(false)
         }
     }
 
-    const setFiltredProductsHandler = (productsToFilter) => {
+    const setFiltredProductsHandler = useCallback((productsToFilter) => {
         setFiltredProducts(productsToFilter)
-    }
+    }, [])
 
     return (
         <div className={st.container}>

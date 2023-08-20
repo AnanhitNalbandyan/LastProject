@@ -12,43 +12,43 @@ export const Header = () => {
 
 
     return (
-        <header className={st.container}>
-
-            <div className={st.logoWrapper}>
-                <NavLink to="/">
-                    <span href="#"> <img className={st.logo} src={logo} alt="" /></span>
-                </NavLink>
-                <button className={st.btnCatalog}> <NavLink className={st.text} to='/catalog'>Catalog</NavLink></button> 
+    
+        <div className={st.container}>
                 
-            </div>
-            <div className={st.navBagWrapper}>
-                <nav >
+                <div className={st.logoWrapper}>
+                    <NavLink to="/">
+                        <span href="#"> <img className={st.logo} src={logo} alt="" /></span>
+                    </NavLink>
+                    <button className={st.btnCatalog}> <NavLink className={st.text} to='/catalog'>Catalog</NavLink></button> 
+                    
+                </div>
+                <div className={st.navBagWrapper}>
+                    <nav >
 
-                    <ul className={st.navWrapper}>
-                        <li>
-                            <NavLink className={({ isActive }) => (isActive ? st.active : '')}
-                                        to='/mainPage'>Main Page</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className={({ isActive }) => (isActive ? st.active : '')}
-                                        to='/allProducts'>All products</NavLink>
-                        </li>
-                        <li>
-                            <NavLink className={({ isActive }) => (isActive ? st.active : '')}
-                                        to='/allSales'>All sales</NavLink>
-                        </li>
-                    </ul>
+                        <ul className={st.navWrapper}>
+                            <li>
+                                <NavLink className={({ isActive }) => (isActive ? st.active : '')}
+                                            to='/'>Main Page</NavLink>
+                            </li>
+                            <li>
+                                <NavLink className={({ isActive }) => (isActive ? st.active : '')}
+                                            to='/allProducts'>All products</NavLink>
+                            </li>
+                            <li>
+                                <NavLink className={({ isActive }) => (isActive ? st.active : '')}
+                                            to='/allSales'>All sales</NavLink>
+                            </li>
+                        </ul>
 
-                </nav>
-                
+                    </nav>
+                    
 
-            <span className={st.bagCount} href="#">
-                <NavLink to="/basket">
-                    <span className={st.count}>{countTotalProducts}</span>
-                    <img className={st.bag} src={bag} alt="Basket" /></NavLink>
-            </span> 
-        </div> 
-            
-        </header>
+                <span className={st.bagCount} href="#">
+                    <NavLink to="/basket">
+                        <span className={st.count}>{countTotalProducts}</span>
+                        <img className={st.bag} src={bag} alt="Basket" /></NavLink>
+                </span> 
+                </div> 
+        </div>    
     )
 }

@@ -34,7 +34,7 @@ import st from './style.module.scss'
         })
 
         setFiltredProducts(sortedProducts) //  без фильров возвращает целиком
-    }, [products, fromPrice, toPrice, sortOrder, setFiltredProducts])
+    }, [fromPrice, toPrice, sortOrder])
 
     return (
     <div className={st.container}>

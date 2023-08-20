@@ -1,13 +1,13 @@
 .inputWrapper {
     width: 100%;
     height: auto;
-    margin-top: -70px;
+    margin-top: 5%;
     margin-left: 2%;
     }
 
 .input {
 width: 90%;
-height: 73px;
+height: 76px;
 border-radius: 20px;
 border: 1px solid #000;
 background: #FFF;
@@ -19,7 +19,7 @@ font-style: normal;
 font-weight: 500;
 line-height: 130%;
 letter-spacing: 0.54px;
-margin-bottom: 20px;
+margin-bottom: 5%;
 
 }
 
@@ -31,10 +31,10 @@ cursor: pointer;
 }
 
 .buttonOrder{
-width: 90%;
-height: 73px;
+max-width: 90%;
+height: 76px;
 margin-left: 2%;
-padding: 20px 185px 20px 143px;
+padding: 2% 45% 2% 45%;
 align-items: flex-start;
 gap: 10px;
 border-radius: 17px;
@@ -51,6 +51,8 @@ letter-spacing: 0.84px;
 .answer{
     width: 403px;
     height: 105px;
+    margin-top: 10%;
+    margin-left: 10%;
     border-radius: 25.147px;
     border: 2.395px solid #fff;
     background: linear-gradient(223deg, #393 0%, #006300 100%);
@@ -66,13 +68,26 @@ letter-spacing: 0.84px;
     align-items: center;
     padding: 20px;
     }
+
 @media only screen and (max-width: 767px) {
     .input {
+        width: 80%;
+        height: auto;
         font-size: 14px;
+        padding: 10px 20px;
+        margin-left: 5%;
     }
 
     .buttonOrder {
+        width: 80%;
+        padding: 0% 30% ;
         font-size: 20px;
+        margin-left: 8%;
+    }
+
+    .answer{
+        width: 80%;
+        font-size: 18px;
     }
 }
 
@@ -83,6 +98,6 @@ letter-spacing: 0.84px;
     }
 
     .buttonOrder {
-        font-size: 22px;
+        font-size: 15px;
     }
 }

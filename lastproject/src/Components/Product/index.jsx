@@ -22,7 +22,8 @@ export const Product = (
             </button>
             <div className={st.titlePrice}>
                 <div className={st.priceContainer}>
-                <p className={st.price}>{`${price}$`}</p> 
+                    <p className={st.price}>{price} <a className={st.dollar} href="dollar">$</a>
+                    </p> 
                 
                 <span className={st.discont_price}>{discont_price ? `${discont_price}$` : ""}</span>
                 <span className={st.percent}> {discont_price ?

@@ -9,8 +9,8 @@
     width: 300px;
     height: auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 5%;
 }
 .price label{
     color: #000;
@@ -20,63 +20,6 @@
     font-weight: 600;
     line-height: 130%; 
     letter-spacing: 0.6px;
-}
-
-
-@media (max-width: 1024px) {
-        .container{
-        width: 100%;
-        margin-left: -100%;
-        margin-bottom: 10px;
-}
-    .price {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .sorted {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-@media (max-width: 768px) {
-    .container{
-        width: 100%;
-        margin-left: -100%;
-        margin-bottom: 10px;
-}
-    .price {
-        width: 100%; 
-        flex-direction: column; 
-        align-items: flex-start; 
-    }
-    .price label {
-        margin-bottom: 10px;
-    }
-    .price input {
-        width: 100%; 
-        margin-bottom: 10px; 
-        padding: 8px; 
-    }
-
-    .sorted {
-        width: 100%; 
-        flex-direction: column; 
-        align-items: flex-start;
-    }
-    .sortText {
-        margin-bottom: 10px; 
-    }
-    .sorted select {
-        width: 100%; 
-        margin-left: 0; 
-    }
-    .option {
-        margin-left: 0; 
-    }
 }
 
 .price input{
@@ -95,37 +38,11 @@
 }
 
 
-.discountCheckbox{
-    width: 300px;
-    height: auto;
-    margin-left: 50px;
-    display: flex;
-    align-items: flex-start;
-}
-.discountCheckbox label{
-    color: #000;
-    font-family: Montserrat;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 130%; 
-    letter-spacing: 0.6px;
-}
-.discountCheckbox input{
-    width: 20px;
-    height: 20px;
-    margin-left: 20px;
-    margin-right: 10px;
-    flex-shrink: 0;
-    border-radius: 7px;
-    border: 1px solid #000;
-} 
+
 .sorted{
-    width: 400px;
+    width: 100%;
     height: auto;
-    margin-left: 30px;
-    display: flex;
-    justify-content: space-between;
+    margin-left: 10%;   
 }
 
 .sortText{
@@ -134,7 +51,7 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
-    line-height: 130%; /* 26px */
+    line-height: 130%; 
     letter-spacing: 0.6px;
     margin-right: 20px;
 }
@@ -162,4 +79,67 @@
     font-weight: 500;
     line-height: 130%; 
     letter-spacing: 0.48px;
+}
+
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+    
+    .price {
+        width: 50%; 
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+    
+    .sorted {
+        width: 100%; 
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+    
+    .sortText {
+        margin-right: 0; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    .price {
+        width: 50%; 
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+    
+    
+    .sorted {
+        width: 100%; 
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+    
+    .sortText {
+        margin-right: 0; 
+    }
+}
+
+
+@media (max-width: 400px) {
+    .price {
+        width: 25%; 
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+    
+    .sorted {
+        width: 50%; 
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+    
+    .sortText {
+        margin-right: 0; 
+    }
 }

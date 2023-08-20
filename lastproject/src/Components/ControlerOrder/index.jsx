@@ -2,15 +2,41 @@
     import { baseUrl } from '../../redux/apiSlice'
     import { useForm, Controller } from 'react-hook-form'
     import { usePostPhoneNumberForDiscountMutation } from '../../redux/apiSlice'
-import { useState } from 'react'
-    
+    import { useState } from 'react'
+    import { useDispatch } from 'react-redux';
+    import {
+    cleanBasket,
+    countTotalProducts,
+    countTotalPrice} from '../../redux/basketSlice'
 
     export const ControlerOrder = () => {
         
     const [phoneEntered, setPhoneEntered] = useState(false)
-    const [postNumberForDiscount, { isError, isLoading, isSuccess }] = usePostPhoneNumberForDiscountMutation();
-    const { handleSubmit, control, setValue } = useForm();
+    const [postNumberForDiscount, { isError, isLoading, isSuccess }] = usePostPhoneNumberForDiscountMutation()
+    const { handleSubmit, control, setValue } = useForm()
+    const [isOrdering, setIsOrdering] = useState(false)
+    const dispatch = useDispatch()
 
+        
+    const cleanBasketHandler = () => {
+        dispatch(cleanBasket())
+        dispatch(countTotalPrice())
+        dispatch(countTotalProducts())
+    }
+
+    const orderButtonClickHandler = () => {
+        setIsOrdering(true);
+        setTimeout(() => {
+            sendNumberHandler(objToSend);
+            setTimeout(() => {
+                cleanBasketHandler();
+                setIsOrdering(false);
+            }, 2000); // Задержка в 2000 миллисекунд (2 секунды) перед очисткой корзины
+        }, 2000); // Задержка в 2000 миллисекунд (2 секунды) перед отправкой данных
+
+        // Дополнительный код, который может выполняться независимо от таймера
+    };
+        
         const onSubmit = async (data) => {
             const response = await fetch(`${baseUrl}sale/send`, {
             method: "POST",
@@ -82,9 +108,14 @@ import { useState } from 'react'
                 </div>
                 )}
             />
-            <button className={st.buttonOrder} onClick={() => sendNumberHandler(objToSend)}>
-                Order
-            </button>
+                <button
+                        className={isOrdering ? `${st.buttonOrder} ${st.buttonOrderDisabled}` : st.buttonOrder}
+                        onClick={orderButtonClickHandler}
+                        disabled={isOrdering}
+                >
+                        {isOrdering ? 'Ordering...' : 'Order'}
+                            </button>
+                
             </>
         )}
         {isLoading ? <div>Loading</div> : null}

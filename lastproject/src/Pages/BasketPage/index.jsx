@@ -8,8 +8,8 @@ export const BasketPage = () => {
     
 
     return (
-        <div>
-            <div className={st.container}>
+    
+            <div className={st.wrapper}>
             <h2>Shopping cart</h2>
             <NavLink className={st.store} to='/'> 
                 Back to the store <span> <AiOutlineRight/></span>
@@ -17,6 +17,6 @@ export const BasketPage = () => {
             <BasketList/>
             </div>
             
-        </div>
+    
     )
 }

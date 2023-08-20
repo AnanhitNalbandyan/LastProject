@@ -1,5 +1,5 @@
     import { NavLink} from 'react-router-dom'
-    import { useState } from "react"
+    import { useCallback, useState } from "react"
     import { useDispatch } from "react-redux"
     import { ToastContainer, toast } from 'react-toastify'
     
@@ -49,7 +49,7 @@
 
             setTimeout(() => {
                 setIsAddingToBasket(false)
-            }, 3000)
+            }, 1000)
         } catch (error) {
             console.error("Error adding product to basket:", error);
             setIsAddingToBasket(false)
@@ -59,9 +59,9 @@
     const productsWithDiscount =
             eachData ? eachData.filter(el => el.discont_price) : []
     
-    const setFiltredProductsHandler = productsToFilter => {
+    const setFiltredProductsHandler = useCallback(productsToFilter => {
     setFilteredProducts(productsToFilter)
-}
+}, [])
         return (
         <div className={st.container}>
         {isLoading ? (

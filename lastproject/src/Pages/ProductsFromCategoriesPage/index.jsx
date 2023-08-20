@@ -54,7 +54,7 @@ export const ProductsFromCategoriesPage = () => {
 
             setTimeout(() => {
                 setIsAddingToBasket(false)
-            }, 3000)
+            }, 1000)
         } catch (error) {
             console.error("Error adding product to basket:", error);
             setIsAddingToBasket(false)

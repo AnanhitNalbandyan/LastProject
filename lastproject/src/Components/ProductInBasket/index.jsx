@@ -37,7 +37,7 @@
         {discont_price ? (
                         <>
                             <p className={st.price}>
-                                {discont_price}$
+                                {discont_price} <a className={st.dollar} href="dollar">$</a>
                             </p>
                             <p className={st.discont_price}>
                                 {price} $    
@@ -45,7 +45,7 @@
                         </>  
                     ) : (      
                             <p className={st.price}>
-                            {price}$
+                            {price} <a className={st.dollar} href="dollar">$</a>
                             </p>
         )}                
             </div>

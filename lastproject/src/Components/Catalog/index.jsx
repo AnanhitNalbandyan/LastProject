@@ -19,9 +19,8 @@ import { CatalogDemonstartion } from '../CatalogDemonstration'
                         </NavLink>   
     </div>
                     
-        <div className={st.categories}>
         <CatalogDemonstartion/>
-        </div>
+        
     </div>
                 </>
     )

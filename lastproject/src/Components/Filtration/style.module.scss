@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 3%;
 }
 .price{
     width: 22%;
@@ -67,8 +67,6 @@
     width: 30%;
     height: auto;
     margin-left: 30px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .sortText{
@@ -107,102 +105,81 @@
     letter-spacing: 0.48px;
 }
 
-/* ≥ 1200px */
-@media (min-width: 1200px) {
+@media (max-width: 1024px) {
     .container {
-        margin-bottom: 40px;
+        flex-direction: column; 
+        align-items: flex-start; 
     }
     
     .price {
-        width: 22%;
-        margin-left: 0;
+        width: 50%; 
+        margin-left: 0; 
+        margin-top: 20px; 
     }
     
     .discountCheckbox {
-        width: 20%;
-        margin-left: 50px;
-    }
-    
-    .sorted {
-        width: 30%;
-        margin-left: 30px;
-    }
-}
-
-/* ≥ 992px */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .container {
-        margin-bottom: 30px;
-    }
-    
-    .price {
-        width: 25%;
-        margin-left: 0;
-    }
-    
-    .discountCheckbox {
-        width: 20%;
-        margin-left: 40px;
-    }
-    
-    .sorted {
-        width: 35%;
-        margin-left: 25px;
-    }
-}
-
-/* ≥ 768px */
-@media (min-width: 768px) and (max-width: 991px) {
-    .container {
-        margin-bottom: 20px;
-    }
-    
-    .price {
-        width: 30%;
-        margin-left: 0;
-    }
-    
-    .discountCheckbox {
-        width: 25%;
-        margin-left: 30px;
-    }
-    
-    .sorted {
-        width: 40%;
-        margin-left: 20px;
-    }
-}
-
-/* ≥ 576px */
-@media (min-width: 576px) and (max-width: 767px) {
-    .container {
-        margin-bottom: 10px;
-    }
-    
-    .price {
-        width: 40%;
-        margin-left: 0;
-    }
-    
-    .discountCheckbox {
-        width: 35%;
-        margin-left: 20px;
-    }
-    
-    .sorted {
-        width: 50%;
-        margin-left: 15px;
-    }
-}
-
-/* < 576px */
-@media (max-width: 575px) {
-    .container {
-        margin-bottom: 5px;
-    }
-    
-    .price, .discountCheckbox, .sorted {
         width: 100%;
-        margin-left: 0;
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+    
+    .sorted {
+        width: 100%; 
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+    
+    .sortText {
+        margin-right: 0; 
+    }
+}
+
+
+@media (max-width: 768px) {
+    .price {
+        width: 50%; 
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+    
+    .discountCheckbox {
+        width: 100%;
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+    
+    .sorted {
+        width: 100%; 
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+    
+    .sortText {
+        margin-right: 0; 
+    }
+}
+
+
+@media (max-width: 400px) {
+    .price {
+        width: 25%; 
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+    
+    .discountCheckbox {
+        width: 50%;
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+    
+    .sorted {
+        width: 50%; 
+        margin-left: 0; 
+        margin-top: 20px; 
+    }
+    
+    .sortText {
+        margin-right: 0; 
     }
 }

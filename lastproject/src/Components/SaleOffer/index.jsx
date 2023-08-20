@@ -13,9 +13,7 @@ export const SaleOffer = () => {
             <h2 className={st.title}>Sale</h2>
             </NavLink>
 
-        <div className={st.products}>
-            <ProductDemonstration />
-        </div>        
+            <ProductDemonstration />       
     
     
     </div>

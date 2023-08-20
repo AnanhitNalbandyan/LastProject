@@ -28,7 +28,7 @@ export const ContactAddress = () => {
             <div className={st.ourAddress}>
                 <h3 className={st.titleAddress}>Address</h3>        
                 <a href="https://goo.su/qUVF">
-                    <address className={st.address}>Linkstraße 2, 8 OG, 10785, Berlin, Deutschland</address>
+                    <address className={st.address}>Linkstraße 2, 8 OG, 10785, <br /> Berlin, Deutschland</address>
                 </a>
 
             <div className={st.workingTime}>

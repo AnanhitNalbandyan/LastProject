@@ -28,10 +28,10 @@ const basketSlice = createSlice({
 
         countTotalProducts: (state) => { state.totalProducts = state.products.length },
         
-        decreaseProduct: (state, action) => {
+        descreaseProduct: (state, action) => {
             const productById = state.products.find(({ id }) => id === action.payload.id);
             const index = state.products.findIndex(el => el.id === action.payload.id);
-            productById.quantity > 1 ? productById.quantity-- : state.products.splice(index, 1)
+            productById.quantity > 1 ? (productById.quantity -= 1 ) : state.products.splice(index, 1)
 
         },
 
@@ -42,7 +42,7 @@ export const {
     addProductToBasket,
     cleanBasket,
     countTotalProducts,
-    decreaseProduct,
+    descreaseProduct,
     deleteProduct,
     countTotalPrice
 } = basketSlice.actions;
