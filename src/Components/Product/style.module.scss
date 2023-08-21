@@ -19,10 +19,10 @@
 }
 
 .image {
-    width: 300px;
+    width: 330px;
     height: 300px;
     background-position: center;
-    object-fit: cover;
+    object-fit:fill;
     margin-bottom: 3%;
 }
 
