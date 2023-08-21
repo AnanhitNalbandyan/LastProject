@@ -7,7 +7,11 @@
     import {
     cleanBasket,
     countTotalProducts,
-    countTotalPrice} from '../../redux/basketSlice'
+    countTotalPrice
+    } from '../../redux/basketSlice'
+    
+    import { ToastContainer, toast } from 'react-toastify'
+    import 'react-toastify/dist/ReactToastify.css'
 
     export const ControlerOrder = () => {
         
@@ -25,17 +29,17 @@
     }
 
     const orderButtonClickHandler = () => {
-        setIsOrdering(true);
+        setIsOrdering(true)
         setTimeout(() => {
-            sendNumberHandler(objToSend);
+            sendNumberHandler(objToSend)
             setTimeout(() => {
-                cleanBasketHandler();
-                setIsOrdering(false);
+                cleanBasketHandler()
+                setIsOrdering(false)
             }, 2000); // Задержка в 2000 миллисекунд (2 секунды) перед очисткой корзины
-        }, 2000); // Задержка в 2000 миллисекунд (2 секунды) перед отправкой данных
+        }, 1000); // Задержка в 2000 миллисекунд (2 секунды) перед отправкой данных
 
-        // Дополнительный код, который может выполняться независимо от таймера
-    };
+        
+    }
         
         const onSubmit = async (data) => {
             const response = await fetch(`${baseUrl}sale/send`, {
@@ -46,10 +50,10 @@
             body: JSON.stringify(data),
             })
             if (response.ok) {
-            console.log('response = ok')
-        } else {
-            console.log('Ooops');
-        }
+                toast.success('Your application has been accepted, we will contact you!!!')
+            } else {
+                toast.error('Oops, something went wrong.')
+            }
         }
 
     const isPhoneValid = (phone) => {
@@ -61,7 +65,8 @@
     const phoneValue = el.target.value;
     const sanitizedPhoneValue = phoneValue.replace(/[^0-9\+]/g, "");
     
-    if (sanitizedPhoneValue.length < 10) {
+        if (sanitizedPhoneValue.length < 10) {
+        toast.warn('You must enter at least 10 characters.')
         setValue('phone', sanitizedPhoneValue);
         setPhoneEntered(false)
     } else {
@@ -120,6 +125,7 @@
         )}
         {isLoading ? <div>Loading</div> : null}
         {isError ? <div>Error</div> : null}
+        <ToastContainer/>
         </form>
         )
     }

@@ -4,6 +4,10 @@ import { useForm, Controller } from 'react-hook-form'
 import { usePostPhoneNumberForDiscountMutation } from '../../redux/apiSlice'
 import { useState } from 'react'
 
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+
 export const ControlerDiscount = () => {
     
 const [phoneEntered, setPhoneEntered] = useState(false)
@@ -19,11 +23,11 @@ const { handleSubmit, control, setValue } = useForm();
         body: JSON.stringify(data),
         })
         if (response.ok) {
-        console.log('response = ok')
-    } else {
-        console.log('Ooops');
-    }
-    }
+            toast.success('Your application has been accepted, we will contact you!!!')
+        } else {
+            toast.error('Oops, something went wrong.')
+        }
+        }
 
 const isPhoneValid = (phone) => {
     return phone.startsWith('+49') || phone === '+4' || phone === '+'
@@ -34,7 +38,8 @@ const handlePhoneChange = (el) => {
     const sanitizedPhoneValue = phoneValue.replace(/[^0-9\+]/g, "");
     
     if (sanitizedPhoneValue.length < 10) {
-        setValue('phone', sanitizedPhoneValue);
+        toast.warn('You must enter at least 10 characters.')
+        setValue('phone', sanitizedPhoneValue)
         setPhoneEntered(false)
     } else {
         setValue('phone', (isPhoneValid(sanitizedPhoneValue) ? sanitizedPhoneValue : `+49${sanitizedPhoneValue}`).replace(/[^0-9\+]/g, ""));
@@ -87,6 +92,8 @@ const objToSend = {
         )}
         {isLoading ? <div>Loading</div> : null}
         {isError ? <div>Error</div> : null}
+        
+        <ToastContainer/>
         </form>
     )
     }
