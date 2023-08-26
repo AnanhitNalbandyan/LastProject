@@ -72,12 +72,19 @@
 
 
 @media (max-width: 1024px) {
+    .container{
+        width: 110%;
+        height: 400px;
+    }
     .wrapper {
+        width: 100%;
         margin-left: 30px;
+        
     }
 
     .sale {
         font-size: 60px;
+        margin-top: 5%;
     }
 
     .season {
@@ -88,60 +95,81 @@
     .btnSale {
         font-size: 20px;
     }
+    .waterfall {
+        width: 40%;
+        height: 60%;
+        margin-top: 3%;
+        
+    }
 }
 
 
 @media (max-width: 768px) {
     .container {
+        width: 135%;
         height: auto;
+        display: flex;
+        flex-direction: column;
     }
-
-    .wrapper {
-        padding-top: 100px;
-        margin-left: 20px;
-    }
-
-    .sale {
-        font-size: 40px;
-    }
-
-    .season {
-        font-size: 36px;
-        margin-bottom: 30px;
-    }
-
-    .btnSale {
-        font-size: 18px;
-        width: 130px;
-        height: 70px;
-        margin-bottom: 5%;
-    }
-
-    .waterfall {
-        width: 40%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-
-@media (max-width: 400px) {
     .sale {
         font-size: 30px;
+        margin-left: 0%;
+        margin-top: 5%;
     }
 
     .season {
         font-size: 30px;
         margin-bottom: 20px;
+        margin-left: -1%;
     }
 
     .btnSale {
         font-size: 16px;
         width: 110px;
         height: 60px;
+        margin-left: 0%;
+        margin-bottom: 10%;
     }
 
     .waterfall {
-        width: 60%;
+        width: 40%;
+        margin-left: 0%;
+        margin-top: 5%;
+    }
+}
+
+
+
+@media (max-width: 400px) {
+    .container {
+        width: 130%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        background-image: url(../../Images/Garden.jpg);
+        background-size: cover;
+    }
+    .sale {
+        font-size: 30px;
+        margin-top: 3%;
+        margin-left: -7%;
+    }
+
+    .season {
+        font-size: 30px;
+        margin-bottom: 20px;
+        margin-left: -10%;
+    }
+
+    .btnSale {
+        font-size: 16px;
+        width: 110px;
+        height: 60px;
+        margin-left: -7%;
+        margin-bottom: 3%;
+    }
+
+    .waterfall {
+    display: none;
     }
 }

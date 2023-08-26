@@ -1,6 +1,6 @@
 import { useRouteError } from "react-router-dom"
 import st from './style.module.scss'
-
+import errorPage from '../../Images/error.svg'
 
 
 export const ErrorPage = () => {
@@ -9,9 +9,9 @@ export const ErrorPage = () => {
     console.error(error)
 
     return (
-        <div id='error-page' className={st.container}>
+        <div id='error-page'>
 
-            <img src='../Images/error.svg' alt="" />
+            <img src={errorPage} className={st.errorImg} alt="Error 404" />
     
         </div>
     )

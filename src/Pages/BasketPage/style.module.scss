@@ -35,7 +35,8 @@ letter-spacing: 1.2px;
 @media (max-width: 1024px) {
     .store {
         width: 80%; 
-        margin-left: 15%;
+        margin-left: 55%;
+        font-size: 20px;
     }
 }
 
@@ -43,9 +44,10 @@ letter-spacing: 1.2px;
 @media (max-width: 768px) {
     .store {
         width: 90%; 
-        margin-left: 15%; 
+        margin-left: 40%; 
         display: flex;
-        gap: 5%;  
+        gap: 5%;
+        font-size: 15px;  
     }
     .store span{
         margin-top: 2%;

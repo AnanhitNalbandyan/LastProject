@@ -67,16 +67,25 @@
 
 @media (max-width: 768px) {
     .container {
+        width: 135%;
+        height: auto;
         flex-direction: column;
         align-items: center;
     }
     .litleMan {
-        max-width: 60%;
-        max-height: auto;
+        width: 60%;
+        height: auto;
+        margin-bottom: -5%;
+        
+    }
+    .wrapper{
+        justify-content: center;
+        align-items: center;
     }
     .text p {
         font-size: 50px;
         line-height: 1em;
+        margin-left: 30%;
     }
     p span {
         font-size: 25px;
@@ -84,9 +93,27 @@
 }
 
 @media (max-width: 400px) {
+    .container{
+        width: 130%;
+        height: auto;
+    }
+    .litleMan {
+        margin-left: -30%;
+        margin-bottom: -5%;
+        
+    }
+    .wrapper{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0%;
+        margin-bottom: 2%;
+        margin-left: 5%;
+    }
     .text p {
         font-size: 40px;
         line-height: 1.2em;
+        margin-left: 10%;
     }
     p span {
         font-size: 20px;

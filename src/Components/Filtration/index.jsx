@@ -5,13 +5,17 @@ import st from './style.module.scss'
     export const Filtration = ({ products, setFiltredProducts }) => {
     
 
+    const [fromPrice, setFromPrice] = useState('')
+    const [toPrice, setToPrice] = useState('')
     
-    const [fromPrice, setFromPrice] = useState()
-    const [toPrice, setToPrice] = useState()
+    const [fromPriceEntered, setFromPriceEntered] = useState(false)
+    const [toPriceEntered, setToPriceEntered] = useState(false)
         
     const [discountedOnly, setDiscountedOnly] = useState(false)
         
     const [sortOrder, setSortOrder] = useState()
+        
+    const [sortOrderChoose, setSortOrderChoose] = useState(false)
 
     useEffect(() => {
         const filteredProducts = products.filter((product) => {
@@ -27,7 +31,6 @@ import st from './style.module.scss'
     
 
         const sortedProducts = filteredProducts.sort((a, b) => {
-        // проверку на наличие скидочной цены
         if (sortOrder === 'asc') {
             return a.price - b.price
         } else if (sortOrder === 'desc') {
@@ -36,22 +39,35 @@ import st from './style.module.scss'
         return 0
         })
 
-        setFiltredProducts(sortedProducts) //  без фильров возвращает целиком
-    }, [ fromPrice, toPrice, discountedOnly, sortOrder])
+        setFiltredProducts(sortedProducts) 
+    }, [ fromPrice,  toPrice, discountedOnly, sortOrder])
 
     return (
     <div className={st.container}>
         <div className={st.price}>
             <label>Price</label>
-                <input type="number"
+                <input
+                    className={`${st.inputForom} ${fromPriceEntered ? st.isActive : ""}`}
+                    type="number"
                     value={fromPrice}
                     placeholder='from'
-                    onChange={(el) => setFromPrice(el.target.value)} />
+                    onChange={(el) => {
+                    setFromPrice(el.target.value)
+                    setFromPriceEntered(true)
+                    }}
+                />
                 
-                <input type="number"
+
+                <input
+                    className={`${st.inputForom} ${toPriceEntered ? st.isActive : ""}`}
+                    type="number"
                     value={toPrice}
                     placeholder='to'
-                    onChange={(e) => setToPrice(e.target.value)} />
+                    onChange={(el) => {
+                    setToPrice(el.target.value)
+                    setToPriceEntered(true)
+                    }}
+                />
         </div>
         
             {<div className={st.discountCheckbox}>
@@ -67,10 +83,17 @@ import st from './style.module.scss'
         <div className={st.sorted}>
             <label className={st.sortText}>
             Sorted
-                <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
-                    <option className={st.option} value="">by default</option> 
-                    <option className={st.option} value="asc">Ascending</option>
-                    <option className={st.option} value="desc">Descending</option>
+                    <select 
+                        className={`${st.option} ${setSortOrderChoose ? st.isActiveSort : ""}`}
+                        value={sortOrder}
+                        onChange={(e) => {
+                            setSortOrder(e.target.value)
+                            setSortOrderChoose(true)
+                        }}
+                            >
+                    <option  value="">by default</option> 
+                    <option  value="asc">Ascending</option>
+                    <option  value="desc">Descending</option>
             </select>
             </label>
         </div>

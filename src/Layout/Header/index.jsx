@@ -28,7 +28,7 @@ export const Header = () => {
                         <ul className={st.navWrapper}>
                             <li>
                                 <NavLink className={({ isActive }) => (isActive ? st.active : '')}
-                                            to='/'>Main Page</NavLink>
+                                            to='/mainPage'>Main Page</NavLink>
                             </li>
                             <li>
                                 <NavLink className={({ isActive }) => (isActive ? st.active : '')}

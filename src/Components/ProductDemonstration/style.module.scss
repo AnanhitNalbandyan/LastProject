@@ -13,21 +13,29 @@
 
 @media (max-width: 1024px) {
     .products {
-        justify-content: center; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap:5%;
     }
 }
 
 
 @media (max-width: 768px) {
-    .products {
-        justify-content: flex-start; 
+    .products { 
+        width: 120%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5%;
     }
 }
 
 
 @media (max-width: 400px) {
     .products {
-        flex-direction: column; 
-        align-items: center; 
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
     }
 }

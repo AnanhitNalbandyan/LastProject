@@ -4,12 +4,11 @@
     box-sizing: border-box;
 }
 
-.container{
-    width: 96%;
-    height:625px;
+
+.errorImg{
+    width: 100%;
+    height:auto;
 }
-
-
 
 @media (max-width: 1024px) {
     .container {

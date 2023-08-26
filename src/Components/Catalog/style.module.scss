@@ -56,14 +56,11 @@ cursor: pointer;
 }
 
 @media (max-width: 1024px) {
-    .wrapper {
-        flex-direction: column;
-    }
-
+    
     .category {
-        margin-left: 0; 
+        margin-left: 10%; 
         margin-right: auto;
-        margin-top: 10px; 
+        margin-top: 3%; 
     }
 }
 
@@ -71,16 +68,21 @@ cursor: pointer;
     h2 {
         font-size: 30px; 
     }
-
     .text {
         font-size: 10px; 
+        padding-top: 2%;
     }
 }
 
 @media (max-width: 400px) {
     h2 {
         font-size: 24px; 
+        margin-left: 5%;
     }
+    .category{
+    margin-left: 10%;
+
+}
 
     .text {
         font-size: 8px; 

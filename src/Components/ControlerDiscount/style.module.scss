@@ -117,3 +117,20 @@
         font-size: 20px;
     }
     }
+    
+    @media (max-width: 400px) {
+
+
+    .input {
+        margin-top: -10%;
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .button {
+        height: 50px;
+        font-size: 20px;
+        margin-top: -8%;
+        margin-bottom: 3%;
+    }
+    }

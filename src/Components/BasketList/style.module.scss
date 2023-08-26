@@ -152,13 +152,14 @@
 }
     .orderBox {
         width: 60%;
+        margin-left:-1%;
     }
 }
 
 
 @media (max-width: 768px) {
 .orderBox {
-        width: 90%;
+        width: 60%;
 }
 .title {
     margin-left: 25px;
@@ -181,11 +182,11 @@ p{
     margin-top: 5%;
 }
 .price {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .dollar {
-    font-size: 10px;
+    font-size: 13px;
 }
 .orderBox{
     margin: 2% 1%;

@@ -4,14 +4,13 @@
     box-sizing: border-box;
 }
 .container{
-    width: 100%;
+    width: 95%;
     display: flex;
     align-items: center;
-    gap: 10%;
     margin-bottom: 3%;
 }
 .price{
-    width: 22%;
+    width: 25%;
     height: auto;
     display: flex;
     align-items: center;
@@ -27,7 +26,7 @@
     letter-spacing: 0.6px;
 }
 
-.price input{
+.inputForom{
     width: 103px;
     height: 42px;
     border-radius: 7px;
@@ -42,12 +41,15 @@
     padding-left: 8px;
 }
 
+.isActive {
+    color: #000; 
+}
 
 .discountCheckbox{
-    width: 50%;
+    width: 35%;
     height: auto;
     display: flex;
-    align-items: flex-start;
+    margin-left: 5%;
 }
 .discountCheckbox label{
     color: #000;
@@ -70,8 +72,7 @@
 .sorted{
     width: 45%;
     height: auto;
-    margin-left: -30%;
-    gap: 5%;
+    margin-left: -13%;
 }
 
 .sortText{
@@ -86,7 +87,6 @@
 .sorted select{
     width: 200px;
     height: 40px;
-    margin-left: 20px;
     border-radius: 7px;
     border: 1px solid #000;
     color: #ACACAC;
@@ -108,9 +108,13 @@
     line-height: 130%; 
     letter-spacing: 0.48px;
 }
+.isActiveSort{
+    color: #000;
+}
 
 @media (max-width: 1024px) {
     .container {
+        width: 100%;
         flex-direction: column; 
         align-items: flex-start; 
     }
@@ -176,7 +180,9 @@
         margin-left: 0; 
         margin-top: 20px; 
     }
-    
+    .discountCheckbox input{
+        margin-left: 0;
+    }
     .sorted {
         width: 50%; 
         margin-left: 0; 
@@ -185,5 +191,8 @@
     
     .sortText {
         margin-right: 0; 
+    }
+    .sorted select{
+        margin-left: 0%;
     }
 }

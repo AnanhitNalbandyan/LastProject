@@ -26,8 +26,7 @@
     line-height: 130%; 
     letter-spacing: 0.6px;
 }
-
-.price input{
+.inputForom{
     width: 103px;
     height: 42px;
     border-radius: 7px;
@@ -40,6 +39,10 @@
     line-height: 130%; 
     letter-spacing: 0.48px;
     padding-left: 8px;
+}
+
+.isActive {
+    color: #000; 
 }
 
 

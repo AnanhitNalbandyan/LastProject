@@ -7,7 +7,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 import './index.css'
 import App from './App'
 import { ErrorPage } from './Pages/ErrorPage'
-import { HomePage } from './Pages/HomePage'
+import {HomePage} from './Pages/HomePage'
 import { AllProductsPage } from './Pages/AllProductsPage'
 import { CategoriesListPage } from './Pages/CategoriesListPage'
 import { SingleProductPage } from './Pages/SingleProductPage';
@@ -18,38 +18,41 @@ import { BasketPage } from './Pages/BasketPage'
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <App/>,
     errorElement: <ErrorPage/>,
     children: [
     {
         path: '/',
-        element:<HomePage/>
+        element: <HomePage/>,
       },
-      
       {
-          path: '/allProducts',
-        element:<AllProductsPage/>
+        path: '/mainPage',
+        element: <HomePage/>,
+      },
+      {
+        path: '/allProducts',
+        element: <AllProductsPage />,
       },
         {
           path: '/allSales',
-        element:<AllSalesProductsPage/>
+          element: <AllSalesProductsPage />,
       },
       {
           path: '/basket',
-        element:<BasketPage/>
+        element:<BasketPage/>,
       },
       {
         path: '/sales',
-        element: <AllSalesProductsPage/>
+        element: <AllSalesProductsPage/>,
       },
       {
           path: '/catalog',
-        element:<CategoriesListPage/>
+        element:<CategoriesListPage/>,
       },
       
       {
           path: '/products/:id',
-        element:<SingleProductPage/>
+        element:<SingleProductPage/>,
       },
     {
         path: '/categories/:id/',

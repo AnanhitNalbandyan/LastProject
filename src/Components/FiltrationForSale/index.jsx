@@ -8,7 +8,9 @@ import st from './style.module.scss'
     
     const [fromPrice, setFromPrice] = useState()
     const [toPrice, setToPrice] = useState()
-        
+    
+    const [fromPriceEntered, setFromPriceEntered] = useState(false)
+    const [toPriceEntered, setToPriceEntered] = useState(false)
         
     const [sortOrder, setSortOrder] = useState()
 
@@ -40,15 +42,28 @@ import st from './style.module.scss'
     <div className={st.container}>
         <div className={st.price}>
             <label>Price</label>
-                <input type="number"
+                <input
+                    className={`${st.inputForom} ${fromPriceEntered ? st.isActive : ""}`}
+                    type="number"
                     value={fromPrice}
                     placeholder='from'
-                    onChange={(el) => setFromPrice(el.target.value)} />
+                    onChange={(el) => {
+                    setFromPrice(el.target.value)
+                    setFromPriceEntered(true)
+                    }}
+                />
                 
-                <input type="number"
+
+                <input
+                    className={`${st.inputForom} ${toPriceEntered ? st.isActive : ""}`}
+                    type="number"
                     value={toPrice}
                     placeholder='to'
-                    onChange={(e) => setToPrice(e.target.value)} />
+                    onChange={(el) => {
+                    setToPrice(el.target.value)
+                    setToPriceEntered(true)
+                    }}
+                />
         </div>
         
         <div className={st.sorted}>
