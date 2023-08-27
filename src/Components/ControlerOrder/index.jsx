@@ -50,14 +50,17 @@
             body: JSON.stringify(data),
             })
             if (response.ok) {
-                toast.success('Your application has been accepted, we will contact you!!!')
+                if (phoneEntered) {
+                toast.success('Your application has been accepted, we will contact you!!!');
+                }
             } else {
-                toast.error('Oops, something went wrong.')
-            }
+            toast.error('Oops, something went wrong.')
+        }
         }
 
     const isPhoneValid = (phone) => {
-        return phone.startsWith('') || phone === '+4' || phone === '+'
+        return phone.startsWith('+') || phone === '+4' ||
+            (phone === '+' && phone.length === 1) || (phone.length >= 10 && !isNaN(phone))
     }
 
 
@@ -70,7 +73,11 @@
         setValue('phone', sanitizedPhoneValue);
         setPhoneEntered(false)
     } else {
-        setValue('phone', (isPhoneValid(sanitizedPhoneValue) ? sanitizedPhoneValue : `+49${sanitizedPhoneValue}`).replace(/[^0-9\+]/g, ""));
+            setValue(
+                'phone',
+                (isPhoneValid(sanitizedPhoneValue) 
+                    ? sanitizedPhoneValue
+                    : `+49${sanitizedPhoneValue}`).replace(/[^0-9\+]/g, ""));
         setPhoneEntered(true);
     }
 }

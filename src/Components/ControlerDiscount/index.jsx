@@ -23,7 +23,9 @@ const { handleSubmit, control, setValue } = useForm();
         body: JSON.stringify(data),
         })
         if (response.ok) {
-            toast.success('Your application has been accepted, we will contact you!!!')
+            if (phoneEntered) {
+                toast.success('Your application has been accepted, we will contact you!!!');
+            }
         } else {
             toast.error('Oops, something went wrong.')
         }
