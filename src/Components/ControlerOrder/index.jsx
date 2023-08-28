@@ -1,7 +1,6 @@
     import st from './style.module.scss'
-    import { baseUrl } from '../../redux/apiSlice'
     import { useForm, Controller } from 'react-hook-form'
-    import { usePostPhoneNumberForDiscountMutation } from '../../redux/apiSlice'
+    import {  useAddOrderMutation } from '../../redux/apiSlice'
     import { useState } from 'react'
     import { useDispatch } from 'react-redux';
     import {
@@ -10,15 +9,17 @@
     countTotalPrice
     } from '../../redux/basketSlice'
     
-    import { ToastContainer, toast } from 'react-toastify'
-    import 'react-toastify/dist/ReactToastify.css'
-
     export const ControlerOrder = () => {
+    
+        const [isOrdering, setIsOrdering] = useState(false)  
+        const [phoneEntered, setPhoneEntered] = useState(false)
+        const [message, setMessage] = useState('')
+
+        const [addOrder, { isError, isLoading, isSuccess }] = useAddOrderMutation()
+    
+        const { handleSubmit, control, setValue } = useForm()
+
         
-    const [phoneEntered, setPhoneEntered] = useState(false)
-    const [postNumberForDiscount, { isError, isLoading, isSuccess }] = usePostPhoneNumberForDiscountMutation()
-    const { handleSubmit, control, setValue } = useForm()
-    const [isOrdering, setIsOrdering] = useState(false)
     const dispatch = useDispatch()
 
         
@@ -35,32 +36,15 @@
             setTimeout(() => {
                 cleanBasketHandler()
                 setIsOrdering(false)
-            }, 2000); // Задержка в 2000 миллисекунд (2 секунды) перед очисткой корзины
-        }, 1000); // Задержка в 2000 миллисекунд (2 секунды) перед отправкой данных
+            }, 2000); 
+        }, 1000); 
 
         
     }
-        
-        const onSubmit = async (data) => {
-            const response = await fetch(`${baseUrl}sale/send`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-            })
-            if (response.ok) {
-                if (phoneEntered) {
-                toast.success('Your application has been accepted, we will contact you!!!');
-                }
-            } else {
-            toast.error('Oops, something went wrong.')
-        }
-        }
+    
 
     const isPhoneValid = (phone) => {
-        return phone.startsWith('+') || phone === '+4' ||
-            (phone === '+' && phone.length === 1) || (phone.length >= 10 && !isNaN(phone))
+        return phone.startsWith('') || phone === '+4' || phone === '+'
     }
 
 
@@ -69,16 +53,15 @@
     const sanitizedPhoneValue = phoneValue.replace(/[^0-9\+]/g, "");
     
         if (sanitizedPhoneValue.length < 10) {
-        toast.warn('You must enter at least 10 characters.')
-        setValue('phone', sanitizedPhoneValue);
-        setPhoneEntered(false)
-    } else {
-            setValue(
-                'phone',
-                (isPhoneValid(sanitizedPhoneValue) 
-                    ? sanitizedPhoneValue
-                    : `+49${sanitizedPhoneValue}`).replace(/[^0-9\+]/g, ""));
-        setPhoneEntered(true);
+            setMessage('You must enter at least 10 characters')
+            setValue('phone', sanitizedPhoneValue)
+            setPhoneEntered(false)
+        } else {
+            setMessage('')
+            setValue('phone', (isPhoneValid(sanitizedPhoneValue)
+                ? sanitizedPhoneValue
+                : `+49${sanitizedPhoneValue}`).replace(/[^0-9\+]/g, ""));
+            setPhoneEntered(true)
     }
 }
     const objToSend = {
@@ -90,12 +73,12 @@
     }
 
     const sendNumberHandler = (obj) => {
-        postNumberForDiscount(obj).unwrap().then()
+        addOrder(obj).unwrap().then()
     }
 
 
         return (
-        <form className={st.inputForm} onSubmit={handleSubmit(onSubmit)}>
+        <form className={st.inputForm} onSubmit={handleSubmit(() => {})}>
         {isSuccess && phoneEntered ? (
                     <div className={st.answer}>
                     Thanks! <br /> Your order is accepted!!
@@ -116,7 +99,8 @@
                     maxLength={14}
                     placeholder="Phone number"
                     />
-                    {error && <span>Phone number is required.</span>}
+                        {error && <span className={st.requiredMessage}>Phone number is required.</span>}
+                        {message && <p className={st.requiredMessage}>{message}</p>}
                 </div>
                 )}
             />
@@ -132,7 +116,6 @@
         )}
         {isLoading ? <div>Loading</div> : null}
         {isError ? <div>Error</div> : null}
-        <ToastContainer/>
         </form>
         )
     }

@@ -7,10 +7,12 @@
     .inputForm {
         width: 70%;
         height: auto;
+        position: relative;
     }
 
     .inputWrapper {
         margin-bottom: 30px;
+        
     }
 
     .input {
@@ -24,8 +26,15 @@
         font-size: 18px;
         font-family: Montserrat;
         font-weight: 600;
+        margin-bottom: 10%;
     }
-
+    .requiredMessage{
+        position: absolute;
+        top: 40%;
+        left: 5%;
+        color:#FFF; 
+        font-size: 20px;
+    }
     .form {
         margin-right: 256px;
     }
@@ -53,7 +62,10 @@
         letter-spacing: 0.862px;
         cursor: pointer;
     }
-
+    .buttonOrderDisabled {
+        opacity: 0.5; 
+        cursor: not-allowed; 
+    }
     .answer{
         width: 100%;
         height: 105px;
@@ -88,6 +100,9 @@
         padding: 15px 30px;
         font-size: 16px;
     }
+    .requiredMessage{
+        font-size: 15px;
+    }
 
     .button:hover,
     .button:focus {
@@ -111,7 +126,9 @@
         padding: 10px 20px;
         font-size: 14px;
     }
-
+    .requiredMessage{
+        top:20%;
+    }
     .button {
         height: 50px;
         font-size: 20px;
@@ -126,7 +143,9 @@
         padding: 10px 20px;
         font-size: 14px;
     }
-
+    .requiredMessage{
+        font-size: 10px;
+    }
     .button {
         height: 50px;
         font-size: 20px;

@@ -9,6 +9,7 @@
     height: auto;
     margin-top: 5%;
     margin-left: 2%;
+    position: relative;
     }
 
 .input {
@@ -26,21 +27,27 @@
     line-height: 130%;
     letter-spacing: 0.54px;
     margin-bottom: 5%;
-
 }
-
+.requiredMessage{
+        position: absolute;
+        top: 80%;
+        left: 5%;
+        color:#e61b1b;
+        font-size: 17px; 
+    }
 .buttonOrder:hover,
 .buttonOrder:focus {
     transform: scale(1.01);
     transition-duration: 500ms;
     cursor: pointer;
 }
-
+    
 .buttonOrder{
     max-width: 90%;
     height: 76px;
     margin-left: 2%;
-    padding: 2% 45% 2% 35%;
+    margin-top: 2%;
+    padding: 2% 45% 3% 35%;
     align-items: flex-start;
     gap: 10px;
     border-radius: 17px;
@@ -53,6 +60,10 @@
     font-weight: 700;
     line-height: 130%; 
     letter-spacing: 0.84px;
+}
+.buttonOrderDisabled {
+    opacity: 0.5; 
+    cursor: not-allowed; 
 }
 .answer{
     width: 80%;
@@ -84,12 +95,17 @@
         padding: 10px 20px;
         margin-left: 5%;
     }
+    .requiredMessage{
+        top:50%; 
+        font-size: 15px;
+    }
 
     .buttonOrder {
         width: 80%;
         padding: 0% 30% ;
         font-size: 20px;
         margin-left: 8%;
+        margin-top: 10%;
     }
 
     .answer{
@@ -104,7 +120,6 @@
     .input {
         font-size: 15px;
     }
-
     .buttonOrder {
         font-size: 15px;
     }

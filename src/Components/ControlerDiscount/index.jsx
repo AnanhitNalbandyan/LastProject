@@ -10,26 +10,13 @@ import 'react-toastify/dist/ReactToastify.css'
 
 export const ControlerDiscount = () => {
     
-const [phoneEntered, setPhoneEntered] = useState(false)
-const [postNumberForDiscount, { isError, isLoading, isSuccess }] = usePostPhoneNumberForDiscountMutation();
-const { handleSubmit, control, setValue } = useForm();
+    const [phoneEntered, setPhoneEntered] = useState(false)
+    const [postNumberForDiscount, { isError, isLoading, isSuccess }] = usePostPhoneNumberForDiscountMutation()
+    const [message, setMessage] = useState('')
 
-    const onSubmit = async (data) => {
-        const response = await fetch(`${baseUrl}sale/send`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-        })
-        if (response.ok) {
-            if (phoneEntered) {
-                toast.success('Your application has been accepted, we will contact you!!!');
-            }
-        } else {
-            toast.error('Oops, something went wrong.')
-        }
-        }
+    const { handleSubmit, control, setValue } = useForm()
+
+
 
 const isPhoneValid = (phone) => {
     return phone.startsWith('+49') || phone === '+4' || phone === '+'
@@ -40,12 +27,15 @@ const handlePhoneChange = (el) => {
     const sanitizedPhoneValue = phoneValue.replace(/[^0-9\+]/g, "");
     
     if (sanitizedPhoneValue.length < 10) {
-        toast.warn('You must enter at least 10 characters.')
+        setMessage('You must enter at least 10 characters')
         setValue('phone', sanitizedPhoneValue)
         setPhoneEntered(false)
     } else {
-        setValue('phone', (isPhoneValid(sanitizedPhoneValue) ? sanitizedPhoneValue : `+49${sanitizedPhoneValue}`).replace(/[^0-9\+]/g, ""));
-        setPhoneEntered(true);
+        setMessage('')
+        setValue('phone', (isPhoneValid(sanitizedPhoneValue)
+            ? sanitizedPhoneValue
+            : `+49${sanitizedPhoneValue}`).replace(/[^0-9\+]/g, ""))
+        setPhoneEntered(true)
     }
 }
 const objToSend = {
@@ -62,7 +52,7 @@ const objToSend = {
 
 
         return (
-        <form className={st.inputForm} onSubmit={handleSubmit(onSubmit)}>
+        <form className={st.inputForm} onSubmit={handleSubmit(() => {})}>
         {isSuccess && phoneEntered ? (
                     <div className={st.answer}>
                     Your application has been accepted, <br /> we will contact you!!!
@@ -83,7 +73,8 @@ const objToSend = {
                     maxLength={14}
                     placeholder="Phone number"
                     />
-                    {error && <span>Phone number is required.</span>}
+                    {error && <span className={st.requiredMessage}>Phone number is required.</span>}
+                    {message && <p className={st.requiredMessage}>{message}</p>}
                 </div>
                 )}
             />
