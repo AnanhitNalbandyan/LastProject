@@ -21,7 +21,7 @@ export const ProductDemonstration = () => {
         event.preventDefault()
 
         toast.success(`Product ${el.title} Added to Card!`, {
-        position: toast.POSITION.BOTTOM_LEFT,
+        position: toast.POSITION.TOP_RIGHT,
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,

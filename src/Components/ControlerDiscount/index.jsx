@@ -1,11 +1,8 @@
 import st from './style.module.scss'
-import { baseUrl } from '../../redux/apiSlice'
 import { useForm, Controller } from 'react-hook-form'
 import { usePostPhoneNumberForDiscountMutation } from '../../redux/apiSlice'
 import { useState } from 'react'
 
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 
 
 export const ControlerDiscount = () => {
@@ -27,7 +24,7 @@ const handlePhoneChange = (el) => {
     const sanitizedPhoneValue = phoneValue.replace(/[^0-9\+]/g, "");
     
     if (sanitizedPhoneValue.length < 10) {
-        setMessage('You must enter at least 10 characters')
+        setMessage('Other than numbers, no characters can enter number must consist of at least 10 numbers and start with "+"')
         setValue('phone', sanitizedPhoneValue)
         setPhoneEntered(false)
     } else {
@@ -85,8 +82,6 @@ const objToSend = {
         )}
         {isLoading ? <div>Loading</div> : null}
         {isError ? <div>Error</div> : null}
-        
-        <ToastContainer/>
         </form>
     )
     }

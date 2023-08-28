@@ -53,7 +53,7 @@
     const sanitizedPhoneValue = phoneValue.replace(/[^0-9\+]/g, "");
     
         if (sanitizedPhoneValue.length < 10) {
-            setMessage('You must enter at least 10 characters')
+            setMessage('Other than numbers, no characters can enter number must consist of at least 10 numbers and start with "+"')
             setValue('phone', sanitizedPhoneValue)
             setPhoneEntered(false)
         } else {

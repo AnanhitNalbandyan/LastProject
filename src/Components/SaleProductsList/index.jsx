@@ -33,7 +33,7 @@
             event.preventDefault()
 
             toast.success(`Product ${el.title} Added to Basket!`, {
-                position: toast.POSITION.BOTTOM_LEFT,
+                position: toast.POSITION.TOP_RIGHT,
                 autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
