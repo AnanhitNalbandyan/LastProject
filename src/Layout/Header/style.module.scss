@@ -110,7 +110,7 @@ a.active {
 .count{
     position: absolute;
     top:16px;
-    left: 10px;
+    left: 9px;
     font-size: 20px;
     color: rgb(70, 149, 70);
     line-height: 40%;
@@ -178,7 +178,6 @@ a.active {
 
     .count {
         position: absolute;
-        margin: calc(0.8% + 0.11vw);
     }
 }
 
@@ -231,7 +230,6 @@ a.active {
 
     .count {
         font-size: 16px;
-        margin: calc(0.6% + 0.11vw);
     }
 }
 

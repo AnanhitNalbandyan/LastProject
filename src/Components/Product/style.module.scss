@@ -22,7 +22,7 @@
     width: 330px;
     height: 300px;
     background-position: center;
-    object-fit:fill;
+    object-fit:contain;
     margin-bottom: 3%;
 }
 
@@ -94,13 +94,14 @@
     
 }
 
-.addToCart:hover{
-opacity: 1;
-transition: opacity .3s;
+.wrapper:hover .addToCart,
+.wrapper:focus .addToCart{
+    display: block;
 }
 .addToCart{
     width: 279px;
     height: 72px;
+    display: none;
     flex-shrink: 0;
     color: #393;
     font-size: 18px;
@@ -113,14 +114,10 @@ transition: opacity .3s;
     position: absolute;
     cursor: pointer;
     bottom: 100px;
-    left: 10px;
-    opacity: 0;
-    transition: opacity .3s;
+    left: 23px;
+
 }
 
-.wrapper:hover .addToCard {
-    opacity: 1;
-}
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .wrapper {
