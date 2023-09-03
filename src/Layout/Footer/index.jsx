@@ -6,13 +6,13 @@ export const Footer = () => {
     
 
     return (
-        <>
+        <div className={st.container}>
             <div className={st.connectingItems}>
                 <ContactAddress />
             </div>
             <div className={st.map}>
             <Map />
             </div>
-        </>
+        </div>
     )
 }

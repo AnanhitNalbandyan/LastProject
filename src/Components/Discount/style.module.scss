@@ -6,6 +6,7 @@
     .container {
     width: 100%;
     height: auto;
+    margin: 3% 0 3% 0;
     background: linear-gradient(223deg, #393 0%, #006300 100%);
     display: flex;
     }
@@ -67,8 +68,6 @@
 
 @media (max-width: 768px) {
     .container {
-        width: 135%;
-        height: auto;
         flex-direction: column;
         align-items: center;
     }
@@ -93,10 +92,7 @@
 }
 
 @media (max-width: 400px) {
-    .container{
-        width: 130%;
-        height: auto;
-    }
+
     .litleMan {
         margin-left: -30%;
         margin-bottom: -5%;

@@ -8,39 +8,30 @@
     height: auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 8%;
 
 }
 @media (max-width: 1024px) and (max-width: 768px) {
     .categoriesContainer { 
-        width: 135%;
-        height: auto;
+        margin-left: 5%;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap:3%;
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .categoriesContainer { 
-        width: 130%;
-        height: auto;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 3%;
-        margin-left: 5%;
     }
 }
 
 
 @media (max-width: 400px) {
     .categoriesContainer { 
-        width: 130%;
-        height: auto;
-        margin-left: 15%;
+        justify-content: center;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        gap: 3%;
     }
 }

@@ -5,10 +5,9 @@
 }
 
 .container {
-    width: 96%;
+    width: 100%;
     height: auto;
-    margin-top: 5%;
-    margin-bottom: 10%;
+    margin:5% 0% 10% 3%;
 }
 
 h2 {
@@ -23,33 +22,34 @@ h2 {
 }
 
 .wrapper {
-    width: 86%;
+    width: 90%;
     height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 5%;
 }
 
 .image {
-    max-width: 70%;
-    max-height: 70%;
-    margin-right: 3%;
+    width: 70%;
+    height: 70%;
 }
 
 .descriptionPrice {
-    width: 500px;
+    width: 25%;
 }
 
 
 .pricePart {
-    width: 300px;
+    width: 60%;
     display:inline-flex; 
     margin-bottom: -100px;
-    margin-left: 10%;
+    margin-left: 5%;
 
 }
 .numberSymbl{
     width: 100%;
+    height: auto;
     display: flex;
 }
 .price {
@@ -79,7 +79,7 @@ h2 {
     font-weight: 500;
     line-height: 130%;
     text-decoration-line: strikethrough;
-    margin-top: 18%;
+    margin-top: 30%;
     margin-left: 15%;
 }
 
@@ -91,7 +91,7 @@ h2 {
     font-weight: 600;
     line-height: 130%;
     letter-spacing: 0.84px;
-    margin-top: 15%;
+    margin-top: 25%;
     margin-left: 10%;
     
     
@@ -151,8 +151,58 @@ cursor: pointer;
     line-height: 130%;
     letter-spacing: 0.6px;
 }
+@media (max-width: 1200px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    .image {
+        max-width: 100%;
+        max-height: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
 
+    .pricePart {
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        margin-left: 0;
+        margin-bottom: 3%;
+    }
+
+    .price {
+        font-size: 50px;
+        margin-top: 3%;
+        margin-left: 0;
+    }
+
+    .dollar {
+        margin-top: 25%;
+        margin-left: 0;
+    }
+
+    .discount {
+        margin-top: 15%;
+        margin-right: 5%;
+    }
+
+    .percent {
+        margin-top: 13%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .button {
+        width: 100%;
+        padding: 25px;
+        justify-content: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+}
 @media (max-width: 768px) {
     .wrapper {
         flex-direction: column;
@@ -258,8 +308,6 @@ cursor: pointer;
 
     .button {
         width: 100%;
-        padding: 20px;
-        justify-content: center;
         margin-bottom: 20px;
         font-size: 24px;
     }

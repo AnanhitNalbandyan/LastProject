@@ -23,7 +23,7 @@
         
     const dispatch = useDispatch()
 
-    const addToBasketHandler = async (event, el) => {
+    const addToCartHandler = async (event, el) => {
         if (isAddingToBasket) {
             return
         }
@@ -79,7 +79,7 @@
                     <NavLink key={el.id} to={`/products/${el.id}`}>
                         <Product
                         {...el}
-                        addToBasketHandler={event => addToBasketHandler(event, el)}
+                        addToCartHandler={event => addToCartHandler(event, el)}
                         isAddingToBasket={isAddingToBasket}
                         />
                     </NavLink>

@@ -50,7 +50,7 @@ export const BasketList = () => {
                 <div className={st.productInBasket}>
                     {returnedValue.length === 0 ? (
                         <div className={st.empty}>
-                        <h3>Your basket is empty</h3>
+                        <h3>Your cart is empty</h3>
                             <img src={basketEmpty} alt = 'shopping basket' className={st.basket}/>
                                 
                             

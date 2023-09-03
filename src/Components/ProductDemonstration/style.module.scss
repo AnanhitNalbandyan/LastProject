@@ -9,24 +9,25 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 8%;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (max-width: 768px) {
     .products {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap:5%;
+        grid-template-columns: repeat(4, 1fr);
+        
     }
 }
 
 
 @media (max-width: 768px) {
     .products { 
-        width: 120%;
+        width: 100%;
         height: auto;
+        margin-left: 1%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 5%;
     }
 }
 

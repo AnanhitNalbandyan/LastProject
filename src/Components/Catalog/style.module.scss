@@ -6,10 +6,11 @@
 .container{
     width: 100%;
     height:auto; 
+    margin: 3% 0 3% 0;
 }
 
 .wrapper{
-    width: 100%;
+    width: 90%;
     display: flex;
     margin-bottom: 20px;  
 }
@@ -59,12 +60,12 @@ cursor: pointer;
     
     .category {
         margin-left: 10%; 
-        margin-right: auto;
         margin-top: 3%; 
     }
 }
 
 @media (max-width: 768px) {
+    
     h2 {
         font-size: 30px; 
     }
@@ -75,12 +76,16 @@ cursor: pointer;
 }
 
 @media (max-width: 400px) {
+    .container{
+    margin-bottom: 40%; 
+}
     h2 {
         font-size: 24px; 
         margin-left: 5%;
     }
     .category{
-    margin-left: 10%;
+        margin-top: 5% ;
+        margin-left: 10%;
 
 }
 

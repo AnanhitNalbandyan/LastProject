@@ -6,7 +6,7 @@ export const Product = (
         image,
         price,
         title,
-        addToBasketHandler,
+        addToCartHandler,
         isAddingToBasket,
     }) => {
 
@@ -15,7 +15,7 @@ export const Product = (
         <div className={st.wrapper}>
             <img className={st.image} src={baseUrl + image} alt={title} />
             <button className={st.addToCart}
-                onClick={addToBasketHandler}
+                onClick={addToCartHandler}
                 disabled={isAddingToBasket}
             >
                 {isAddingToBasket ? 'Product is adding' : 'Add to Cart'}

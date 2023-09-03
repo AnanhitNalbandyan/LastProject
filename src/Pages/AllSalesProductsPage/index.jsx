@@ -5,11 +5,11 @@ import { SaleProductsList} from "../../Components/SaleProductsList"
 
     
         return (
-            <>
+            <div className={st.container}>
                 <h2 className={st.title}>
                     Products with sale
                 </h2>
                 <SaleProductsList/>
-            </>
+            </div>
     )
 }

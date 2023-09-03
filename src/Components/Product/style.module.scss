@@ -13,8 +13,8 @@
 
 .wrapper {
     position: relative;
-    width: 300px;
-    height: 350px;
+    width: 100%;
+    height: 100%;
     margin-bottom: 20%;
 }
 
@@ -27,13 +27,15 @@
 }
 
 .titlePrice{
-    width: 300px;
+    width: 100%;
     height: 200px;
-    text-align: center;
+
+
 }
 .priceContainer {
     width: 100%;
-    display: inline-flex;    
+    display: inline-flex;
+    margin-left: 10%;   
 }
 
 .price {
@@ -91,6 +93,7 @@
     font-weight: 500;
     line-height: 130%;
     letter-spacing: 0.48px;
+    text-align: center;
     
 }
 
@@ -113,7 +116,7 @@
     z-index: 111;
     position: absolute;
     cursor: pointer;
-    bottom: 100px;
+    top: 225px;
     left: 23px;
 
 }
@@ -122,14 +125,13 @@
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .wrapper {
         width: 100%;
-        height: 100%;
+        height: auto;
         padding: 15px;
     }
 
     .image {
-        width: 100%;
-        height: 65%;
-        gap: 5%;
+        width: 250px;
+        height: 250px;
     }
 
     .titlePrice{
@@ -182,17 +184,14 @@
         z-index: 111;
         position: absolute;
         cursor: pointer;
-        bottom: 180px;
-        left: 30px;
-        opacity: 0;
-        transition: opacity .3s;
+
 }
 }
 
 @media screen and (max-width: 767px) {
     .wrapper {
-        width: 90%;
-        height: 90%;
+        width: 100%;
+        height: 100%;
         margin-bottom: 10%;
     }
 
@@ -202,15 +201,14 @@
     }
 
     .titlePrice{
-        width: 80%;
-        height: 80%;
+        width: 70%;
+        height: 70%;
         
     }
     .priceContainer {
         width: 50%;
         height: 10%;
-        padding-top: 2px;
-        margin-left: -5%;     
+        padding-top: 2px;     
     }
 
     .price {
@@ -235,11 +233,12 @@
         font-size: 12px;
         margin-top: 2%;
         padding: 0;
-        margin-left: 5%;
+        text-align: center;
     }
     .addToCart{
         width: 150px;
         height: auto;
+        display: none;
         flex-shrink: 0;
         color: #393;
         font-size: 8px;
@@ -253,8 +252,6 @@
         cursor: pointer;
         bottom: 100px;
         left: 30px;
-        opacity: 0;
-        transition: opacity .3s;
 }
 
 }
@@ -306,10 +303,12 @@
     .title {
         font-size: 14px;
         margin-top: -2%;
+        text-align: center;
     }
     .addToCart{
         width: 150px;
         height: auto;
+        display: none;
         flex-shrink: 0;
         color: #393;
         font-size: 8px;
@@ -323,8 +322,6 @@
         cursor: pointer;
         bottom: 100px;
         left: 30px;
-        opacity: 0;
-        transition: opacity .3s;
 }
 
 }
