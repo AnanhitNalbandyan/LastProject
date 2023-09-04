@@ -17,7 +17,7 @@ export const ProductDemonstration = () => {
 
     const dispatch = useDispatch()
 
-    const addToBasketHandler = (event, el) => {
+    const addToCartHandler = (event, el) => {
         event.preventDefault()
 
         toast.success(`Product ${el.title} Added to Card!`, {
@@ -50,7 +50,7 @@ export const ProductDemonstration = () => {
                             {discountedProducts && discountedProducts.slice(0, 4).map((el) => (
                                 <NavLink to={`/products/${el.id}`} key={el.id}>
                                     <Product {...el}
-                                        addToBasketHandler={(event) => addToBasketHandler(event, el)} />
+                                        addToCartHandler={(event) => addToCartHandler(event, el)} />
                                 </NavLink>
                             ))}
                             </div>
