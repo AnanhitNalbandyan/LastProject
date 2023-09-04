@@ -19,7 +19,12 @@
     align-items: center;
     gap: 20%;
 }
-
+.logo:hover,
+.logo:focus {
+    transform: scale(1.1);
+    transition-duration: 500ms;
+    cursor: pointer;
+}
 .logo {
     width: 72px;
     height: 72px;
